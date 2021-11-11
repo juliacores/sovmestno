@@ -1,5 +1,8 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
+import 'package:sovmestno/widgets/appbar.dart';
 
 class AuthorizationScreen extends StatefulWidget {
   const AuthorizationScreen({Key key}) : super(key: key);
@@ -13,83 +16,7 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.appBarColor,
-      appBar: AppBar(
-        title: Padding(
-          padding: const EdgeInsets.only(
-            left: 70.0,
-          ),
-          child: Text(
-            'Совместно',
-            style: TextStyle(
-              fontSize: 32,
-              color: MyColors.backgroundButton,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        backgroundColor: MyColors.appBarColor,
-        toolbarHeight: 100,
-        automaticallyImplyLeading: false,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 105),
-            child: Row(
-              children: [
-                Container(
-                  width: 0.5,
-                  height: 49,
-                  color: Colors.grey,
-                ),
-                const SizedBox(width: 35),
-                SizedBox(
-                  width: 207,
-                  height: 40,
-                  child: ElevatedButton(
-                    child: Text(
-                      'Зарегестрироваться',
-                      style: TextStyle(color: MyColors.backgroundButton),
-                    ),
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.white,
-                      onPrimary: Colors.blue[100],
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                        side: BorderSide(
-                          width: 1.0,
-                          color: MyColors.backgroundButton,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 28),
-                SizedBox(
-                  width: 98,
-                  height: 40,
-                  child: ElevatedButton(
-                    child: const Text(
-                      'Далее',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: MyColors.backgroundButton,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ), // Container(
-          //   color: MyColors.borderTextField,
-          //   width: 50,
-          //   height: 49,
-          // )
-        ],
-      ),
+      appBar: registrationAppBar(context, 'Совместно'),
       body: Column(
         children: [
           const SizedBox(height: 200),
