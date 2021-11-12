@@ -13,4 +13,7 @@ class MyColors {
   static Color hintColor = const Color(0xff9FA2B4);
 
   static Color appBarColor = const Color(0xffFFFFFF);
+
+    static Color grayscale = const Color(0xffFCFDFE);
 }
+
