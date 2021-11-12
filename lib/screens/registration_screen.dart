@@ -76,6 +76,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   }
 }
 
+//TODO move reg widgets to other files, load them continuously
+
 class DetailedRegistration extends StatefulWidget {
   const DetailedRegistration({Key key}) : super(key: key);
 
@@ -212,7 +214,7 @@ class _DetailedRegistrationState extends State<DetailedRegistration> {
     );
   }
 }
-
+//TODO move to another file
 class UserImage extends StatelessWidget {
   const UserImage({Key key}) : super(key: key);
 
@@ -229,6 +231,7 @@ class UserImage extends StatelessWidget {
               width: 66,
               height: 66,
               child: ClipOval(
+                //TODO add placeholder
                 child: Image.network('src'),
               ),
             ),

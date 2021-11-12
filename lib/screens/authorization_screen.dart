@@ -23,6 +23,7 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
           SizedBox(
             width: 655,
             height: 42,
+            //TODO change to textformfiled ad add OnFieldSubmitted logic as user tap on a Next btn
             child: TextField(
               textAlign: TextAlign.start,
               decoration: InputDecoration(
@@ -55,6 +56,7 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
                 style: TextStyle(color: Colors.white),
               ),
               onPressed: () {},
+              //TODO move style to themedata
               style: ElevatedButton.styleFrom(
                 primary: MyColors.backgroundButton,
                 shape: RoundedRectangleBorder(
@@ -67,6 +69,7 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              //TODO move to another files to allow reuse this widgets
               TextButton(
                 onPressed: () {},
                 child: Text(
