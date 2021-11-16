@@ -15,7 +15,7 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.appBarColor,
-      appBar: registrationAppBar(context, 'Совместно'),
+      appBar: const RegistrationAppBar(title: 'Совместно'),
       body: Center(
         child: Column(
           children: [

@@ -3,8 +3,14 @@ import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/screens/registration/login_by_email_screen.dart';
 import 'package:sovmestno/screens/registration/registration_screen.dart';
 
-Widget registrationAppBar(BuildContext context, String title) {
-  return AppBar(
+
+class RegistrationAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final String title;
+  const RegistrationAppBar({ Key key, @required this.title }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+ return AppBar(
     title: Padding(
       padding: const EdgeInsets.only(
         left: 70.0,
@@ -88,5 +94,8 @@ Widget registrationAppBar(BuildContext context, String title) {
         ),
       ),
     ],
-  );
+  );  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(100);
 }
