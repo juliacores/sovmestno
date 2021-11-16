@@ -20,7 +20,7 @@ class RegistrationButtonWidget extends StatelessWidget {
             ),
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-              primary: MyColors.blue,
+              primary: MyColors.backgroundButton,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.0),
               ),
@@ -44,7 +44,7 @@ class RegistrationButtonWidget extends StatelessWidget {
               child: Text(
                 'Зарегестрироваться',
                 style: TextStyle(
-                  color: MyColors.blue,
+                  color: MyColors.backgroundButton,
                   fontWeight: FontWeight.bold,
                 ),
               ),

@@ -13,7 +13,7 @@ Widget registrationAppBar(BuildContext context, String title) {
         title,
         style: TextStyle(
           fontSize: 32,
-          color: MyColors.blue,
+          color: MyColors.backgroundButton,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -38,7 +38,7 @@ Widget registrationAppBar(BuildContext context, String title) {
               child: ElevatedButton(
                 child: Text(
                   'Зарегестрироваться',
-                  style: TextStyle(color: MyColors.blue),
+                  style: TextStyle(color: MyColors.backgroundButton),
                 ),
                 onPressed: () {
                   Navigator.push(
@@ -54,7 +54,7 @@ Widget registrationAppBar(BuildContext context, String title) {
                     borderRadius: BorderRadius.circular(8.0),
                     side: BorderSide(
                       width: 1.0,
-                      color: MyColors.blue,
+                      color: MyColors.backgroundButton,
                     ),
                   ),
                 ),
@@ -77,7 +77,7 @@ Widget registrationAppBar(BuildContext context, String title) {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: MyColors.blue,
+                  primary: MyColors.backgroundButton,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),

@@ -27,13 +27,13 @@ class _LoginByEmailState extends State<LoginByEmail> {
               const SizedBox(height: 66),
               Text(
                 'Вход в аккаунт',
-                style: TextStyle(fontSize: 36, color: MyColors.blue),
+                style: TextStyle(fontSize: 36, color: MyColors.backgroundButton),
               ),
               const SizedBox(height: 18),
               Container(
                 width: double.infinity,
                 height: 0.2,
-                color: MyColors.blue,
+                color: MyColors.backgroundButton,
               ),
               const SizedBox(height: 19),
               TextButton(
@@ -44,12 +44,12 @@ class _LoginByEmailState extends State<LoginByEmail> {
                     Icon(
                       Icons.arrow_back_ios,
                       size: 16,
-                      color: MyColors.blue,
+                      color: MyColors.backgroundButton,
                     ),
                     const SizedBox(width: 8),
                     Text(
                       'Назад',
-                      style: TextStyle(color: MyColors.blue, fontSize: 16),
+                      style: TextStyle(color: MyColors.backgroundButton, fontSize: 16),
                     ),
                   ],
                 ),
@@ -82,7 +82,7 @@ class _DetailedRegistrationState extends State<DetailedRegistration> {
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
-          color: MyColors.blue,
+          color: MyColors.backgroundButton,
           width: 0.5,
         ),
         borderRadius: BorderRadius.circular(12),
@@ -127,7 +127,7 @@ class _DetailedRegistrationState extends State<DetailedRegistration> {
                   'Пароль',
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(width: 170),
+                const SizedBox(width: 170),
                 TextButton(
                   onPressed: () {},
                   child: Text(

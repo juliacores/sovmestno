@@ -28,7 +28,7 @@ class UserImageWidget extends StatelessWidget {
               child: ElevatedButton(
                 child: Text(
                   'Загрузить фотографию',
-                  style: TextStyle(color: MyColors.blue),
+                  style: TextStyle(color: MyColors.backgroundButton),
                 ),
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
@@ -38,7 +38,7 @@ class UserImageWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(6.0),
                     side: BorderSide(
                       width: 1.0,
-                      color: MyColors.blue,
+                      color: MyColors.backgroundButton,
                     ),
                   ),
                 ),
@@ -49,7 +49,7 @@ class UserImageWidget extends StatelessWidget {
         const SizedBox(height: 18),
         Text(
           'Максимальный размер фото  1 MB.',
-          style: TextStyle(fontSize: 12, color: MyColors.blue),
+          style: TextStyle(fontSize: 12, color: MyColors.backgroundButton),
         ),
         const SizedBox(height: 37),
         SizedBox(
@@ -62,7 +62,7 @@ class UserImageWidget extends StatelessWidget {
             ),
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-              primary: MyColors.blue,
+              primary: MyColors.backgroundButton,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.0),
               ),

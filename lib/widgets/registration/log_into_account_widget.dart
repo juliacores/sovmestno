@@ -22,7 +22,7 @@ class LogIntoAccountWidget extends StatelessWidget {
           child: Text(
             'Войти',
             style: TextStyle(
-              color: MyColors.blue,
+              color: MyColors.backgroundButton,
               fontWeight: FontWeight.bold,
             ),
           ),

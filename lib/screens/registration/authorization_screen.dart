@@ -56,7 +56,7 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
                 ),
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  primary: MyColors.blue,
+                  primary: MyColors.backgroundButton,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
