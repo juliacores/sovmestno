@@ -16,7 +16,7 @@ class _LoginByEmailState extends State<LoginByEmail> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.appBarColor,
-      appBar: registrationAppBar(context, 'Совместно'),
+      appBar: const RegistrationAppBar(title: 'Совместно'),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
