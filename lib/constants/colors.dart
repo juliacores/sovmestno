@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class MyColors {
 
 //
-  static Color blue = const Color(0xff023270);
+  static Color backgroundButton = const Color(0xff023270);
 
   static Color backgroundTextTextField = const Color(0xffc4c4c4);
 

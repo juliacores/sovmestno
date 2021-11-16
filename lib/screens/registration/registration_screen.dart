@@ -29,13 +29,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               const SizedBox(height: 66),
               Text(
                 'Регистрация',
-                style: TextStyle(fontSize: 36, color: MyColors.blue),
+                style: TextStyle(fontSize: 36, color: MyColors.backgroundButton),
               ),
               const SizedBox(height: 18),
               Container(
                 width: double.infinity,
                 height: 0.2,
-                color: MyColors.blue,
+                color: MyColors.backgroundButton,
               ),
               const SizedBox(height: 19),
               TextButton(
@@ -54,12 +54,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     Icon(
                       Icons.arrow_back_ios,
                       size: 16,
-                      color: MyColors.blue,
+                      color: MyColors.backgroundButton,
                     ),
                     const SizedBox(width: 8),
                     Text(
                       'Назад',
-                      style: TextStyle(color: MyColors.blue, fontSize: 16),
+                      style: TextStyle(color: MyColors.backgroundButton, fontSize: 16),
                     ),
                   ],
                 ),
@@ -94,7 +94,7 @@ class _DetailedRegistrationState extends State<DetailedRegistration> {
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
-          color: MyColors.blue,
+          color: MyColors.backgroundButton,
           width: 0.5,
         ),
         borderRadius: BorderRadius.circular(12),
@@ -203,7 +203,7 @@ class _DetailedRegistrationState extends State<DetailedRegistration> {
             const SizedBox(height: 18),
             Text(
               'Ваш пароль должен содержать от 8 символов.',
-              style: TextStyle(fontSize: 12, color: MyColors.blue),
+              style: TextStyle(fontSize: 12, color: MyColors.backgroundButton),
             ),
             const SizedBox(height: 19),
             const UserImageWidget(),
@@ -241,7 +241,7 @@ class UserImage extends StatelessWidget {
               child: ElevatedButton(
                 child: Text(
                   'Загрузить фотографию',
-                  style: TextStyle(color: MyColors.blue),
+                  style: TextStyle(color: MyColors.backgroundButton),
                 ),
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
@@ -251,7 +251,7 @@ class UserImage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(6.0),
                     side: BorderSide(
                       width: 1.0,
-                      color: MyColors.blue,
+                      color: MyColors.backgroundButton,
                     ),
                   ),
                 ),
@@ -262,7 +262,7 @@ class UserImage extends StatelessWidget {
         const SizedBox(height: 18),
         Text(
           'Максимальный размер фото  1 MB.',
-          style: TextStyle(fontSize: 12, color: MyColors.blue),
+          style: TextStyle(fontSize: 12, color: MyColors.backgroundButton),
         ),
         const SizedBox(height: 37),
         SizedBox(
@@ -275,7 +275,7 @@ class UserImage extends StatelessWidget {
             ),
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-              primary: MyColors.blue,
+              primary: MyColors.backgroundButton,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.0),
               ),
@@ -297,7 +297,7 @@ class UserImage extends StatelessWidget {
               onPressed: () {},
               child: Text(
                 'Войти',
-                style: TextStyle(color: MyColors.blue),
+                style: TextStyle(color: MyColors.backgroundButton),
               ),
             ),
           ],
