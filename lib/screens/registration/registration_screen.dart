@@ -75,6 +75,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   }
 }
 
+//TODO move reg widgets to other files, load them continuously
+
 class DetailedRegistration extends StatefulWidget {
   const DetailedRegistration({Key key}) : super(key: key);
 
@@ -208,6 +210,99 @@ class _DetailedRegistrationState extends State<DetailedRegistration> {
           ],
         ),
       ),
+    );
+  }
+}
+//TODO move to another file
+class UserImage extends StatelessWidget {
+  const UserImage({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text('Фотография'),
+        const SizedBox(height: 5),
+        Row(
+          children: [
+            SizedBox(
+              width: 66,
+              height: 66,
+              child: ClipOval(
+                //TODO: add placeholder
+                child: Image.network('src'),
+              ),
+            ),
+            const SizedBox(width: 33),
+            SizedBox(
+              height: 40,
+              width: 246,
+              child: ElevatedButton(
+                child: Text(
+                  'Загрузить фотографию',
+                  style: TextStyle(color: MyColors.blue),
+                ),
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white,
+                  onPrimary: Colors.blue[100],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(6.0),
+                    side: BorderSide(
+                      width: 1.0,
+                      color: MyColors.blue,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 18),
+        Text(
+          'Максимальный размер фото  1 MB.',
+          style: TextStyle(fontSize: 12, color: MyColors.blue),
+        ),
+        const SizedBox(height: 37),
+        SizedBox(
+          width: double.infinity,
+          height: 40,
+          child: ElevatedButton(
+            child: const Text(
+              'Зарегестрироваться',
+              style: TextStyle(color: Colors.white),
+            ),
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              primary: MyColors.blue,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 16),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Уже есть аккаунт?',
+                style: TextStyle(color: MyColors.hintColor),
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Войти',
+                style: TextStyle(color: MyColors.blue),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
