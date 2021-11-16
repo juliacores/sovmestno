@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sovmestno/screens/authorization_screen.dart';
-import 'package:sovmestno/screens/registration_screen.dart';
+import 'package:sovmestno/screens/registration/authorization_screen.dart';
 
 void main() {
   runApp(const MyApp());

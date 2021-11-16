@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
-import 'package:sovmestno/screens/registration_screen.dart';
+import 'package:sovmestno/screens/registration/login_by_email_screen.dart';
+import 'package:sovmestno/screens/registration/registration_screen.dart';
 
 Widget registrationAppBar(BuildContext context, String title) {
   return AppBar(
@@ -12,7 +13,7 @@ Widget registrationAppBar(BuildContext context, String title) {
         title,
         style: TextStyle(
           fontSize: 32,
-          color: MyColors.backgroundButton,
+          color: MyColors.blue,
           fontWeight: FontWeight.bold,
         ),
       ),
@@ -37,7 +38,7 @@ Widget registrationAppBar(BuildContext context, String title) {
               child: ElevatedButton(
                 child: Text(
                   'Зарегестрироваться',
-                  style: TextStyle(color: MyColors.backgroundButton),
+                  style: TextStyle(color: MyColors.blue),
                 ),
                 onPressed: () {
                   Navigator.push(
@@ -53,7 +54,7 @@ Widget registrationAppBar(BuildContext context, String title) {
                     borderRadius: BorderRadius.circular(8.0),
                     side: BorderSide(
                       width: 1.0,
-                      color: MyColors.backgroundButton,
+                      color: MyColors.blue,
                     ),
                   ),
                 ),
@@ -65,12 +66,18 @@ Widget registrationAppBar(BuildContext context, String title) {
               height: 40,
               child: ElevatedButton(
                 child: const Text(
-                  'Далее',
+                  'Войти',
                   style: TextStyle(color: Colors.white),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LoginByEmail()),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
-                  primary: MyColors.backgroundButton,
+                  primary: MyColors.blue,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),

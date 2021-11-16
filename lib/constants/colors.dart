@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class MyColors {
-  //
-  static Color backgroundTextTextField = const Color(0xffc4c4c4);
 
-  static Color backgroundButton = const Color(0xff023270);
+//
+  static Color blue = const Color(0xff023270);
+
+  static Color backgroundTextTextField = const Color(0xffc4c4c4);
 
   static Color borderTextField = const Color(0xffc4c4c4);
 
@@ -14,6 +15,5 @@ class MyColors {
 
   static Color appBarColor = const Color(0xffFFFFFF);
 
-    static Color grayscale = const Color(0xffFCFDFE);
+  static Color grayscale = const Color(0xffFCFDFE);
 }
-
