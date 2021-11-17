@@ -65,6 +65,7 @@ class _LoginByEmailState extends State<LoginByEmail> {
   }
 }
 
+//TODO move to another file
 class DetailedRegistration extends StatefulWidget {
   const DetailedRegistration({Key key}) : super(key: key);
 

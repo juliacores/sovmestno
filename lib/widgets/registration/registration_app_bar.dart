@@ -50,6 +50,7 @@ class RegistrationAppBar extends StatelessWidget
                           builder: (context) => const RegistrationScreen()),
                     );
                   },
+                  //TODO move to theme data or constants
                   style: ElevatedButton.styleFrom(
                     primary: Colors.white,
                     onPrimary: Colors.blue[100],
