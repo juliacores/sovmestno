@@ -52,6 +52,8 @@ class UserImageWidget extends StatelessWidget {
           style: TextStyle(fontSize: 12, color: MyColors.backgroundButton),
         ),
         const SizedBox(height: 37),
+        //TODO remove btn from Image widget
+        //у тебя виджет для загрузки фотки, зачем тут кнопку зашивать
         SizedBox(
           width: double.infinity,
           height: 40,
@@ -70,6 +72,8 @@ class UserImageWidget extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
+        //TODO remove btn from Image widget
+        //у тебя виджет для загрузки фотки, зачем тут кнопку зашивать
         const LogIntoAccountWidget()
       ],
     );
