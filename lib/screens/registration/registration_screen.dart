@@ -27,7 +27,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 66),
-              Text(
+              const Text(
                 'Регистрация',
                 style:
                     TextStyle(fontSize: 36, color: MyColors.backgroundButton),
@@ -51,13 +51,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 },
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
-                  children: [
+                  children: const [
                     Icon(
                       Icons.arrow_back_ios,
                       size: 16,
                       color: MyColors.backgroundButton,
                     ),
-                    const SizedBox(width: 8),
+                    SizedBox(width: 8),
                     Text(
                       'Назад',
                       style: TextStyle(
@@ -117,17 +117,17 @@ class _DetailedRegistrationState extends State<DetailedRegistration> {
                 filled: true,
                 fillColor: MyColors.grayscale,
                 hintText: 'Введите ваше имя',
-                hintStyle: TextStyle(color: MyColors.hintColor),
+                hintStyle: const TextStyle(color: MyColors.hintColor),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: MyColors.borderTextField,
                     width: 0.5,
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: MyColors.focusedBorderTextField,
                     width: 0.5,
                   ),
@@ -146,17 +146,17 @@ class _DetailedRegistrationState extends State<DetailedRegistration> {
                 filled: true,
                 fillColor: MyColors.grayscale,
                 hintText: 'Введите вашу фамилию',
-                hintStyle: TextStyle(color: MyColors.hintColor),
+                hintStyle: const TextStyle(color: MyColors.hintColor),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: MyColors.borderTextField,
                     width: 0.5,
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: MyColors.focusedBorderTextField,
                     width: 0.5,
                   ),
@@ -176,17 +176,17 @@ class _DetailedRegistrationState extends State<DetailedRegistration> {
                 filled: true,
                 fillColor: MyColors.grayscale,
                 hintText: 'Введите пароль',
-                hintStyle: TextStyle(color: MyColors.hintColor),
+                hintStyle: const TextStyle(color: MyColors.hintColor),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: MyColors.borderTextField,
                     width: 0.5,
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                     color: MyColors.focusedBorderTextField,
                     width: 0.5,
                   ),
@@ -203,7 +203,7 @@ class _DetailedRegistrationState extends State<DetailedRegistration> {
               ),
             ),
             const SizedBox(height: 18),
-            Text(
+            const Text(
               'Ваш пароль должен содержать от 8 символов.',
               style: TextStyle(fontSize: 12, color: MyColors.backgroundButton),
             ),
@@ -242,7 +242,7 @@ class UserImage extends StatelessWidget {
               height: 40,
               width: 246,
               child: ElevatedButton(
-                child: Text(
+                child: const Text(
                   'Загрузить фотографию',
                   style: TextStyle(color: MyColors.backgroundButton),
                 ),
@@ -252,7 +252,7 @@ class UserImage extends StatelessWidget {
                   onPrimary: Colors.blue[100],
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(6.0),
-                    side: BorderSide(
+                    side: const BorderSide(
                       width: 1.0,
                       color: MyColors.backgroundButton,
                     ),
@@ -263,7 +263,7 @@ class UserImage extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 18),
-        Text(
+        const Text(
           'Максимальный размер фото  1 MB.',
           style: TextStyle(fontSize: 12, color: MyColors.backgroundButton),
         ),
