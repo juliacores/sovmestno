@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/screens/registration/authorization_screen.dart';
+import 'package:sovmestno/widgets/registration/log_into_account_widget.dart';
 import 'package:sovmestno/widgets/registration/registration_app_bar.dart';
 import 'package:sovmestno/widgets/registration/user_image_widget.dart';
 //
@@ -28,7 +29,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               const SizedBox(height: 66),
               Text(
                 'Регистрация',
-                style: TextStyle(fontSize: 36, color: MyColors.backgroundButton),
+                style:
+                    TextStyle(fontSize: 36, color: MyColors.backgroundButton),
               ),
               const SizedBox(height: 18),
               Container(
@@ -58,7 +60,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     const SizedBox(width: 8),
                     Text(
                       'Назад',
-                      style: TextStyle(color: MyColors.backgroundButton, fontSize: 16),
+                      style: TextStyle(
+                          color: MyColors.backgroundButton, fontSize: 16),
                     ),
                   ],
                 ),
@@ -212,6 +215,7 @@ class _DetailedRegistrationState extends State<DetailedRegistration> {
     );
   }
 }
+
 //TODO move to another file
 class UserImage extends StatelessWidget {
   const UserImage({Key key}) : super(key: key);
@@ -282,25 +286,7 @@ class UserImage extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 16),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                'Уже есть аккаунт?',
-                style: TextStyle(color: MyColors.hintColor),
-              ),
-            ),
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                'Войти',
-                style: TextStyle(color: MyColors.backgroundButton),
-              ),
-            ),
-          ],
-        ),
+        const LogIntoAccountWidget()
       ],
     );
   }

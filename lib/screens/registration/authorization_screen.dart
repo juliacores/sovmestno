@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
+import 'package:sovmestno/screens/registration/registration_screen.dart';
 import 'package:sovmestno/widgets/registration/log_into_account_widget.dart';
 import 'package:sovmestno/widgets/registration/registration_app_bar.dart';
 
@@ -54,7 +55,13 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
                   'Далее',
                   style: TextStyle(color: Colors.white),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const RegistrationScreen()),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   primary: MyColors.backgroundButton,
                   shape: RoundedRectangleBorder(

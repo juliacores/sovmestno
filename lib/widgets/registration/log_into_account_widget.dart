@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
+import 'package:sovmestno/screens/registration/login_by_email_screen.dart';
 
 class LogIntoAccountWidget extends StatelessWidget {
   const LogIntoAccountWidget({Key key}) : super(key: key);
@@ -10,15 +11,18 @@ class LogIntoAccountWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        TextButton(
-          onPressed: () {},
-          child: Text(
-            'Уже есть аккаунт?',
-            style: TextStyle(color: MyColors.hintColor),
-          ),
+        Text(
+          'Уже есть аккаунт?',
+          style: TextStyle(color: MyColors.hintColor),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginByEmail()),
+                    );
+          },
           child: Text(
             'Войти',
             style: TextStyle(
