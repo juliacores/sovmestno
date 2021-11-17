@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
-import 'package:sovmestno/widgets/registration/log_into_account_widget.dart';
 
 class RegistrationButtonWidget extends StatelessWidget {
   const RegistrationButtonWidget({Key key}) : super(key: key);

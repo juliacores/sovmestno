@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/screens/registration/authorization_screen.dart';
-import 'package:sovmestno/widgets/registration/log_into_account_widget.dart';
 import 'package:sovmestno/widgets/registration/registration_app_bar.dart';
 import 'package:sovmestno/widgets/registration/user_image_widget.dart';
 //
