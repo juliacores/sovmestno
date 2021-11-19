@@ -33,14 +33,14 @@ class RegistrationButtonWidget extends StatelessWidget {
           children: [
             TextButton(
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 'Нет аккаунта?',
                 style: TextStyle(color: MyColors.hintColor),
               ),
             ),
             TextButton(
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 'Зарегестрироваться',
                 style: TextStyle(
                   color: MyColors.backgroundButton,

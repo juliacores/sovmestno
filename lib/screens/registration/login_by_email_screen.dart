@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
+import 'package:sovmestno/widgets/registration/registration_widget.dart';
 import 'package:sovmestno/widgets/registration/registration_app_bar.dart';
-import 'package:sovmestno/widgets/registration/registration_button_widget.dart';
 
 class LoginByEmail extends StatefulWidget {
   const LoginByEmail({Key key}) : super(key: key);
@@ -11,7 +11,6 @@ class LoginByEmail extends StatefulWidget {
 }
 
 class _LoginByEmailState extends State<LoginByEmail> {
-  @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,9 +24,10 @@ class _LoginByEmailState extends State<LoginByEmail> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 66),
-              Text(
+              const Text(
                 'Вход в аккаунт',
-                style: TextStyle(fontSize: 36, color: MyColors.backgroundButton),
+                style:
+                    TextStyle(fontSize: 36, color: MyColors.backgroundButton),
               ),
               const SizedBox(height: 18),
               Container(
@@ -40,141 +40,26 @@ class _LoginByEmailState extends State<LoginByEmail> {
                 onPressed: () {},
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
-                  children: [
+                  children: const [
                     Icon(
                       Icons.arrow_back_ios,
                       size: 16,
                       color: MyColors.backgroundButton,
                     ),
-                    const SizedBox(width: 8),
+                    SizedBox(width: 8),
                     Text(
                       'Назад',
-                      style: TextStyle(color: MyColors.backgroundButton, fontSize: 16),
+                      style: TextStyle(
+                          color: MyColors.backgroundButton, fontSize: 16),
                     ),
                   ],
                 ),
               ),
               const SizedBox(height: 44),
-              const DetailedRegistration(),
+              const Registration(),
               const SizedBox(height: 32),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-//TODO move to another file
-class DetailedRegistration extends StatefulWidget {
-  const DetailedRegistration({Key key}) : super(key: key);
-
-  @override
-  State<DetailedRegistration> createState() => _DetailedRegistrationState();
-}
-
-class _DetailedRegistrationState extends State<DetailedRegistration> {
-  bool _showPassword = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 450,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border.all(
-          color: MyColors.backgroundButton,
-          width: 0.5,
-        ),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(52),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Email',
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 6),
-            TextField(
-              textAlign: TextAlign.start,
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: MyColors.grayscale,
-                hintText: 'Введите ваш Email',
-                hintStyle: TextStyle(color: MyColors.hintColor),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(5),
-                  borderSide: BorderSide(
-                    color: MyColors.borderTextField,
-                    width: 0.5,
-                  ),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(5),
-                  borderSide: BorderSide(
-                    color: MyColors.focusedBorderTextField,
-                    width: 0.5,
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(height: 32),
-            Row(
-              children: [
-                const Text(
-                  'Пароль',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(width: 170),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Забыли пароль?',
-                    style: TextStyle(color: MyColors.hintColor),
-                  ),
-                )
-              ],
-            ),
-            const SizedBox(height: 6),
-            TextField(
-              textAlign: TextAlign.start,
-              obscureText: !_showPassword,
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: MyColors.grayscale,
-                hintText: 'Введите пароль',
-                hintStyle: TextStyle(color: MyColors.hintColor),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(5),
-                  borderSide: BorderSide(
-                    color: MyColors.borderTextField,
-                    width: 0.5,
-                  ),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(5),
-                  borderSide: BorderSide(
-                    color: MyColors.focusedBorderTextField,
-                    width: 0.5,
-                  ),
-                ),
-                suffixIcon: IconButton(
-                  icon: Icon(
-                    Icons.remove_red_eye,
-                    color: _showPassword ? Colors.blue : Colors.grey,
-                  ),
-                  onPressed: () {
-                    setState(() => _showPassword = !_showPassword);
-                  },
-                ),
-              ),
-            ),
-            const SizedBox(height: 30),
-            const RegistrationButtonWidget()
-          ],
         ),
       ),
     );

@@ -39,7 +39,7 @@ class RegistrationAppBar extends StatelessWidget
                 width: 207,
                 height: 40,
                 child: ElevatedButton(
-                  child: Text(
+                  child: const Text(
                     'Зарегестрироваться',
                     style: TextStyle(color: MyColors.backgroundButton),
                   ),
@@ -50,18 +50,7 @@ class RegistrationAppBar extends StatelessWidget
                           builder: (context) => const RegistrationScreen()),
                     );
                   },
-                  //TODO move to theme data or constants
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    onPrimary: Colors.blue[100],
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                      side: BorderSide(
-                        width: 1.0,
-                        color: MyColors.backgroundButton,
-                      ),
-                    ),
-                  ),
+                  style: Styles.registrationButtonStyle,
                 ),
               ),
               const SizedBox(width: 28),

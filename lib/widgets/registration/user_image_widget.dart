@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/widgets/registration/log_into_account_widget.dart';
+import 'package:sovmestno/widgets/registration/register_button_widget.dart';
 
 class UserImageWidget extends StatelessWidget {
   const UserImageWidget({Key key}) : super(key: key);
@@ -26,7 +27,7 @@ class UserImageWidget extends StatelessWidget {
               height: 40,
               width: 246,
               child: ElevatedButton(
-                child: Text(
+                child: const Text(
                   'Загрузить фотографию',
                   style: TextStyle(color: MyColors.backgroundButton),
                 ),
@@ -36,7 +37,7 @@ class UserImageWidget extends StatelessWidget {
                   onPrimary: Colors.blue[100],
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(6.0),
-                    side: BorderSide(
+                    side: const BorderSide(
                       width: 1.0,
                       color: MyColors.backgroundButton,
                     ),
@@ -47,33 +48,13 @@ class UserImageWidget extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 18),
-        Text(
+        const Text(
           'Максимальный размер фото  1 MB.',
           style: TextStyle(fontSize: 12, color: MyColors.backgroundButton),
         ),
         const SizedBox(height: 37),
-        //TODO remove btn from Image widget
-        //у тебя виджет для загрузки фотки, зачем тут кнопку зашивать
-        SizedBox(
-          width: double.infinity,
-          height: 40,
-          child: ElevatedButton(
-            child: const Text(
-              'Зарегестрироваться',
-              style: TextStyle(color: Colors.white),
-            ),
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              primary: MyColors.backgroundButton,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-            ),
-          ),
-        ),
+        const RegisterButtonWidget(),
         const SizedBox(height: 16),
-        //TODO remove btn from Image widget
-        //у тебя виджет для загрузки фотки, зачем тут кнопку зашивать
         const LogIntoAccountWidget()
       ],
     );

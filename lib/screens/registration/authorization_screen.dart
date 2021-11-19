@@ -28,17 +28,17 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
                 textAlign: TextAlign.start,
                 decoration: InputDecoration(
                   hintText: 'Введите ваш Email',
-                  hintStyle: TextStyle(color: MyColors.hintColor),
+                  hintStyle: const TextStyle(color: MyColors.hintColor),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(5),
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: MyColors.borderTextField,
                       width: 1.0,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(5),
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: MyColors.focusedBorderTextField,
                       width: 1.0,
                     ),
