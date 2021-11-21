@@ -23,4 +23,18 @@ class Styles {
       ),
     ),
   );
+
+   static ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+    primary: Colors.white,
+    onPrimary: Colors.blue[100],
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(8.0),
+      side: const BorderSide(
+        width: 1.0,
+        color: MyColors.backgroundButton,
+      ),
+    ),
+  );
+
+
 }
