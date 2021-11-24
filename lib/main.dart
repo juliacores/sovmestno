@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sovmestno/screens/form/main_form.dart';
 import 'package:sovmestno/screens/registration/authorization_screen.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const AuthorizationScreen(),
+      home: const MainForm(),
     );
   }
 }

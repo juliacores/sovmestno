@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
+import 'package:sovmestno/screens/form/main_form.dart';
 
 class RegistrationButtonWidget extends StatelessWidget {
   const RegistrationButtonWidget({Key key}) : super(key: key);
@@ -17,7 +18,10 @@ class RegistrationButtonWidget extends StatelessWidget {
               'Зарегестрироваться',
               style: TextStyle(color: Colors.white),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => const  MainForm()));
+            },
             style: ElevatedButton.styleFrom(
               primary: MyColors.backgroundButton,
               shape: RoundedRectangleBorder(
