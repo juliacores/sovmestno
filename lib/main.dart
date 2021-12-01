@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sovmestno/constants/themes.dart';
 import 'package:sovmestno/screens/form/main_form.dart';
 import 'package:sovmestno/screens/registration/authorization_screen.dart';
 
@@ -15,10 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Sovmestno',
       //TODO set ThemeData for inputs,elevated buttons,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      theme: mainTheme(),
       home: const AuthorizationScreen(),
     );
   }
