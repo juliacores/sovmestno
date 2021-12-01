@@ -48,7 +48,7 @@ class _MainFormState extends State<MainForm> {
               const SizedBox(height: 30),
               const CheckboxWidget(),
               const SizedBox(height: 30),
-              AddressField(),
+              const AddressField(),
               const SizedBox(height: 46),
               const SaveButtonWidget(),
               const SizedBox(height: 100),
