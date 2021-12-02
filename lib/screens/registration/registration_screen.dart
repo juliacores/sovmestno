@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
-import 'package:sovmestno/screens/registration/authorization_screen.dart';
 import 'package:sovmestno/widgets/registration_widgets/detailed_registration_widget.dart';
 import 'package:sovmestno/widgets/registration_widgets/registration_app_bar.dart';
-
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({Key key}) : super(key: key);
@@ -40,13 +38,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               const SizedBox(height: 19),
               TextButton(
                 onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) =>
-                          const AuthorizationScreen(),
-                    ),
-                  );
+                  Navigator.pushNamed(context, '/authorization');
                 },
                 child: Row(
                   mainAxisSize: MainAxisSize.min,

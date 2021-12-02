@@ -14,7 +14,9 @@ class RegisterButtonWidget extends StatelessWidget {
           'Зарегестрироваться',
           style: TextStyle(color: Colors.white),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/main_form');
+        },
         style: ElevatedButton.styleFrom(
           primary: MyColors.backgroundButton,
           shape: RoundedRectangleBorder(

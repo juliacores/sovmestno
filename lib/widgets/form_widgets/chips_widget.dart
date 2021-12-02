@@ -1,55 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:sovmestno/constants/colors.dart';
 
-class ChipsWidget extends StatefulWidget {
-  const ChipsWidget({Key key}) : super(key: key);
+class ChipsWidget extends StatelessWidget {
+  final String title;
+  final Color chipsColor;
+  final Color textColor;
+  final Color borderColor;
 
-  @override
-  _ChipsWidgetState createState() => _ChipsWidgetState();
-}
-
-class _ChipsWidgetState extends State<ChipsWidget> {
-  String defaultChoiceIndex;
-  final List<String> _choicesList = ['Основное', 'О себе', 'Навыки', 'Мэчтинг'];
-
-  @override
-  void initState() {
-    super.initState();
-    defaultChoiceIndex = _choicesList.first;
-  }
+  const ChipsWidget({
+    Key key,
+    @required this.title,
+    this.chipsColor,
+    this.textColor,
+    this.borderColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
-
- 
-    return Wrap(
-      spacing: 16,
-      children:    _choicesList.map((title)=> ChoiceChip(
-          shape: const StadiumBorder(
-            side: BorderSide(color: Colors.grey, width: 0.1),
-          ),
-          label: Container(
-            alignment: Alignment.center,
-            width: 90,
-            height: 32,
-            child: Text(title,
-              style: Theme.of(context)  
-                  .textTheme
-                  .bodyText2
-                  .copyWith(color: Colors.white, fontSize: 14),
-            ),
-          ),
-          selected: defaultChoiceIndex == title,
-          selectedColor: MyColors.backgroundButton,
-          onSelected: (value) {
-            setState(() {
-              defaultChoiceIndex = value ? title : defaultChoiceIndex;
-            });
-          },
-          elevation: 2,
-        )).toList(),
-
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(
+          Radius.circular(9),
+        ),
+        border: Border.all(
+          color: borderColor,
+          width: 1.0,
+        ),
+        color: chipsColor,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 9,
+        ),
+        child: Text(
+          title,
+          style: TextStyle(color: textColor, fontSize: 11),
+        ),
+      ),
     );
   }
 }

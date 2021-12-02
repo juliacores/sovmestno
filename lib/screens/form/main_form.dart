@@ -39,7 +39,12 @@ class _MainFormState extends State<MainForm> {
                 color: MyColors.backgroundButton,
               ),
               const SizedBox(height: 50),
-              const ChipsWidget(),
+              const ChipsWidget(
+                title: 'Основное',
+                chipsColor: MyColors.backgroundButton,
+                textColor: Colors.white,
+                borderColor: MyColors.backgroundButton,
+              ),
               const SizedBox(height: 60),
               const Text(
                 'Кем вы хотите быть?',

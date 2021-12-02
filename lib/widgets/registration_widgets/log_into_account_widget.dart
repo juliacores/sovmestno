@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
-import 'package:sovmestno/screens/registration/login_by_email_screen.dart';
 
 class LogIntoAccountWidget extends StatelessWidget {
   const LogIntoAccountWidget({Key key}) : super(key: key);
@@ -17,12 +16,7 @@ class LogIntoAccountWidget extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const LoginByEmail(),
-              ),
-            );
+            Navigator.pushNamed(context, '/loginByEmail');
           },
           child: const Text(
             'Войти',

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/constants/styles.dart';
-import 'package:sovmestno/screens/registration/login_by_email_screen.dart';
-import 'package:sovmestno/screens/registration/registration_screen.dart';
 
 class RegistrationAppBar extends StatelessWidget
     implements PreferredSizeWidget {
@@ -44,11 +42,7 @@ class RegistrationAppBar extends StatelessWidget
                     style: TextStyle(color: MyColors.backgroundButton),
                   ),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const RegistrationScreen()),
-                    );
+                    Navigator.pushNamed(context, '/registration');
                   },
                   style: Styles.registrationButtonStyle,
                 ),
@@ -63,11 +57,7 @@ class RegistrationAppBar extends StatelessWidget
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const LoginByEmail()),
-                    );
+                    Navigator.pushNamed(context, '/loginByEmail');
                   },
                   style: ElevatedButton.styleFrom(
                     primary: MyColors.backgroundButton,

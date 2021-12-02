@@ -13,7 +13,7 @@ class _PopupMenuButtonWidgetState extends State<PopupMenuButtonWidget> {
   Widget build(BuildContext context) {
     return PopupMenuButton(
       padding: const EdgeInsets.all(0),
-      offset: const Offset(10,70),
+      offset: const Offset(20,50),
       icon: const Icon(
         Icons.keyboard_arrow_down,
         color: Colors.black,
