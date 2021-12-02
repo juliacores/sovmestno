@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
-import 'package:sovmestno/widgets/form_widgets/address_field.dart';
-import 'package:sovmestno/widgets/form_widgets/checkbox_widget.dart';
-import 'package:sovmestno/widgets/form_widgets/chips_widget.dart';
-import 'package:sovmestno/widgets/form_widgets/form_app_bar.dart';
-import 'package:sovmestno/widgets/form_widgets/save_button_widget.dart';
+import 'package:sovmestno/modules/form/form_widgets/address_field.dart';
+import 'package:sovmestno/modules/form/form_widgets/checkbox_widget.dart';
+import 'package:sovmestno/modules/form/form_widgets/chips_widget.dart';
+import 'package:sovmestno/modules/form/form_widgets/form_app_bar.dart';
+import 'package:sovmestno/modules/form/form_widgets/save_button_widget.dart';
+
 
 class MainForm extends StatefulWidget {
   const MainForm({Key key}) : super(key: key);

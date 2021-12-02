@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
-import 'package:sovmestno/screens/registration/registration_screen.dart';
-import 'package:sovmestno/widgets/registration_widgets/log_into_account_widget.dart';
-import 'package:sovmestno/widgets/registration_widgets/log_into_account_widget.dart';
-import 'package:sovmestno/widgets/registration_widgets/registration_app_bar.dart';
+import 'package:sovmestno/modules/registration/registration_widgets/log_into_account_widget.dart';
+import 'package:sovmestno/modules/registration/registration_widgets/registration_app_bar.dart';
+
 
 class AuthorizationScreen extends StatefulWidget {
   const AuthorizationScreen({Key key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
-import 'package:sovmestno/widgets/registration_widgets/user_image_widget.dart';
+import 'package:sovmestno/modules/registration/registration_widgets/user_image_widget.dart';
 
 class DetailedRegistrationWidget extends StatefulWidget {
   const DetailedRegistrationWidget({Key key}) : super(key: key);

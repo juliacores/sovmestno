@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
-import 'package:sovmestno/widgets/registration_widgets/registration_widget.dart';
-import 'package:sovmestno/widgets/registration_widgets/registration_app_bar.dart';
+import 'package:sovmestno/modules/registration/registration_widgets/registration_app_bar.dart';
+import 'package:sovmestno/modules/registration/registration_widgets/registration_widget.dart';
+
 
 class LoginByEmail extends StatefulWidget {
   const LoginByEmail({Key key}) : super(key: key);

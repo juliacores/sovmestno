@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
-import 'package:sovmestno/widgets/registration_widgets/registration_button_widget.dart';
+import 'package:sovmestno/modules/registration/registration_widgets/registration_button_widget.dart';
 
 class Registration extends StatefulWidget {
   const Registration({Key key}) : super(key: key);

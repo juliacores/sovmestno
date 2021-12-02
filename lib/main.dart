@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/themes.dart';
-import 'package:sovmestno/screens/form/main_form.dart';
-import 'package:sovmestno/screens/registration/authorization_screen.dart';
-import 'package:sovmestno/screens/registration/login_by_email_screen.dart';
-import 'package:sovmestno/screens/registration/registration_screen.dart';
+import 'package:sovmestno/modules/form/form_screens/main_form.dart';
+import 'package:sovmestno/modules/registration/registration_screens/authorization_screen.dart';
+import 'package:sovmestno/modules/registration/registration_screens/login_by_email_screen.dart';
+import 'package:sovmestno/modules/registration/registration_screens/registration_screen.dart';
 
 void main() {
   runApp(const MyApp());

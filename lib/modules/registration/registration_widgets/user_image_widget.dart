@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
-import 'package:sovmestno/widgets/registration_widgets/log_into_account_widget.dart';
-import 'package:sovmestno/widgets/registration_widgets/register_button_widget.dart';
+import 'package:sovmestno/modules/registration/registration_widgets/log_into_account_widget.dart';
+import 'package:sovmestno/modules/registration/registration_widgets/register_button_widget.dart';
+
 
 class UserImageWidget extends StatelessWidget {
   const UserImageWidget({Key key}) : super(key: key);
