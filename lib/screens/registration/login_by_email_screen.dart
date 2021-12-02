@@ -37,7 +37,9 @@ class _LoginByEmailState extends State<LoginByEmail> {
               ),
               const SizedBox(height: 19),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/authorization');
+                },
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: const [
