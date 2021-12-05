@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
-import 'package:sovmestno/modules/form/form_widgets/address_field.dart';
+import 'package:sovmestno/modules/form/form_widgets/address_field_widget.dart';
 import 'package:sovmestno/modules/form/form_widgets/checkbox_widget.dart';
 import 'package:sovmestno/modules/form/form_widgets/chips_widget.dart';
-import 'package:sovmestno/modules/form/form_widgets/form_app_bar.dart';
+import 'package:sovmestno/modules/form/form_widgets/form_app_bar_widget.dart';
 import 'package:sovmestno/widgets/save_button_widget.dart';
 
 class MainForm extends StatefulWidget {
@@ -18,7 +18,10 @@ class _MainFormState extends State<MainForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.appBarColor,
-      appBar: const FormAppBar(title: 'Совместно'),
+      appBar: const FormAppBar(
+        title: 'Совместно',
+        name: 'Татьяна Иванова',
+      ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
@@ -39,12 +42,13 @@ class _MainFormState extends State<MainForm> {
                 color: MyColors.backgroundButton,
               ),
               const SizedBox(height: 40),
-              const ChipsWidget(
-                  //   title: 'Основное',
-                  //   chipsColor: MyColors.backgroundButton,
-                  //   textColor: Colors.white,
-                  //   borderColor: MyColors.backgroundButton,
-                  ),
+             ChipsWidget(
+                title: 'О себе',
+                y: 0,
+                x: 0,
+                textColor: Colors.white,
+                backgroundColor: MyColors.backgroundButton,
+              ),
               const SizedBox(height: 50),
               const Text(
                 'Кем вы хотите быть?',

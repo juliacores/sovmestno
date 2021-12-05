@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/modules/registration/registration_widgets/detailed_registration_widget.dart';
 import 'package:sovmestno/modules/registration/registration_widgets/registration_app_bar.dart';
-
+import 'package:sovmestno/widgets/back_button_widget.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({Key key}) : super(key: key);
@@ -37,26 +37,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 color: MyColors.backgroundButton,
               ),
               const SizedBox(height: 19),
-              TextButton(
+              BackButtonWidget(
                 onPressed: () {
                   Navigator.pushNamed(context, '/authorization');
                 },
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: const [
-                    Icon(
-                      Icons.arrow_back_ios,
-                      size: 16,
-                      color: MyColors.backgroundButton,
-                    ),
-                    SizedBox(width: 8),
-                    Text(
-                      'Назад',
-                      style: TextStyle(
-                          color: MyColors.backgroundButton, fontSize: 16),
-                    ),
-                  ],
-                ),
               ),
               const SizedBox(height: 44),
               const DetailedRegistrationWidget(),

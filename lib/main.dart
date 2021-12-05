@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/themes.dart';
-import 'package:sovmestno/modules/form/form_screens/user_information.dart';
+import 'package:sovmestno/modules/form/form_screens/mentor_skills.dart';
 import 'package:sovmestno/modules/form/form_screens/main_form.dart';
 import 'package:sovmestno/modules/registration/registration_screens/authorization_screen.dart';
 import 'package:sovmestno/modules/registration/registration_screens/login_by_email_screen.dart';
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Sovmestno',
       theme: mainTheme(),
-      home: const AboutMeForm(),
+      home: const MentorSkills(),
       routes: {
         '/authorization': (context) => const AuthorizationScreen(),
         '/loginByEmail': (context) => const LoginByEmail(),

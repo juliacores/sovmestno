@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/constants/styles.dart';
-
 import 'dropdown_button_widget.dart';
 
 class FormAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  const FormAppBar({Key key, @required this.title}) : super(key: key);
+  final String name;
+  final String mentor;
+
+  const FormAppBar({
+    Key key,
+    @required this.title,
+    @required this.name,
+    this.mentor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +41,26 @@ class FormAppBar extends StatelessWidget implements PreferredSizeWidget {
                 color: Colors.grey,
               ),
               const SizedBox(width: 23),
-              const Text(
-                'Татьяна Иванова',
-                style:
-                    TextStyle(fontSize: 18, color: MyColors.backgroundButton),
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 12),
+                  Text(
+                    name,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      color: MyColors.backgroundButton,
+                    ),
+                  ),
+                  Text(
+                    mentor ?? '',
+                    style: const TextStyle(
+                      fontSize: 18,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(width: 23),
               SizedBox(

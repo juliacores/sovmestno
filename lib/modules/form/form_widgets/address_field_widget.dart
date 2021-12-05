@@ -56,7 +56,7 @@ class _AddressFieldState extends State<AddressField> {
         ),
         const SizedBox(height: 10),
         SizedBox(
-          width: 225,
+          width: 960,
           height: 40,
           child: TextField(
             controller: addressController,

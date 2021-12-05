@@ -1,25 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:sovmestno/constants/colors.dart';
 
 class ChipsWidget extends StatelessWidget {
-  const ChipsWidget({Key key}) : super(key: key);
+  String title;
+  double y;
+  double x;
+  Color textColor;
+  Color backgroundColor;
+  Color borderColor;
+  ChipsWidget({
+    Key key,
+    @required this.y,
+    @required this.x,
+    @required this.title,
+    @required this.textColor,
+    @required this.backgroundColor,
+    this.borderColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    List<String> titleList = ['Jdkld', 'skdnsk', 'njsdn', 'nsdid'];
-    return Row(
-      children: [
-        Container(
-          decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(6),
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: y, horizontal: x),
+      child: Row(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: backgroundColor,
+              border: Border.all(width: 1, color: borderColor ?? backgroundColor),
+              borderRadius: const BorderRadius.all(
+                Radius.circular(8),
               ),
-              color: Colors.blue),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-            child: Text(titleList[0]),
-          ),
-        )
-      ],
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                child: Text(
+                  title,
+                  style: TextStyle(color: textColor),
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
