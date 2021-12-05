@@ -16,6 +16,5 @@ class MyColors {
 
   static const Color grayscale = Color(0xffFCFDFE);
 
-    static const Color checkboxColor = Color(0xffFFD448);
-
+  static const Color checkboxColor = Color(0xffFFD448);
 }
