@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sovmestno/constants/colors.dart';
 
 class ChipsWidget extends StatelessWidget {
   String title;

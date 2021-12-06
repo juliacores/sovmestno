@@ -18,7 +18,7 @@ class _MainFormState extends State<MainForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.appBarColor,
-      appBar: const FormAppBar(
+      appBar: FormAppBar(
         title: 'Совместно',
         name: 'Татьяна Иванова',
       ),
@@ -42,7 +42,7 @@ class _MainFormState extends State<MainForm> {
                 color: MyColors.backgroundButton,
               ),
               const SizedBox(height: 40),
-             ChipsWidget(
+              ChipsWidget(
                 title: 'О себе',
                 y: 0,
                 x: 0,
@@ -60,7 +60,7 @@ class _MainFormState extends State<MainForm> {
               const AddressField(),
               const SizedBox(height: 46),
               SaveButtonWidget(onPressed: () {
-                print('Сохранить');
+                debugPrint('Сохранить');
               }),
               const SizedBox(height: 100),
             ],

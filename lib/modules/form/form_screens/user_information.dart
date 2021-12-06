@@ -18,7 +18,7 @@ class _UserInformationState extends State<UserInformation> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.appBarColor,
-      appBar: const FormAppBar(
+      appBar: FormAppBar(
         title: 'Совместно',
         name: 'Татьяна Иванова',
       ),
@@ -44,7 +44,7 @@ class _UserInformationState extends State<UserInformation> {
               const SizedBox(height: 22),
               BackButton(
                 onPressed: () {
-                  print('Nazad/');
+                  debugPrint('Nazad/');
                 },
               ),
               const SizedBox(height: 20),
@@ -73,7 +73,7 @@ class _UserInformationState extends State<UserInformation> {
               const PersonalQualities(),
               const SizedBox(height: 45),
               SaveButtonWidget(onPressed: () {
-                print('Сохранить');
+                debugPrint('Сохранить');
               }),
               const SizedBox(height: 45),
             ],

@@ -11,25 +11,17 @@ class SaveButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      //TODO убрать размеры
-      width: 225,
-      height: 40,
-      child: ElevatedButton(
-        //TODO почему захардхожено сохранить?) логично же его тоже ставить
-        //final Widget child;
-        //SaveButtonWidget(onPressed: onPressed(), child: Text('Сохранить'))
-        //поставить ниже
-        //child: child,
-        child: const Text('Сохранить'),
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          primary: MyColors.backgroundButton,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8.0),
-          ),
-          //TODO оперировать параметром size
+    return ElevatedButton(
+      onPressed: onPressed,
+      child: const Text('Сохранить'),
+      style: ElevatedButton.styleFrom(
+        primary: MyColors.backgroundButton,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8.0),
         ),
+        // minimumSize: 
+        // maximumSize: 
+        fixedSize: const Size(225, 40),
       ),
     );
   }

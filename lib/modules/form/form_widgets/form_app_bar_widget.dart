@@ -6,10 +6,9 @@ import 'dropdown_button_widget.dart';
 class FormAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final String name;
-  //TODO почему стринг? логично же булевую переменную делать ментор/менти
   final String mentor;
-
-  const FormAppBar({
+  // bool mentor;
+  FormAppBar({
     Key key,
     @required this.title,
     @required this.name,
@@ -18,6 +17,8 @@ class FormAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    Widget child;
+
     return AppBar(
       title: Padding(
         padding: const EdgeInsets.only(
@@ -54,13 +55,11 @@ class FormAppBar extends StatelessWidget implements PreferredSizeWidget {
                       color: MyColors.backgroundButton,
                     ),
                   ),
-                  Text(
-                    mentor ?? '',
-                    style: const TextStyle(
-                      fontSize: 18,
-                      color: Colors.grey,
-                    ),
-                  ),
+                  const Text(
+                    'Ментор',
+                    style: TextStyle(color: Colors.grey, fontSize: 18),
+                  )
+                  // mentor ? const Text('Ментор') : const Text('Менти')
                 ],
               ),
               const SizedBox(width: 23),

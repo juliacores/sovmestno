@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sovmestno/constants/routes.dart';
 import 'package:sovmestno/constants/themes.dart';
 import 'package:sovmestno/modules/form/form_screens/mentor_skills.dart';
-import 'package:sovmestno/modules/form/form_screens/main_form.dart';
-import 'package:sovmestno/modules/registration/registration_screens/authorization_screen.dart';
-import 'package:sovmestno/modules/registration/registration_screens/login_by_email_screen.dart';
-import 'package:sovmestno/modules/registration/registration_screens/registration_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,18 +16,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Sovmestno',
       theme: mainTheme(),
-      //TODO склеить в единое приложение - дать возможность пройти этапы целиком
-      //TODO сделать роутинг (навигатор пуш/поп либо autoroute)
-      home: const MentorSkills(),
-      //TODO вынести роуты в отдельный файл, брать оттуда
-      routes: {
-        '/authorization': (context) => const AuthorizationScreen(),
-        '/loginByEmail': (context) => const LoginByEmail(),
-        '/registration': (context) => const RegistrationScreen(),
-        '/main_form': (context) => const MainForm(),
-
-        //static const String routeTo... = '/authorization'; and others
-      },
+      // home: const MentorSkills(),
+      initialRoute: '/mentor_skills',
+      routes: customRoutes,
     );
   }
 }
