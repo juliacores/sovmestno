@@ -33,6 +33,7 @@ class _DropdownFormFieldWidgetState extends State<DropdownFormFieldWidget> {
         onChanged: (String newValue) {
           setState(() {});
         },
+        //TODO вынести в отдельный файл констант - навыки пришлю в ближайшее время
         items: <String>['1', '2', '3', '4'].map<DropdownMenuItem<String>>(
           (String value) {
             return DropdownMenuItem<String>(

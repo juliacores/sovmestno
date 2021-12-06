@@ -6,6 +6,7 @@ import 'dropdown_button_widget.dart';
 class FormAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final String name;
+  //TODO почему стринг? логично же булевую переменную делать ментор/менти
   final String mentor;
 
   const FormAppBar({

@@ -19,12 +19,17 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Sovmestno',
       theme: mainTheme(),
+      //TODO склеить в единое приложение - дать возможность пройти этапы целиком
+      //TODO сделать роутинг (навигатор пуш/поп либо autoroute)
       home: const MentorSkills(),
+      //TODO вынести роуты в отдельный файл, брать оттуда
       routes: {
         '/authorization': (context) => const AuthorizationScreen(),
         '/loginByEmail': (context) => const LoginByEmail(),
         '/registration': (context) => const RegistrationScreen(),
         '/main_form': (context) => const MainForm(),
+
+        //static const String routeTo... = '/authorization'; and others
       },
     );
   }
