@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
 
-class SaveButtonWidget extends StatelessWidget {
+class CustomButtonWidget extends StatelessWidget {
+  final String text;
   final GestureTapCallback onPressed;
 
-  const SaveButtonWidget({
+  const CustomButtonWidget({
     Key key,
+    @required this.text,
     @required this.onPressed,
   }) : super(key: key);
 
@@ -13,14 +15,12 @@ class SaveButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      child: const Text('Сохранить'),
+      child: Text(text),
       style: ElevatedButton.styleFrom(
         primary: MyColors.backgroundButton,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),
-        // minimumSize: 
-        // maximumSize: 
         fixedSize: const Size(225, 40),
       ),
     );

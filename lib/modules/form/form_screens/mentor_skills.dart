@@ -5,7 +5,7 @@ import 'package:sovmestno/modules/form/form_widgets/dropdown_form_field_widget.d
 import 'package:sovmestno/modules/form/form_widgets/form_app_bar_widget.dart';
 import 'package:sovmestno/modules/form/form_widgets/mentor_skills_widget.dart';
 import 'package:sovmestno/widgets/back_button_widget.dart';
-import 'package:sovmestno/widgets/save_button_widget.dart';
+import 'package:sovmestno/widgets/custom_button_widget.dart';
 
 class MentorSkills extends StatelessWidget {
   const MentorSkills({Key key}) : super(key: key);
@@ -14,7 +14,7 @@ class MentorSkills extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.appBarColor,
-      appBar: FormAppBar(
+      appBar: const FormAppBar(
         title: 'Совместно',
         name: 'Татьяна Иванова',
         mentor: 'Ментор',
@@ -46,11 +46,6 @@ class MentorSkills extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               ChipsWidget(
-                title: 'Основное',
-                y: 0,
-                x: 0,
-                textColor: Colors.white,
-                backgroundColor: MyColors.backgroundButton,
               ),
               const SizedBox(height: 38),
               const MentorSkillsWidget(),
@@ -69,7 +64,9 @@ class MentorSkills extends StatelessWidget {
               const DropdownFormFieldWidget(),
               /* ДЛЯ "Dropdown" НЕТ категорий !!!!!!!!!!! */
               const SizedBox(height: 30),
-              SaveButtonWidget(onPressed: () {
+              CustomButtonWidget(
+                text: 'Сохранить',
+                onPressed: () {
                 debugPrint('Сохранить');
               }),
               const SizedBox(height: 45),

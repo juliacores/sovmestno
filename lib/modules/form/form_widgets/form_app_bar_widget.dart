@@ -7,18 +7,17 @@ class FormAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final String name;
   final String mentor;
+  //TODO
   // bool mentor;
-  FormAppBar({
+  const FormAppBar({
     Key key,
     @required this.title,
     @required this.name,
     this.mentor,
   }) : super(key: key);
-
+ 
   @override
   Widget build(BuildContext context) {
-    Widget child;
-
     return AppBar(
       title: Padding(
         padding: const EdgeInsets.only(

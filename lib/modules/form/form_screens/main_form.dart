@@ -4,7 +4,7 @@ import 'package:sovmestno/modules/form/form_widgets/address_field_widget.dart';
 import 'package:sovmestno/modules/form/form_widgets/checkbox_widget.dart';
 import 'package:sovmestno/modules/form/form_widgets/chips_widget.dart';
 import 'package:sovmestno/modules/form/form_widgets/form_app_bar_widget.dart';
-import 'package:sovmestno/widgets/save_button_widget.dart';
+import 'package:sovmestno/widgets/custom_button_widget.dart';
 
 class MainForm extends StatefulWidget {
   const MainForm({Key key}) : super(key: key);
@@ -18,7 +18,7 @@ class _MainFormState extends State<MainForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.appBarColor,
-      appBar: FormAppBar(
+      appBar: const FormAppBar(
         title: 'Совместно',
         name: 'Татьяна Иванова',
       ),
@@ -42,13 +42,13 @@ class _MainFormState extends State<MainForm> {
                 color: MyColors.backgroundButton,
               ),
               const SizedBox(height: 40),
-              ChipsWidget(
-                title: 'О себе',
-                y: 0,
-                x: 0,
-                textColor: Colors.white,
-                backgroundColor: MyColors.backgroundButton,
-              ),
+              // ChipsWidget(
+              //   title: 'О себе',
+              //   y: 0,
+              //   x: 0,
+              //   textColor: Colors.white,
+              //   backgroundColor: MyColors.backgroundButton,
+              // ),
               const SizedBox(height: 50),
               const Text(
                 'Кем вы хотите быть?',
@@ -59,9 +59,11 @@ class _MainFormState extends State<MainForm> {
               const SizedBox(height: 30),
               const AddressField(),
               const SizedBox(height: 46),
-              SaveButtonWidget(onPressed: () {
-                debugPrint('Сохранить');
-              }),
+              CustomButtonWidget(
+                  text: 'Сохранить',
+                  onPressed: () {
+                    debugPrint('Сохранить');
+                  }),
               const SizedBox(height: 100),
             ],
           ),

@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
+import 'package:sovmestno/constants/text.dart';
 import 'package:sovmestno/modules/form/form_widgets/chips_widget.dart';
 import 'package:sovmestno/modules/form/form_widgets/form_app_bar_widget.dart';
-import 'package:sovmestno/modules/form/form_widgets/personal_qualities_widget.dart';
-import 'package:sovmestno/modules/form/form_widgets/user_biography_widget.dart';
+import 'package:sovmestno/widgets/back_button_widget.dart';
 import 'package:sovmestno/widgets/custom_button_widget.dart';
 
-class UserInformation extends StatefulWidget {
-  const UserInformation({Key key}) : super(key: key);
+class MatchingForMentor extends StatelessWidget {
+  const MatchingForMentor({Key key}) : super(key: key);
 
-  @override
-  _UserInformationState createState() => _UserInformationState();
-}
-
-class _UserInformationState extends State<UserInformation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,6 +16,7 @@ class _UserInformationState extends State<UserInformation> {
       appBar: const FormAppBar(
         title: 'Совместно',
         name: 'Татьяна Иванова',
+        mentor: 'Ментор',
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -42,40 +38,28 @@ class _UserInformationState extends State<UserInformation> {
                 color: MyColors.backgroundButton,
               ),
               const SizedBox(height: 22),
-              BackButton(
+              BackButtonWidget(
                 onPressed: () {
-                  debugPrint('Nazad/');
+                  debugPrint('Nazad/Nazad');
                 },
               ),
               const SizedBox(height: 20),
-              // ChipsWidget(
-              //   title: 'Навыки',
-              //   y: 0,
-              //   x: 0,
-              //   textColor: Colors.white,
-              //   backgroundColor: MyColors.backgroundButton,
-              // ),
-              const SizedBox(height: 38),
-              const UserBiography(),
+              ChipsWidget(),
               const SizedBox(height: 40),
-              const Text('Личностные качества', style: TextStyle(fontSize: 28)),
-              const SizedBox(height: 20),
-              Container(
-                width: double.infinity,
-                height: 0.2,
-                color: MyColors.backgroundButton,
-              ),
-              const SizedBox(height: 30),
               const Text(
-                  'Как бы вы описали себя? Этот вопрос не обязателен, но он поможет подобрать для вас подходящих людей.',
-                  style: TextStyle(fontSize: 18)),
-              const SizedBox(height: 20),
-              const PersonalQualities(),
-              const SizedBox(height: 45),
+                'Спасибо! Мы предложим вашу кандидатуру подходящим менти.',
+                style: TextStyle(fontSize: 22, color: Colors.black),
+              ),
+              const SizedBox(height: 40),
+              const Text(
+                ConstText.mentorText,
+                style: TextStyle(fontSize: 18, color: Colors.black),
+              ),
+              const SizedBox(height: 40),
               CustomButtonWidget(
-                  text: 'Сохранить',
+                  text: 'Далее',
                   onPressed: () {
-                    debugPrint('Сохранить');
+                    debugPrint('Далее');
                   }),
               const SizedBox(height: 45),
             ],
