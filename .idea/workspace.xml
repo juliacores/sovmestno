@@ -7,13 +7,11 @@
     <list default="true" id="1f48310b-b233-4f0f-b366-532243994c91" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants/routes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/modules/form/form_screens/main_form.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/form/form_screens/main_form.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/modules/form/form_widgets/address_field_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/form/form_widgets/address_field_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/modules/form/form_widgets/dropdown_form_field_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/form/form_widgets/dropdown_form_field_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modules/form/form_widgets/form_app_bar_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/form/form_widgets/form_app_bar_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modules/registration/registration_widgets/log_into_account_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/registration/registration_widgets/log_into_account_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/save_button_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/save_button_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,5 +68,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

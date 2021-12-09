@@ -8,7 +8,7 @@ class DropdownFormFieldWidget extends StatefulWidget {
   State<DropdownFormFieldWidget> createState() =>
       _DropdownFormFieldWidgetState();
 }
-
+//TODO сделать список с предложениями. Сделать строку ввода, в которую можно вводить любые теги
 class _DropdownFormFieldWidgetState extends State<DropdownFormFieldWidget> {
   @override
   Widget build(BuildContext context) {
