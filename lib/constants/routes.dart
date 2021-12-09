@@ -6,6 +6,7 @@ import 'package:sovmestno/modules/registration/registration_screens/login_by_ema
 import 'package:sovmestno/modules/registration/registration_screens/registration_screen.dart';
 
 var customRoutes = <String, WidgetBuilder>{
+  //TODO посмотреть как в преокте Valtab2b сделано. переделать по аналогии
   
   '/authorization': (context) => const AuthorizationScreen(),
   '/loginByEmail': (context) => const LoginByEmail(),

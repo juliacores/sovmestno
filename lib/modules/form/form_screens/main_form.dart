@@ -63,6 +63,8 @@ class _MainFormState extends State<MainForm> {
                   text: 'Сохранить',
                   onPressed: () {
                     debugPrint('Сохранить');
+                    //для теста
+                     Navigator.of(context).pushNamed('/mentor_skills');
                   }),
               const SizedBox(height: 100),
             ],

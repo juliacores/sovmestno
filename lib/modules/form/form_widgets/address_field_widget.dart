@@ -7,7 +7,7 @@ class AddressField extends StatefulWidget {
   @override
   _AddressFieldState createState() => _AddressFieldState();
 }
-
+//TODO сделать просто отдельный общий виджет Заголовок+Ввод с собственным TextEditingController. Сейчас работает некорректно
 class _AddressFieldState extends State<AddressField> {
   TextEditingController addressController = TextEditingController();
 
