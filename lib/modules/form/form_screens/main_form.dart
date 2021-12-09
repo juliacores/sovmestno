@@ -8,68 +8,12 @@ class MainForm extends StatelessWidget {
   const MainForm({Key key,@required this.onSavePressed }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
           'Кем вы хотите быть?',
           style: TextStyle(fontSize: 22, color: Colors.black),
-=======
-    return Scaffold(
-      backgroundColor: MyColors.appBarColor,
-      appBar: const FormAppBar(
-        title: 'Совместно',
-        name: 'Татьяна Иванова',
-      ),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Padding(
-          padding: const EdgeInsets.only(left: 104, right: 104),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 66),
-              const Text(
-                'Анкета',
-                style:
-                    TextStyle(fontSize: 36, color: MyColors.backgroundButton),
-              ),
-              const SizedBox(height: 20),
-              Container(
-                width: double.infinity,
-                height: 0.2,
-                color: MyColors.backgroundButton,
-              ),
-              const SizedBox(height: 40),
-              // ChipsWidget(
-              //   title: 'О себе',
-              //   y: 0,
-              //   x: 0,
-              //   textColor: Colors.white,
-              //   backgroundColor: MyColors.backgroundButton,
-              // ),
-              const SizedBox(height: 50),
-              const Text(
-                'Кем вы хотите быть?',
-                style: TextStyle(fontSize: 22, color: Colors.black),
-              ),
-              const SizedBox(height: 30),
-              const CheckboxWidget(),
-              const SizedBox(height: 30),
-              const AddressField(),
-              const SizedBox(height: 46),
-              CustomButtonWidget(
-                  text: 'Сохранить',
-                  onPressed: () {
-                    debugPrint('Сохранить');
-                    //для теста
-                     Navigator.of(context).pushNamed('/mentor_skills');
-                  }),
-              const SizedBox(height: 100),
-            ],
-          ),
->>>>>>> 73f20e23ba36eb09592b0d97abaf4ac104b42ce2
         ),
         const SizedBox(height: 30),
           CheckboxWidget(onChanged: (val){
