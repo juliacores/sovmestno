@@ -9,6 +9,17 @@ class Styles {
       color: MyColors.backgroundButton,
       fontWeight: FontWeight.bold,
       fontFamily: 'Mak');
+
+  static const TextStyle tabTitle = TextStyle(
+      fontSize: 11,
+      color: Colors.white,
+      fontWeight: FontWeight.w700,
+      // height: 11 / 13.81,
+      // fontFamily: 'Mulish'
+      
+      );
+
+
   //
   static GoogleFonts hintStyle = GoogleFonts();
 

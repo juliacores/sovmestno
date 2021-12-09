@@ -26,8 +26,8 @@ class ChipsWidget extends StatelessWidget {
             ),
             color: Colors.grey,
           ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
+          child: const Padding(
+            padding: EdgeInsets.symmetric(
               horizontal: 20,
               vertical: 10,
             ),
