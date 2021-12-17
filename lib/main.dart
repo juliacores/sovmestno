@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sovmestno/constants/routes.dart';
 import 'package:sovmestno/constants/themes.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -15,12 +14,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(1440, 1024),
-      builder:()=> MaterialApp(
+      builder: () => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Sovmestno',
         theme: mainTheme(),
-       
-      routes: Routes.routes,
+        initialRoute: '/main_form_screen',
+        routes: customRoutes,
       ),
     );
   }
