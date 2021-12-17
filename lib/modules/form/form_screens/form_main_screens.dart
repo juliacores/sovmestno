@@ -48,15 +48,22 @@ class _FormMainScreenState extends State<FormMainScreen> {
           currentScreen = nextScreen;
         },
       ),
-      'Навыки': const MentorSkills(),
-      'Мэчтинг': const MatchingForMentor(),
+      'Навыки': MentorSkills(
+        onSavePressed: () {
+          currentScreen = nextScreen;
+        },
+      ),
+      'Мэчтинг': MatchingForMentor(
+        onSavePressed: () {
+          currentScreen = nextScreen;
+        },
+      ),
     });
     _currentScreen = screens.keys.first;
   }
 
   @override
   Widget build(BuildContext context) {
-    // return Container();
     return Scaffold(
       backgroundColor: MyColors.appBarColor,
       appBar: const FormAppBar(
@@ -82,13 +89,14 @@ class _FormMainScreenState extends State<FormMainScreen> {
                 height: 0.2,
                 color: MyColors.backgroundButton,
               ),
+              const SizedBox(height: 20),
               if (_currentScreen != screens.keys.first)
                 BackButtonWidget(
                   onPressed: () {
                     currentScreen = previousScreen;
                   },
                 ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 20),
               Row(
                 children: screens.keys.map((screen) {
                   final isCurrentScreen = screen == _currentScreen;
@@ -109,6 +117,7 @@ class _FormMainScreenState extends State<FormMainScreen> {
                       child: Text(
                         screen,
                         style: Styles.tabTitle.copyWith(
+                            fontSize: 12,
                             color:
                                 isCurrentScreen ? Colors.white : Colors.grey),
                       ),

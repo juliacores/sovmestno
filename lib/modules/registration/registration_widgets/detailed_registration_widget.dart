@@ -123,6 +123,7 @@ class _DetailedRegistrationWidgetState
                   ),
                   onPressed: () {
                     setState(() => _showPassword = !_showPassword);
+                    Navigator.pushNamed(context, '/main_form_screen');
                   },
                 ),
               ),

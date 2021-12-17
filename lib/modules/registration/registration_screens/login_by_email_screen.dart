@@ -39,7 +39,7 @@ class _LoginByEmailState extends State<LoginByEmail> {
               const SizedBox(height: 19),
               BackButtonWidget(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/authorization');
+                  Navigator.pushNamed(context, '/FormMainScreen');
                 },
               ),
               const SizedBox(height: 44),
