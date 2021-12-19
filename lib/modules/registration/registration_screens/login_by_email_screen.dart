@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/modules/registration/registration_widgets/registration_app_bar.dart';
-import 'package:sovmestno/modules/registration/registration_widgets/registration_widget.dart';
 import 'package:sovmestno/widgets/back_button_widget.dart';
 
 class LoginByEmail extends StatefulWidget {
@@ -16,7 +15,7 @@ class _LoginByEmailState extends State<LoginByEmail> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.appBarColor,
-      appBar: const RegistrationAppBar(title: 'Совместно'),
+      appBar: const RegistrationAppBar(),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
@@ -43,7 +42,7 @@ class _LoginByEmailState extends State<LoginByEmail> {
                 },
               ),
               const SizedBox(height: 44),
-              const Registration(),
+              const LoginByEmail(),
               const SizedBox(height: 32),
             ],
           ),

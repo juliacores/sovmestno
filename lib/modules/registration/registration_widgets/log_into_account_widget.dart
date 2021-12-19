@@ -10,13 +10,12 @@ class LogIntoAccountWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        const Text(
+        const Text( 
           'Уже есть аккаунт?',
           style: TextStyle(color: MyColors.hintColor),
         ),
         TextButton(
           onPressed: () {
-            //TODO вынести роуты в отдельный файл, брать оттуда
             Navigator.pushNamed(context, '/loginByEmail');
           },
           child: const Text(

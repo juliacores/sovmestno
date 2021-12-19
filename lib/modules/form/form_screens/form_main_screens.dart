@@ -67,7 +67,6 @@ class _FormMainScreenState extends State<FormMainScreen> {
     return Scaffold(
       backgroundColor: MyColors.appBarColor,
       appBar: const FormAppBar(
-        title: 'Совместно',
         name: 'Татьяна Иванова',
       ),
       body: SingleChildScrollView(
@@ -117,7 +116,8 @@ class _FormMainScreenState extends State<FormMainScreen> {
                       child: Text(
                         screen,
                         style: Styles.tabTitle.copyWith(
-                            fontSize: 12,
+                            fontSize: 14,
+                            fontWeight: FontWeight.normal,
                             color:
                                 isCurrentScreen ? Colors.white : Colors.grey),
                       ),

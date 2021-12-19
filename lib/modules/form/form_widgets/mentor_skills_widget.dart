@@ -7,6 +7,7 @@ class MentorSkillsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController skillFieldController = TextEditingController();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -19,6 +20,7 @@ class MentorSkillsWidget extends StatelessWidget {
           width: 960,
           height: 160,
           child: TextField(
+            controller: skillFieldController,
             maxLines: 10,
             textAlign: TextAlign.left,
             decoration: InputDecoration(

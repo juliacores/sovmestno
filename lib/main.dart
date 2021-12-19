@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Sovmestno',
         theme: mainTheme(),
-        initialRoute: '/main_form_screen',
+        initialRoute: '/authorization',
         routes: customRoutes,
       ),
     );

@@ -13,6 +13,10 @@ class DetailedRegistrationWidget extends StatefulWidget {
 class _DetailedRegistrationWidgetState
     extends State<DetailedRegistrationWidget> {
   bool _showPassword = false;
+  
+  final TextEditingController userNameController = TextEditingController();
+  final TextEditingController userSurnameController = TextEditingController();
+  final TextEditingController userPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +41,7 @@ class _DetailedRegistrationWidgetState
             ),
             const SizedBox(height: 6),
             TextField(
+              controller: userNameController,
               textAlign: TextAlign.start,
               decoration: InputDecoration(
                 filled: true,
@@ -66,6 +71,7 @@ class _DetailedRegistrationWidgetState
             ),
             const SizedBox(height: 6),
             TextField(
+              controller: userSurnameController,
               textAlign: TextAlign.start,
               decoration: InputDecoration(
                 filled: true,
@@ -95,6 +101,7 @@ class _DetailedRegistrationWidgetState
             ),
             const SizedBox(height: 6),
             TextField(
+              controller: userPasswordController,
               textAlign: TextAlign.start,
               obscureText: !_showPassword,
               decoration: InputDecoration(
@@ -123,7 +130,6 @@ class _DetailedRegistrationWidgetState
                   ),
                   onPressed: () {
                     setState(() => _showPassword = !_showPassword);
-                    Navigator.pushNamed(context, '/main_form_screen');
                   },
                 ),
               ),
@@ -135,6 +141,7 @@ class _DetailedRegistrationWidgetState
             ),
             const SizedBox(height: 19),
             const UserImageWidget(),
+            
           ],
         ),
       ),

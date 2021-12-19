@@ -5,20 +5,19 @@ import 'package:sovmestno/constants/colors.dart';
 
 class Styles {
   static const TextStyle mainTitle = TextStyle(
-      fontSize: 32,
-      color: MyColors.backgroundButton,
-      fontWeight: FontWeight.bold,
-      fontFamily: 'Mak');
+    fontSize: 32,
+    color: MyColors.backgroundButton,
+    fontWeight: FontWeight.bold,
+    // fontFamily: 'Mak'
+  );
 
   static const TextStyle tabTitle = TextStyle(
-      fontSize: 11,
-      color: Colors.white,
-      fontWeight: FontWeight.w700,
-      // height: 11 / 13.81,
-      // fontFamily: 'Mulish'
-      
-      );
-
+    fontSize: 11,
+    color: Colors.white,
+    fontWeight: FontWeight.w700,
+    // height: 11 / 13.81,
+    // fontFamily: 'Mulish'
+  );
 
   //
   static GoogleFonts hintStyle = GoogleFonts();
@@ -35,7 +34,7 @@ class Styles {
     ),
   );
 
-   static ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+  static ButtonStyle buttonStyle = ElevatedButton.styleFrom(
     primary: Colors.white,
     onPrimary: Colors.blue[100],
     shape: RoundedRectangleBorder(

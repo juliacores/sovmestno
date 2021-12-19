@@ -3,7 +3,6 @@ import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/modules/registration/registration_widgets/log_into_account_widget.dart';
 import 'package:sovmestno/modules/registration/registration_widgets/registration_app_bar.dart';
 
-
 class AuthorizationScreen extends StatefulWidget {
   const AuthorizationScreen({Key key}) : super(key: key);
 
@@ -12,11 +11,13 @@ class AuthorizationScreen extends StatefulWidget {
 }
 
 class _AuthorizationScreenState extends State<AuthorizationScreen> {
+  final TextEditingController authorizationFieldController =
+      TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.appBarColor,
-      appBar: const RegistrationAppBar(title: 'Совместно'),
+      appBar: const RegistrationAppBar(),
       body: Center(
         child: Column(
           children: [
@@ -25,6 +26,7 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
               width: 655,
               height: 42,
               child: TextField(
+                controller: authorizationFieldController,
                 textAlign: TextAlign.start,
                 decoration: InputDecoration(
                   hintText: 'Введите ваш Email',
@@ -56,8 +58,7 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
                   style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () {
-                   Navigator.pushNamed(context, '/registration');  
-
+                  Navigator.pushNamed(context, '/registration');
                 },
                 style: ElevatedButton.styleFrom(
                   primary: MyColors.backgroundButton,

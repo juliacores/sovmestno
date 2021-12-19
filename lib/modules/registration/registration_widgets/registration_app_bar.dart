@@ -4,19 +4,22 @@ import 'package:sovmestno/constants/styles.dart';
 
 class RegistrationAppBar extends StatelessWidget
     implements PreferredSizeWidget {
-  final String title;
-  const RegistrationAppBar({Key key, @required this.title}) : super(key: key);
+  const RegistrationAppBar({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Padding(
-        padding: const EdgeInsets.only(
+      title: const Padding(
+        padding: EdgeInsets.only(
           left: 70.0,
         ),
         child: Text(
-          title,
-          style: Styles.mainTitle,
+          'Совместно',
+          style: TextStyle(
+            color: MyColors.backgroundButton,
+            fontFamily: 'mak',
+            fontSize: 36
+          ),
         ),
       ),
       backgroundColor: MyColors.appBarColor,

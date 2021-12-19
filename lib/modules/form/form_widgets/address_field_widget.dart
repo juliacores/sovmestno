@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
 
 class AddressField extends StatefulWidget {
-  const AddressField({Key key}) : super(key: key);
+  const   AddressField({Key key}) : super(key: key);
 
   @override
   _AddressFieldState createState() => _AddressFieldState();
 }
-//TODO сделать просто отдельный общий виджет Заголовок+Ввод с собственным TextEditingController. Сейчас работает некорректно
 class _AddressFieldState extends State<AddressField> {
-  TextEditingController addressController = TextEditingController();
+  TextEditingController addresFieldController = TextEditingController();
+  TextEditingController ageFieldController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class _AddressFieldState extends State<AddressField> {
           width: 225,
           height: 40,
           child: TextField(
-            controller: addressController,
+            controller: addresFieldController,
             textAlign: TextAlign.start,
             decoration: InputDecoration(
               filled: true,
@@ -56,15 +56,15 @@ class _AddressFieldState extends State<AddressField> {
         ),
         const SizedBox(height: 10),
         SizedBox(
-          width: 960,
+          width: 225,
           height: 40,
           child: TextField(
-            controller: addressController,
+            controller: ageFieldController,
             textAlign: TextAlign.start,
             decoration: InputDecoration(
               filled: true,
               fillColor: MyColors.grayscale,
-              hintText: 'Введите ваш город',
+              hintText: 'Введите ваш возраст',
               hintStyle: const TextStyle(color: MyColors.hintColor),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5),

@@ -15,7 +15,7 @@ class RegisterButtonWidget extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, '/main_form');
+          Navigator.pushNamed(context, '/main_form_screen');
         },
         style: ElevatedButton.styleFrom(
           primary: MyColors.backgroundButton,

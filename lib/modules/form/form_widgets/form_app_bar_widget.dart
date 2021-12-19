@@ -4,14 +4,12 @@ import 'package:sovmestno/constants/styles.dart';
 import 'dropdown_button_widget.dart';
 
 class FormAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final String title;
   final String name;
   final String mentor;
   //TODO
   // bool mentor;
   const FormAppBar({
     Key key,
-    @required this.title,
     @required this.name,
     this.mentor,
   }) : super(key: key);
@@ -19,13 +17,17 @@ class FormAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Padding(
-        padding: const EdgeInsets.only(
+      title: const Padding(
+        padding: EdgeInsets.only(
           left: 70.0,
         ),
         child: Text(
-          title,
-          style: Styles.mainTitle,
+          'Совместно',
+          style: TextStyle(
+            color: MyColors.backgroundButton,
+            fontFamily: 'mak',
+            fontSize: 36
+          ),
         ),
       ),
       backgroundColor: MyColors.appBarColor,

@@ -7,6 +7,7 @@ class UserBiography extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController questionnaireController = TextEditingController();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -19,6 +20,7 @@ class UserBiography extends StatelessWidget {
           width: 960,
           height: 160,
           child: TextField(
+            controller: questionnaireController,
             maxLines: 10,
             textAlign: TextAlign.left,
             decoration: InputDecoration(
