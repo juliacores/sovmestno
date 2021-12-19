@@ -15,11 +15,7 @@ class RegistrationAppBar extends StatelessWidget
         ),
         child: Text(
           'Совместно',
-          style: TextStyle(
-            color: MyColors.backgroundButton,
-            fontFamily: 'mak',
-            fontSize: 36
-          ),
+          style: Styles.mainTitle
         ),
       ),
       backgroundColor: MyColors.appBarColor,

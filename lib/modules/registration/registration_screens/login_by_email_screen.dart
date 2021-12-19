@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sovmestno/constants/colors.dart';
+import 'package:sovmestno/modules/registration/registration_widgets/login_by_email_widget.dart';
 import 'package:sovmestno/modules/registration/registration_widgets/registration_app_bar.dart';
 import 'package:sovmestno/widgets/back_button_widget.dart';
 
-class LoginByEmail extends StatefulWidget {
-  const LoginByEmail({Key key}) : super(key: key);
+class LoginByEmailScreen extends StatefulWidget {
+  const LoginByEmailScreen({Key key}) : super(key: key);
 
   @override
-  _LoginByEmailState createState() => _LoginByEmailState();
+  _LoginByEmailScreenState createState() => _LoginByEmailScreenState();
 }
 
-class _LoginByEmailState extends State<LoginByEmail> {
+class _LoginByEmailScreenState extends State<LoginByEmailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +21,7 @@ class _LoginByEmailState extends State<LoginByEmail> {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
-          padding: const EdgeInsets.only(left: 104, right: 104),
+          padding: EdgeInsets.symmetric(horizontal: 104.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -42,7 +44,7 @@ class _LoginByEmailState extends State<LoginByEmail> {
                 },
               ),
               const SizedBox(height: 44),
-              const LoginByEmail(),
+              const LoginByEmailWidget(),
               const SizedBox(height: 32),
             ],
           ),

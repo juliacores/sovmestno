@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/modules/registration/registration_widgets/registration_button_widget.dart';
 
-class LoginByEmail extends StatefulWidget {
-  const LoginByEmail({Key key}) : super(key: key);
+class LoginByEmailWidget extends StatefulWidget {
+  const LoginByEmailWidget({Key key}) : super(key: key);
 
   @override
-  State<LoginByEmail> createState() => _LoginByEmailState();
+  State<LoginByEmailWidget> createState() => _LoginByEmailWidgetState();
 }
 
-class _LoginByEmailState extends State<LoginByEmail> {
+class _LoginByEmailWidgetState extends State<LoginByEmailWidget> {
   bool _showPassword = false;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();

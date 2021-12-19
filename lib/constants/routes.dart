@@ -8,7 +8,7 @@ import '../modules/registration/registration_screens/registration_screen.dart';
 var customRoutes = <String, WidgetBuilder>{
   //registration screens
   '/authorization': (context) => const AuthorizationScreen(),
-  '/loginByEmail': (context) => const LoginByEmail(),
+  '/loginByEmail': (context) => const LoginByEmailScreen(),
   '/registration': (context) => const RegistrationScreen(),
 
   //form screens

@@ -67,6 +67,7 @@ class _FormMainScreenState extends State<FormMainScreen> {
     return Scaffold(
       backgroundColor: MyColors.appBarColor,
       appBar: const FormAppBar(
+        mentor: false,
         name: 'Татьяна Иванова',
       ),
       body: SingleChildScrollView(
@@ -100,7 +101,6 @@ class _FormMainScreenState extends State<FormMainScreen> {
                 children: screens.keys.map((screen) {
                   final isCurrentScreen = screen == _currentScreen;
                   return Container(
-                    // height: 94,
                     margin: const EdgeInsets.only(right: 16),
                     decoration: BoxDecoration(
                         color: isCurrentScreen

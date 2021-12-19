@@ -10,7 +10,7 @@ class LogIntoAccountWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        const Text( 
+        const Text(
           'Уже есть аккаунт?',
           style: TextStyle(color: MyColors.hintColor),
         ),
