@@ -1,16 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+    <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0ed468f-a8e3-4730-a844-0386128f3985" name="Default Changelist" comment="" />
+    <list default="true" id="1f48310b-b233-4f0f-b366-532243994c91" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants/routes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants/styles.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants/styles.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/modules/form/form_screens/form_main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/form/form_screens/form_main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/modules/form/form_screens/mentor_skills.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/form/form_screens/mentor_skills.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/modules/form/form_widgets/form_app_bar_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/form/form_widgets/form_app_bar_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/modules/registration/registration_screens/authorization_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/registration/registration_screens/authorization_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/modules/registration/registration_screens/login_by_email_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/registration/registration_screens/login_by_email_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/modules/registration/registration_screens/registration_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/registration/registration_screens/registration_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/modules/registration/registration_widgets/log_into_account_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/registration/registration_widgets/log_into_account_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/modules/registration/registration_widgets/registration_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/registration/registration_widgets/registration_app_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/modules/registration/registration_widgets/registration_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/registration/registration_widgets/registration_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/form_main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/form_main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/form_main_screens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/form_main_screens.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/form_widgets/address_field_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/form_widgets/address_field_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/main_form.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/main_form.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/matching_for_mentor.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/matching_for_mentor.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/mentor_skills.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/mentor_skills.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/detailed_registration_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/detailed_registration_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/login_by_email_widget.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/registration_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/registration_widget.dart" afterDir="false" />
+    </list>
+    <list id="0f7fbc54-855c-4b7e-8962-fc77b3fa64d0" name="refactor" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/dev" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="f25894a4ee4b71a58640a98d7e5c534919719e9f" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="dev" />
+                    <option name="lastUsedInstant" value="1645266503" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="romans_refactor" />
+                    <option name="lastUsedInstant" value="1645266421" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="ProjectId" id="20oYf6v72drYkhmPcmZ9JGev9yF" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -22,13 +90,35 @@
       </pane>
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/widgets/buttons" />
+      <recent name="$PROJECT_DIR$/lib/presentation/registration/forms" />
+      <recent name="$PROJECT_DIR$/lib/presentation/registration" />
+      <recent name="$PROJECT_DIR$/lib/widgets/appbar" />
+      <recent name="$PROJECT_DIR$/lib/widgets" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1f48310b-b233-4f0f-b366-532243994c91" name="Default Changelist" comment="" />
+      <changelist id="0f7fbc54-855c-4b7e-8962-fc77b3fa64d0" name="refactor" comment="" />
+      <created>1636712508892</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1636712508892</updated>
+    </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -36,6 +126,16 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
     </layout>
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -48,9 +148,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Merge remote-tracking branch 'origin/dev' into dev&#10;&#10;# Conflicts:&#10;#&#9;.flutter-plugins-dependencies&#10;#&#9;lib/constants/routes.dart&#10;#&#9;lib/constants/styles.dart&#10;#&#9;lib/main.dart&#10;#&#9;lib/modules/form/form_screens/form_main.dart&#10;#&#9;lib/modules/form/form_screens/form_main_screens.dart&#10;#&#9;lib/modules/form/form_screens/matching_for_mentor.dart&#10;#&#9;lib/modules/registration/registration_widgets/login_by_email_widget.dart&#10;#&#9;lib/modules/registration/registration_widgets/registration_widget.dart&#10;#&#9;lib/presentation/registration/form_main.dart&#10;#&#9;lib/presentation/registration/forms/form_widgets/address_field_widget.dart&#10;#&#9;lib/presentation/registration/forms/form_widgets/chips_widget.dart&#10;#&#9;lib/presentation/registration/registration_widgets/detailed_registration_widget.dart&#10;#&#9;lib/presentation/registration/registration_widgets/registration_widget.dart" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/dev' into dev&#10;&#10;# Conflicts:&#10;#&#9;.flutter-plugins-dependencies&#10;#&#9;lib/constants/routes.dart&#10;#&#9;lib/constants/styles.dart&#10;#&#9;lib/main.dart&#10;#&#9;lib/modules/form/form_screens/form_main.dart&#10;#&#9;lib/modules/form/form_screens/form_main_screens.dart&#10;#&#9;lib/modules/form/form_screens/matching_for_mentor.dart&#10;#&#9;lib/modules/registration/registration_widgets/login_by_email_widget.dart&#10;#&#9;lib/modules/registration/registration_widgets/registration_widget.dart&#10;#&#9;lib/presentation/registration/form_main.dart&#10;#&#9;lib/presentation/registration/forms/form_widgets/address_field_widget.dart&#10;#&#9;lib/presentation/registration/forms/form_widgets/chips_widget.dart&#10;#&#9;lib/presentation/registration/registration_widgets/detailed_registration_widget.dart&#10;#&#9;lib/presentation/registration/registration_widgets/registration_widget.dart" />
   </component>
 </project>

@@ -1,16 +1,13 @@
 # sovmestno
 
-A new Flutter project.
+A new Flutter web project for connecting users with mentors.
 
-## Getting Started
+Проект можно тестировать в веб окружении либо на андроиде
+Фаербейз настроен на них для авторизации
 
-This project is a starting point for a Flutter application.
+ссылка на дизайн
+https://www.figma.com/file/urpy3qu90W9lP1jQ8lYyWr/%D0%9F%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D1%82%D0%B8%D0%BF?node-id=0%3A1
+ссылка на описание ТЗ
+https://www.notion.so/04edc616793e479b9cb8796e13b06b53
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Используем в работе Provider, пишем стейтлес виджеты
