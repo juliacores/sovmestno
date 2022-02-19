@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
 
 class PopupMenuButtonWidget extends StatefulWidget {
-  const PopupMenuButtonWidget({Key key}) : super(key: key);
+  const PopupMenuButtonWidget({Key? key}) : super(key: key);
 
   @override
   State<PopupMenuButtonWidget> createState() => _PopupMenuButtonWidgetState();
@@ -27,13 +27,13 @@ class _PopupMenuButtonWidgetState extends State<PopupMenuButtonWidget> {
                 onPressed: () {},
                 icon: const Icon(
                   Icons.settings,
-                  color: MyColors.hintColor,
+                  color: AppColors.hintColor,
                   size: 22,
                 ),
               ),
               const Text(
                 'Настройки',
-                style: TextStyle(fontSize: 18, color: MyColors.hintColor),
+                style: TextStyle(fontSize: 18, color: AppColors.hintColor),
               ),
             ],
           ),
@@ -46,13 +46,13 @@ class _PopupMenuButtonWidgetState extends State<PopupMenuButtonWidget> {
                 onPressed: () {},
                 icon: const Icon(
                   Icons.close,
-                  color: MyColors.hintColor,
+                  color: AppColors.hintColor,
                   size: 22,
                 ),
               ),
               const Text(
                 'Выйти',
-                style: TextStyle(fontSize: 18, color: MyColors.hintColor),
+                style: TextStyle(fontSize: 18, color: AppColors.hintColor),
               ),
             ],
           ),

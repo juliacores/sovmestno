@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
-import 'package:sovmestno/modules/registration/registration_widgets/user_image_widget.dart';
 
-class DetailedRegistrationWidget extends StatefulWidget {
-  const DetailedRegistrationWidget({Key key}) : super(key: key);
+import '../../../widgets/buttons/custom_main_button.dart';
+
+<<<<<<< HEAD:lib/presentation/registration/registration_widgets/registration_widget.dart
+class Registration extends StatefulWidget {
+  const Registration({Key? key}) : super(key: key);
+=======
+class LoginByEmailWidget extends StatefulWidget {
+  const LoginByEmailWidget({Key key}) : super(key: key);
+>>>>>>> 394cf484e9afce1bc8b322c1ca9b7379e76641c1:lib/presentation/registration/registration_widgets/login_by_email_widget.dart
 
   @override
-  State<DetailedRegistrationWidget> createState() =>
-      _DetailedRegistrationWidgetState();
+  State<LoginByEmailWidget> createState() => _LoginByEmailWidgetState();
 }
 
-class _DetailedRegistrationWidgetState
-    extends State<DetailedRegistrationWidget> {
+class _LoginByEmailWidgetState extends State<LoginByEmailWidget> {
   bool _showPassword = false;
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +27,7 @@ class _DetailedRegistrationWidgetState
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
-          color: MyColors.backgroundButton,
+          color: AppColors.backgroundButton,
           width: 0.5,
         ),
         borderRadius: BorderRadius.circular(12),
@@ -32,87 +38,72 @@ class _DetailedRegistrationWidgetState
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Имя',
+              'Email',
               style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 6),
             TextField(
+              controller: emailController,
               textAlign: TextAlign.start,
               decoration: InputDecoration(
                 filled: true,
-                fillColor: MyColors.grayscale,
-                hintText: 'Введите ваше имя',
-                hintStyle: const TextStyle(color: MyColors.hintColor),
+                fillColor: AppColors.grayscale,
+                hintText: 'Введите ваш Email',
+                hintStyle: const TextStyle(color: AppColors.hintColor),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                   borderSide: const BorderSide(
-                    color: MyColors.borderTextField,
+                    color: AppColors.borderTextField,
                     width: 0.5,
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                   borderSide: const BorderSide(
-                    color: MyColors.focusedBorderTextField,
+                    color: AppColors.focusedBorderTextField,
                     width: 0.5,
                   ),
                 ),
               ),
             ),
             const SizedBox(height: 32),
-            const Text(
-              'Фамилия',
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            Row(
+              children: [
+                const Text(
+                  'Пароль',
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(width: 170),
+                TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'Забыли пароль?',
+                    style: TextStyle(color: AppColors.hintColor),
+                  ),
+                )
+              ],
             ),
             const SizedBox(height: 6),
             TextField(
-              textAlign: TextAlign.start,
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: MyColors.grayscale,
-                hintText: 'Введите вашу фамилию',
-                hintStyle: const TextStyle(color: MyColors.hintColor),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(5),
-                  borderSide: const BorderSide(
-                    color: MyColors.borderTextField,
-                    width: 0.5,
-                  ),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(5),
-                  borderSide: const BorderSide(
-                    color: MyColors.focusedBorderTextField,
-                    width: 0.5,
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(height: 32),
-            const Text(
-              'Пароль',
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 6),
-            TextField(
+              controller: passwordController,
               textAlign: TextAlign.start,
               obscureText: !_showPassword,
               decoration: InputDecoration(
                 filled: true,
-                fillColor: MyColors.grayscale,
+                fillColor: AppColors.grayscale,
                 hintText: 'Введите пароль',
-                hintStyle: const TextStyle(color: MyColors.hintColor),
+                hintStyle: const TextStyle(color: AppColors.hintColor),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                   borderSide: const BorderSide(
-                    color: MyColors.borderTextField,
+                    color: AppColors.borderTextField,
                     width: 0.5,
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                   borderSide: const BorderSide(
-                    color: MyColors.focusedBorderTextField,
+                    color: AppColors.focusedBorderTextField,
                     width: 0.5,
                   ),
                 ),
@@ -127,13 +118,9 @@ class _DetailedRegistrationWidgetState
                 ),
               ),
             ),
-            const SizedBox(height: 18),
-            const Text(
-              'Ваш пароль должен содержать от 8 символов.',
-              style: TextStyle(fontSize: 12, color: MyColors.backgroundButton),
-            ),
-            const SizedBox(height: 19),
-            const UserImageWidget(),
+            const SizedBox(height: 30),
+            const CustomButtonWidget(title: 'Войти',)
+            // const RegistrationButtonWidget()
           ],
         ),
       ),

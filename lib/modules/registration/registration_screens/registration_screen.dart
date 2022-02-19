@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/modules/registration/registration_widgets/detailed_registration_widget.dart';
 import 'package:sovmestno/modules/registration/registration_widgets/registration_app_bar.dart';
@@ -16,11 +17,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.appBarColor,
-      appBar: const RegistrationAppBar(title: 'Совместно'),
+      appBar: const RegistrationAppBar(),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
-          padding: const EdgeInsets.only(left: 104, right: 104),
+          padding: EdgeInsets.symmetric(horizontal: 104.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

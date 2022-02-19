@@ -5,7 +5,7 @@ class ChipsWidget extends StatelessWidget {
   // Color backgroundColor;
   // Color borderColor;
   ChipsWidget({
-    Key key,
+    Key? key,
     // this.title,
     // this.backgroundColor,
     // this.borderColor,

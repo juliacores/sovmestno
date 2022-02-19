@@ -1,17 +1,24 @@
-
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
-import 'package:sovmestno/modules/registration/registration_widgets/registration_button_widget.dart';
 
+import '../../../widgets/buttons/custom_main_button.dart';
+
+<<<<<<< HEAD:lib/presentation/registration/registration_widgets/registration_widget.dart
 class Registration extends StatefulWidget {
-  const Registration({Key key}) : super(key: key);
+  const Registration({Key? key}) : super(key: key);
+=======
+class LoginByEmailWidget extends StatefulWidget {
+  const LoginByEmailWidget({Key key}) : super(key: key);
+>>>>>>> 394cf484e9afce1bc8b322c1ca9b7379e76641c1:lib/presentation/registration/registration_widgets/login_by_email_widget.dart
 
   @override
-  State<Registration> createState() => _RegistrationState();
+  State<LoginByEmailWidget> createState() => _LoginByEmailWidgetState();
 }
 
-class _RegistrationState extends State<Registration> {
+class _LoginByEmailWidgetState extends State<LoginByEmailWidget> {
   bool _showPassword = false;
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +27,7 @@ class _RegistrationState extends State<Registration> {
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
-          color: MyColors.backgroundButton,
+          color: AppColors.backgroundButton,
           width: 0.5,
         ),
         borderRadius: BorderRadius.circular(12),
@@ -36,23 +43,24 @@ class _RegistrationState extends State<Registration> {
             ),
             const SizedBox(height: 6),
             TextField(
+              controller: emailController,
               textAlign: TextAlign.start,
               decoration: InputDecoration(
                 filled: true,
-                fillColor: MyColors.grayscale,
+                fillColor: AppColors.grayscale,
                 hintText: 'Введите ваш Email',
-                hintStyle: const TextStyle(color: MyColors.hintColor),
+                hintStyle: const TextStyle(color: AppColors.hintColor),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                   borderSide: const BorderSide(
-                    color: MyColors.borderTextField,
+                    color: AppColors.borderTextField,
                     width: 0.5,
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                   borderSide: const BorderSide(
-                    color: MyColors.focusedBorderTextField,
+                    color: AppColors.focusedBorderTextField,
                     width: 0.5,
                   ),
                 ),
@@ -70,31 +78,32 @@ class _RegistrationState extends State<Registration> {
                   onPressed: () {},
                   child: const Text(
                     'Забыли пароль?',
-                    style: TextStyle(color: MyColors.hintColor),
+                    style: TextStyle(color: AppColors.hintColor),
                   ),
                 )
               ],
             ),
             const SizedBox(height: 6),
             TextField(
+              controller: passwordController,
               textAlign: TextAlign.start,
               obscureText: !_showPassword,
               decoration: InputDecoration(
                 filled: true,
-                fillColor: MyColors.grayscale,
+                fillColor: AppColors.grayscale,
                 hintText: 'Введите пароль',
-                hintStyle: const TextStyle(color: MyColors.hintColor),
+                hintStyle: const TextStyle(color: AppColors.hintColor),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                   borderSide: const BorderSide(
-                    color: MyColors.borderTextField,
+                    color: AppColors.borderTextField,
                     width: 0.5,
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                   borderSide: const BorderSide(
-                    color: MyColors.focusedBorderTextField,
+                    color: AppColors.focusedBorderTextField,
                     width: 0.5,
                   ),
                 ),
@@ -110,7 +119,8 @@ class _RegistrationState extends State<Registration> {
               ),
             ),
             const SizedBox(height: 30),
-            const RegistrationButtonWidget()
+            const CustomButtonWidget(title: 'Войти',)
+            // const RegistrationButtonWidget()
           ],
         ),
       ),

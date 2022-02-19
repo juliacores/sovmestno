@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
 
 class AddressField extends StatefulWidget {
-  const AddressField({Key key}) : super(key: key);
+<<<<<<< HEAD:lib/presentation/registration/forms/form_widgets/address_field_widget.dart
+  const AddressField({Key? key}) : super(key: key);
+=======
+  const   AddressField({Key key}) : super(key: key);
+>>>>>>> 394cf484e9afce1bc8b322c1ca9b7379e76641c1:lib/modules/form/form_widgets/address_field_widget.dart
 
   @override
   _AddressFieldState createState() => _AddressFieldState();
 }
-//TODO сделать просто отдельный общий виджет Заголовок+Ввод с собственным TextEditingController. Сейчас работает некорректно
 class _AddressFieldState extends State<AddressField> {
-  TextEditingController addressController = TextEditingController();
+  TextEditingController addresFieldController = TextEditingController();
+  TextEditingController ageFieldController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,24 +29,24 @@ class _AddressFieldState extends State<AddressField> {
           width: 225,
           height: 40,
           child: TextField(
-            controller: addressController,
+            controller: addresFieldController,
             textAlign: TextAlign.start,
             decoration: InputDecoration(
               filled: true,
-              fillColor: MyColors.grayscale,
+              fillColor: AppColors.grayscale,
               hintText: 'Введите ваш город',
-              hintStyle: const TextStyle(color: MyColors.hintColor),
+              hintStyle: const TextStyle(color: AppColors.hintColor),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5),
                 borderSide: const BorderSide(
-                  color: MyColors.borderTextField,
+                  color: AppColors.borderTextField,
                   width: 0.5,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5),
                 borderSide: const BorderSide(
-                  color: MyColors.focusedBorderTextField,
+                  color: AppColors.focusedBorderTextField,
                   width: 0.5,
                 ),
               ),
@@ -56,27 +60,33 @@ class _AddressFieldState extends State<AddressField> {
         ),
         const SizedBox(height: 10),
         SizedBox(
-          width: 960,
+          width: 225,
           height: 40,
           child: TextField(
-            controller: addressController,
+            controller: ageFieldController,
             textAlign: TextAlign.start,
             decoration: InputDecoration(
               filled: true,
-              fillColor: MyColors.grayscale,
+<<<<<<< HEAD:lib/presentation/registration/forms/form_widgets/address_field_widget.dart
+              fillColor: AppColors.grayscale,
               hintText: 'Введите ваш город',
+              hintStyle: const TextStyle(color: AppColors.hintColor),
+=======
+              fillColor: MyColors.grayscale,
+              hintText: 'Введите ваш возраст',
               hintStyle: const TextStyle(color: MyColors.hintColor),
+>>>>>>> 394cf484e9afce1bc8b322c1ca9b7379e76641c1:lib/modules/form/form_widgets/address_field_widget.dart
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5),
                 borderSide: const BorderSide(
-                  color: MyColors.borderTextField,
+                  color: AppColors.borderTextField,
                   width: 0.5,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5),
                 borderSide: const BorderSide(
-                  color: MyColors.focusedBorderTextField,
+                  color: AppColors.focusedBorderTextField,
                   width: 0.5,
                 ),
               ),

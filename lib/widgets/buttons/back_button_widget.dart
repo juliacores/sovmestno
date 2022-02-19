@@ -5,8 +5,8 @@ class BackButtonWidget extends StatelessWidget {
   final GestureTapCallback onPressed;
 
   const BackButtonWidget({
-    Key key,
-    @required this.onPressed,
+    Key? key,
+    required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -20,12 +20,12 @@ class BackButtonWidget extends StatelessWidget {
           Icon(
             Icons.arrow_back_ios,
             size: 16,
-            color: MyColors.backgroundButton,
+            color: AppColors.backgroundButton,
           ),
           SizedBox(width: 8),
           Text(
             'Назад',
-            style: TextStyle(color: MyColors.backgroundButton, fontSize: 16),
+            style: TextStyle(color: AppColors.backgroundButton, fontSize: 16),
           ),
         ],
       ),

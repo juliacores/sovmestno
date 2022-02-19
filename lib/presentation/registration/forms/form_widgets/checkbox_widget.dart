@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
 
 class CheckboxWidget extends StatefulWidget {
-  final ValueChanged<bool> onChanged;
-  const CheckboxWidget({Key key,@required this.onChanged}) : super(key: key);
+  final ValueChanged<bool?> onChanged;
+  const CheckboxWidget({Key? key,required this.onChanged}) : super(key: key);
 
   @override
   _CheckboxWidgetState createState() => _CheckboxWidgetState();
 }
 
 class _CheckboxWidgetState extends State<CheckboxWidget> {
-  bool isChecked = false;
-  bool isCheck = false;
+  bool? isChecked = false;
+  bool? isCheck = false;
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +27,9 @@ class _CheckboxWidgetState extends State<CheckboxWidget> {
               side: const BorderSide(width: 0.5, color: Colors.black),
               checkColor: Colors.white,
               focusColor: Colors.black,
-              fillColor: MaterialStateProperty.all(MyColors.checkboxColor),
+              fillColor: MaterialStateProperty.all(AppColors.checkboxColor),
               value: isChecked,
-              onChanged: (bool value) {
+              onChanged: (bool? value) {
                 setState(
                   () {
                     isChecked = value;
@@ -55,9 +55,9 @@ class _CheckboxWidgetState extends State<CheckboxWidget> {
               side: const BorderSide(width: 0.5, color: Colors.black),
               checkColor: Colors.white,
               focusColor: Colors.black,
-              fillColor: MaterialStateProperty.all(MyColors.checkboxColor),
+              fillColor: MaterialStateProperty.all(AppColors.checkboxColor),
               value: isCheck,
-              onChanged: (bool value) {
+              onChanged: (bool? value) {
                 setState(
                   () {
                     isCheck = value;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
 
 class RegisterButtonWidget extends StatelessWidget {
-  const RegisterButtonWidget({Key key}) : super(key: key);
+  const RegisterButtonWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +15,10 @@ class RegisterButtonWidget extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, '/main_form');
+          Navigator.pushNamed(context, '/main_form_screen');
         },
         style: ElevatedButton.styleFrom(
-          primary: MyColors.backgroundButton,
+          primary: AppColors.backgroundButton,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),
           ),

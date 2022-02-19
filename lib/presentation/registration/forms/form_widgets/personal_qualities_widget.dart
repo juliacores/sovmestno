@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
 
 class PersonalQualities extends StatefulWidget {
-  const PersonalQualities({Key key}) : super(key: key);
+  const PersonalQualities({Key? key}) : super(key: key);
 
   @override
   _PersonalQualitiesState createState() => _PersonalQualitiesState();
@@ -16,30 +16,30 @@ class Tech {
 
 bool selected = false;
 final List<Tech> _chipsList = [
-  Tech('Толерантный', MyColors.appBarColor, false),
-  Tech('Честный', MyColors.appBarColor, false),
-  Tech('Общительный', MyColors.appBarColor, false),
-  Tech('Рефлексирующий', MyColors.appBarColor, false),
-  Tech('Заботливый', MyColors.appBarColor, false),
-  Tech('Смелый', MyColors.appBarColor, false),
-  Tech('Энергичный', MyColors.appBarColor, false),
+  Tech('Толерантный', AppColors.appBarColor, false),
+  Tech('Честный', AppColors.appBarColor, false),
+  Tech('Общительный', AppColors.appBarColor, false),
+  Tech('Рефлексирующий', AppColors.appBarColor, false),
+  Tech('Заботливый', AppColors.appBarColor, false),
+  Tech('Смелый', AppColors.appBarColor, false),
+  Tech('Энергичный', AppColors.appBarColor, false),
   //
-  Tech('Гибкий', MyColors.appBarColor, false),
-  Tech('Ответственный', MyColors.appBarColor, false),
-  Tech('Интроверт', MyColors.appBarColor, false),
-  Tech('Экстраверт', MyColors.appBarColor, false),
-  Tech('Стрессоустойчивый', MyColors.appBarColor, false),
-  Tech('Пунктуальный', MyColors.appBarColor, false),
-  Tech('Логичный', MyColors.appBarColor, false),
-  Tech('Веселый', MyColors.appBarColor, false),
+  Tech('Гибкий', AppColors.appBarColor, false),
+  Tech('Ответственный', AppColors.appBarColor, false),
+  Tech('Интроверт', AppColors.appBarColor, false),
+  Tech('Экстраверт', AppColors.appBarColor, false),
+  Tech('Стрессоустойчивый', AppColors.appBarColor, false),
+  Tech('Пунктуальный', AppColors.appBarColor, false),
+  Tech('Логичный', AppColors.appBarColor, false),
+  Tech('Веселый', AppColors.appBarColor, false),
 
-  Tech('Инициативный', MyColors.appBarColor, false),
-  Tech('Организованный', MyColors.appBarColor, false),
-  Tech('Креативный', MyColors.appBarColor, false),
-  Tech('Ведомый', MyColors.appBarColor, false),
-  Tech('Терпеливый', MyColors.appBarColor, false),
-  Tech('Перфекционист', MyColors.appBarColor, false),
-  Tech('Убедительный', MyColors.appBarColor, false),
+  Tech('Инициативный', AppColors.appBarColor, false),
+  Tech('Организованный', AppColors.appBarColor, false),
+  Tech('Креативный', AppColors.appBarColor, false),
+  Tech('Ведомый', AppColors.appBarColor, false),
+  Tech('Терпеливый', AppColors.appBarColor, false),
+  Tech('Перфекционист', AppColors.appBarColor, false),
+  Tech('Убедительный', AppColors.appBarColor, false),
 ];
 
 class _PersonalQualitiesState extends State<PersonalQualities> {

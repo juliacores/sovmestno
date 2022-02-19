@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:sovmestno/constants/colors.dart'; 
-import 'package:sovmestno/modules/form/form_widgets/personal_qualities_widget.dart';
-import 'package:sovmestno/modules/form/form_widgets/user_biography_widget.dart';
-import 'package:sovmestno/widgets/custom_button_widget.dart'; 
+import 'package:sovmestno/constants/colors.dart';
+import 'package:sovmestno/presentation/registration/forms/form_widgets/personal_qualities_widget.dart';
+import 'package:sovmestno/presentation/registration/forms/form_widgets/user_biography_widget.dart';
+import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
 
 class UserInformation extends StatelessWidget {
   final VoidCallback onSavePressed; 
 
   const UserInformation({
-    Key key,
-    @required this.onSavePressed, 
+    Key? key,
+    required this.onSavePressed, 
   }) : super(key: key);
  
   @override
@@ -24,7 +24,7 @@ class UserInformation extends StatelessWidget {
         Container(
           width: double.infinity,
           height: 0.2,
-          color: MyColors.backgroundButton,
+          color: AppColors.backgroundButton,
         ),
         const SizedBox(height: 30),
         const Text(
@@ -34,8 +34,8 @@ class UserInformation extends StatelessWidget {
         const PersonalQualities(),
         const SizedBox(height: 45),
         CustomButtonWidget(
-            text: 'Сохранить',
-            onPressed: () {
+            title: 'Сохранить',
+            callback: () {
               debugPrint('Сохранить');
               onSavePressed.call();
             }),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
 
 class DropdownFormFieldWidget extends StatefulWidget {
-  const DropdownFormFieldWidget({Key key}) : super(key: key);
+  const DropdownFormFieldWidget({Key? key}) : super(key: key);
 
   @override
   State<DropdownFormFieldWidget> createState() =>
@@ -19,18 +19,18 @@ class _DropdownFormFieldWidgetState extends State<DropdownFormFieldWidget> {
         decoration: InputDecoration(
           isDense: true,
           filled: true,
-          fillColor: MyColors.grayscale,
+          fillColor: AppColors.grayscale,
           hintText: 'Отметьте все навыки из списка',
-          hintStyle: const TextStyle(color: MyColors.hintColor),
+          hintStyle: const TextStyle(color: AppColors.hintColor),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5),
             borderSide: const BorderSide(
-              color: MyColors.borderTextField,
+              color: AppColors.borderTextField,
               width: 0.5,
             ),
           ),
         ),
-        onChanged: (String newValue) {
+        onChanged: (String? newValue) {
           setState(() {});
         },
         //TODO вынести в отдельный файл констант - навыки пришлю в ближайшее время

@@ -16,7 +16,6 @@ class LogIntoAccountWidget extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            //TODO вынести роуты в отдельный файл, брать оттуда
             Navigator.pushNamed(context, '/loginByEmail');
           },
           child: const Text(

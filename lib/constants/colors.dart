@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class MyColors {
+class AppColors {
 //
   static const Color backgroundButton = Color(0xff023270);
 
