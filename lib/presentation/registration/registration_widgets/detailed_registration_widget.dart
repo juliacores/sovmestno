@@ -142,13 +142,9 @@ class _DetailedRegistrationWidgetState
             ),
             const SizedBox(height: 19),
             const UserImageWidget(),
-<<<<<<< HEAD:lib/presentation/registration/registration_widgets/detailed_registration_widget.dart
             CustomButtonWidget(title: 'Зарегестрироваться',),
             const SizedBox(height: 16),
-=======
-            
->>>>>>> 394cf484e9afce1bc8b322c1ca9b7379e76641c1:lib/modules/registration/registration_widgets/detailed_registration_widget.dart
-          ],
+     ],
         ),
       ),
     );

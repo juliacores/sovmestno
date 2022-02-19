@@ -3,19 +3,14 @@ import 'package:sovmestno/constants/colors.dart';
 
 import '../../../widgets/buttons/custom_main_button.dart';
 
-<<<<<<< HEAD:lib/presentation/registration/registration_widgets/registration_widget.dart
 class Registration extends StatefulWidget {
   const Registration({Key? key}) : super(key: key);
-=======
-class LoginByEmailWidget extends StatefulWidget {
-  const LoginByEmailWidget({Key key}) : super(key: key);
->>>>>>> 394cf484e9afce1bc8b322c1ca9b7379e76641c1:lib/presentation/registration/registration_widgets/login_by_email_widget.dart
 
   @override
-  State<LoginByEmailWidget> createState() => _LoginByEmailWidgetState();
+  State<Registration> createState() => _RegistrationState();
 }
 
-class _LoginByEmailWidgetState extends State<LoginByEmailWidget> {
+class _RegistrationState extends State<Registration> {
   bool _showPassword = false;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();

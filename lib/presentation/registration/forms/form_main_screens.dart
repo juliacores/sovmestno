@@ -66,17 +66,12 @@ class _FormMainScreenState extends State<FormMainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< HEAD:lib/presentation/registration/form_main.dart
+
       backgroundColor: AppColors.appBarColor,
       //TODO change to real data
       appBar: const CustomAppBar(
           actions: ProfileActions(
-=======
-      backgroundColor: MyColors.appBarColor,
-      appBar: const FormAppBar(
-        mentor: false,
->>>>>>> 394cf484e9afce1bc8b322c1ca9b7379e76641c1:lib/presentation/registration/forms/form_main_screens.dart
-        name: 'Татьяна Иванова',
+ name: 'Татьяна Иванова',
         avatarUrl:
             'https://firebasestorage.googleapis.com/v0/b/sovmestno-co.appspot.com/o/11.png?alt=media&token=e64a6ccb-87e7-4b33-95ca-309546586901',
       )),

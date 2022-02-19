@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
+
 import 'package:sovmestno/presentation/registration/forms/main_form.dart';
 import 'package:sovmestno/presentation/registration/forms/matching_for_mentor.dart';
 import 'package:sovmestno/presentation/registration/forms/mentor_skills.dart';
@@ -27,20 +27,3 @@ class Routes {
 
   };
 }
-=======
-import 'package:sovmestno/modules/form/form_screens/form_main_screens.dart';
-
-import '../modules/registration/registration_screens/authorization_screen.dart';
-import '../modules/registration/registration_screens/login_by_email_screen.dart';
-import '../modules/registration/registration_screens/registration_screen.dart';
-
-var customRoutes = <String, WidgetBuilder>{
-  //registration screens
-  '/authorization': (context) => const AuthorizationScreen(),
-  '/loginByEmail': (context) => const LoginByEmailScreen(),
-  '/registration': (context) => const RegistrationScreen(),
-
-  //form screens
-  '/main_form_screen': (context) => const FormMainScreen(),
-};
->>>>>>> 394cf484e9afce1bc8b322c1ca9b7379e76641c1

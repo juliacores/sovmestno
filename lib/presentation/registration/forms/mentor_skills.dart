@@ -7,8 +7,8 @@ import 'package:sovmestno/widgets/buttons/back_button_widget.dart';
 import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
 
 class MentorSkills extends StatelessWidget {
-  const MentorSkills({Key? key}) : super(key: key);
-
+  const MentorSkills({Key? key,  this.onSavePressed}) : super(key: key);
+final onSavePressed;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -52,9 +52,7 @@ class MentorSkills extends StatelessWidget {
         const SizedBox(height: 30),
         CustomButtonWidget(
             title: 'Сохранить',
-            callback: () {
-              debugPrint('Сохранить');
-            }),
+            callback: onSavePressed),
         const SizedBox(height: 45),
       ],
     );
