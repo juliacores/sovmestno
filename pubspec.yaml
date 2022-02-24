@@ -47,14 +47,25 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/logo.png
+  assets:
+    - assets/images/
   fonts:
     - family: mak
       fonts:
         - asset: fonts/mak.ttf
           weight: 300
-          
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto-Regular.ttf
+          weight: 400
+        - asset: fonts/Roboto-Medium.ttf
+          weight: 500
+        - asset: fonts/Roboto-Bold.ttf
+          weight: 700
+    - family: Mulish
+      fonts:
+        - asset: fonts/Mulish-Bold.ttf
+          weight: 700
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

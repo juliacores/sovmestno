@@ -6,6 +6,7 @@ import 'package:sovmestno/presentation/registration/registration_widgets/registr
 import 'package:sovmestno/widgets/appbar/auth_actions.dart';
 import 'package:sovmestno/widgets/appbar/custom_appbar.dart';
 import 'package:sovmestno/widgets/header_with_line.dart';
+import 'package:sovmestno/widgets/my_menti_card.dart';
 import 'package:sovmestno/widgets/registration_app_bar.dart';
 
 
@@ -120,6 +121,17 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
             regState = 3;
           }),
         ),
+    //Вывод виджетов на экран авторизации для проверки
+    SizedBox(height: 30,),
+    Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(width: 50,),
+        MyMentiesCard(mentiesAvailable: false),
+        SizedBox(width: 50,),
+        MyMentiesCard(mentiesAvailable: true, name: 'Иван Зайцев',),
+      ],
+    )
       ];
 
   secondRegStep() => [

@@ -5,28 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f48310b-b233-4f0f-b366-532243994c91" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/images/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/icon_person.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Mulish-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Roboto-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Roboto-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonts/Roboto-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/widgets/avatar.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/widgets/my_menti_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_19_02_2022__13_57__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/constants/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants/routes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/constants/styles.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants/styles.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modules/form/form_screens/form_main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/form/form_screens/form_main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modules/form/form_screens/mentor_skills.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/form/form_screens/mentor_skills.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modules/form/form_widgets/form_app_bar_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/form/form_widgets/form_app_bar_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modules/registration/registration_screens/authorization_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/registration/registration_screens/authorization_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modules/registration/registration_screens/login_by_email_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/registration/registration_screens/login_by_email_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modules/registration/registration_screens/registration_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/registration/registration_screens/registration_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modules/registration/registration_widgets/log_into_account_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/registration/registration_widgets/log_into_account_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modules/registration/registration_widgets/registration_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/registration/registration_widgets/registration_app_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/modules/registration/registration_widgets/registration_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/modules/registration/registration_widgets/registration_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/form_main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/form_main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/form_main_screens.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/form_main_screens.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/form_widgets/address_field_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/form_widgets/address_field_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/main_form.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/main_form.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/matching_for_mentor.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/matching_for_mentor.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/mentor_skills.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/mentor_skills.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/detailed_registration_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/detailed_registration_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/login_by_email_widget.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/registration_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/registration_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants/colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants/colors.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/auth/authorization_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/auth/authorization_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <list id="0f7fbc54-855c-4b7e-8962-fc77b3fa64d0" name="refactor" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +30,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -48,7 +43,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="f25894a4ee4b71a58640a98d7e5c534919719e9f" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,6 +89,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
@@ -102,11 +101,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images" />
+      <recent name="$PROJECT_DIR$/fonts" />
       <recent name="$PROJECT_DIR$/lib/widgets/buttons" />
       <recent name="$PROJECT_DIR$/lib/presentation/registration/forms" />
       <recent name="$PROJECT_DIR$/lib/presentation/registration" />
-      <recent name="$PROJECT_DIR$/lib/widgets/appbar" />
-      <recent name="$PROJECT_DIR$/lib/widgets" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
