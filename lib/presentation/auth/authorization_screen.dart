@@ -8,7 +8,6 @@ import 'package:sovmestno/widgets/appbar/custom_appbar.dart';
 import 'package:sovmestno/widgets/button_constructor.dart';
 import 'package:sovmestno/widgets/header_with_line.dart';
 import 'package:sovmestno/widgets/my_menti_card.dart';
-import 'package:sovmestno/widgets/registration_app_bar.dart';
 
 
 class AuthorizationScreen extends StatefulWidget {
