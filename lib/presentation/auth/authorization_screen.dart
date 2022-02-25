@@ -5,6 +5,7 @@ import 'package:sovmestno/presentation/registration/registration_widgets/detaile
 import 'package:sovmestno/presentation/registration/registration_widgets/registration_widget.dart';
 import 'package:sovmestno/widgets/appbar/auth_actions.dart';
 import 'package:sovmestno/widgets/appbar/custom_appbar.dart';
+import 'package:sovmestno/widgets/button_constructor.dart';
 import 'package:sovmestno/widgets/header_with_line.dart';
 import 'package:sovmestno/widgets/my_menti_card.dart';
 import 'package:sovmestno/widgets/registration_app_bar.dart';
@@ -130,6 +131,10 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
         MyMentiesCard(mentiesAvailable: false),
         SizedBox(width: 50,),
         MyMentiesCard(mentiesAvailable: true, name: 'Иван Зайцев',),
+        SizedBox(width: 50,),
+        ButtonConstructor(buttonIsBlue: false, buttonText: 'Белая', onPressed: (){}),
+        SizedBox(width: 50,),
+        ButtonConstructor(buttonIsBlue: true, buttonText: 'Синяя', onPressed: (){})
       ],
     )
       ];
