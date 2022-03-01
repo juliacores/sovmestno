@@ -23,7 +23,7 @@ class MainForm extends StatelessWidget {
         const SizedBox(height: 30),
          AddressField(),
         const SizedBox(height: 46),
-        CustomButtonWidget(
+        CustomButtonWidget.blue(
             title: 'Сохранить',
             callback: () {
               debugPrint('Сохранить');

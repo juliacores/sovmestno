@@ -33,7 +33,7 @@ class UserInformation extends StatelessWidget {
         const SizedBox(height: 20),
         const PersonalQualities(),
         const SizedBox(height: 45),
-        CustomButtonWidget(
+        CustomButtonWidget.blue(
             title: 'Сохранить',
             callback: () {
               debugPrint('Сохранить');

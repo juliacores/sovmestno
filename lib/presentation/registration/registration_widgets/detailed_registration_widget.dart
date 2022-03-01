@@ -142,7 +142,7 @@ class _DetailedRegistrationWidgetState
             ),
             const SizedBox(height: 19),
             const UserImageWidget(),
-            CustomButtonWidget(title: 'Зарегестрироваться',),
+            CustomButtonWidget.blue(title: 'Зарегестрироваться',),
             const SizedBox(height: 16),
      ],
         ),

@@ -44,7 +44,7 @@ class MatchingForMentor extends StatelessWidget {
           style: TextStyle(fontSize: 18, color: Colors.black),
         ),
         const SizedBox(height: 40),
-        CustomButtonWidget(title: 'Далее', callback: onSavePressed),
+        CustomButtonWidget.blue(title: 'Далее', callback: onSavePressed),
         const SizedBox(height: 45),
       ],
     );

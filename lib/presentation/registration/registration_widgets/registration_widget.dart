@@ -114,7 +114,7 @@ class _RegistrationState extends State<Registration> {
               ),
             ),
             const SizedBox(height: 30),
-            const CustomButtonWidget(title: 'Войти',)
+            CustomButtonWidget.blue(title: 'Войти',)
             // const RegistrationButtonWidget()
           ],
         ),

@@ -18,6 +18,12 @@ class Styles {
     fontWeight: FontWeight.w700,
   );
 
+  static const TextStyle roboroRegular = TextStyle(
+      color: Color.fromRGBO(37, 39, 51, 1),
+      fontFamily: 'Roboto',
+      fontSize: 14,
+      fontWeight: FontWeight.w400);
+
   //
   static GoogleFonts hintStyle = GoogleFonts();
 
@@ -36,6 +42,17 @@ class Styles {
   static ButtonStyle buttonStyle = ElevatedButton.styleFrom(
     primary: Colors.white,
     onPrimary: Colors.blue[100],
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(8.0),
+      side: const BorderSide(
+        width: 1.0,
+        color: AppColors.backgroundButton,
+      ),
+    ),
+  );
+
+  static ButtonStyle blueButtonStyle = ElevatedButton.styleFrom(
+    primary: AppColors.backgroundButton,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(8.0),
       side: const BorderSide(

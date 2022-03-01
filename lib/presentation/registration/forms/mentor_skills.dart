@@ -50,7 +50,7 @@ final onSavePressed;
         const DropdownFormFieldWidget(),
         /* ДЛЯ "Dropdown" НЕТ категорий !!!!!!!!!!! */
         const SizedBox(height: 30),
-        CustomButtonWidget(
+        CustomButtonWidget.blue(
             title: 'Сохранить',
             callback: onSavePressed),
         const SizedBox(height: 45),

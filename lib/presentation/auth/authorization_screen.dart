@@ -5,7 +5,7 @@ import 'package:sovmestno/presentation/registration/registration_widgets/detaile
 import 'package:sovmestno/presentation/registration/registration_widgets/registration_widget.dart';
 import 'package:sovmestno/widgets/appbar/auth_actions.dart';
 import 'package:sovmestno/widgets/appbar/custom_appbar.dart';
-import 'package:sovmestno/widgets/button_constructor.dart';
+import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
 import 'package:sovmestno/widgets/header_with_line.dart';
 import 'package:sovmestno/widgets/my_menti_card.dart';
 
@@ -127,13 +127,13 @@ class _AuthorizationScreenState extends State<AuthorizationScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(width: 50,),
-        MyMentiesCard(mentiesAvailable: false),
+        MyMentiesCard.empty(),
         SizedBox(width: 50,),
-        MyMentiesCard(mentiesAvailable: true, name: 'Иван Зайцев',),
+        MyMentiesCard.available(name: 'Иван Зайцев'),
         SizedBox(width: 50,),
-        ButtonConstructor(buttonIsBlue: false, buttonText: 'Белая', onPressed: (){}),
+        CustomButtonWidget.blue(title: 'Синяя-синяя кнопка', callback: (){},),
         SizedBox(width: 50,),
-        ButtonConstructor(buttonIsBlue: true, buttonText: 'Синяя', onPressed: (){})
+        CustomButtonWidget.white(title: 'White', callback: (){},),
       ],
     )
       ];

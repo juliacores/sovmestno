@@ -18,4 +18,10 @@ class AppColors {
 
   static const Color checkboxColor = Color(0xffFFD448);
 
+  static const Color shadowColor = Color(0x00000029);
+
+  static const Color emptyMentiIconColor = Color(0xff3751FF);
+
+  static const Color MentiCardTextColor = Color(0x252733);
+
 }
