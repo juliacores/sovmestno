@@ -6,8 +6,6 @@ import 'package:sovmestno/presentation/registration/registration_widgets/registr
 import 'package:sovmestno/widgets/appbar/auth_actions.dart';
 import 'package:sovmestno/widgets/appbar/custom_appbar.dart';
 import 'package:sovmestno/widgets/header_with_line.dart';
-import 'package:sovmestno/widgets/registration_app_bar.dart';
-
 
 class AuthorizationScreen extends StatefulWidget {
   const AuthorizationScreen({Key? key}) : super(key: key);

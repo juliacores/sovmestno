@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "167388937151",
+    "project_id": "sovmestno-co",
+    "storage_bucket": "sovmestno-co.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167388937151:android:2c866244289ee27045ff0a",
+        "android_client_info": {
+          "package_name": "com.company.sovmestno"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "167388937151-kf5svo3c2db3bv7f2ksl0isjlefms0nk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAw-cA_kw9K8bgskWNdPKrXMAOH2yHtuM8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "167388937151-kf5svo3c2db3bv7f2ksl0isjlefms0nk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
