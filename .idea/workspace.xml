@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f48310b-b233-4f0f-b366-532243994c91" name="Default Changelist" comment="Переделаны конструкторы кнопок и карточкек менти">
+    <list default="true" id="1f48310b-b233-4f0f-b366-532243994c91" name="Default Changelist" comment="add text styles">
+      <change afterPath="$PROJECT_DIR$/lib/models/user_login.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/constants/styles.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants/styles.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/buttons/custom_main_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/buttons/custom_main_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/my_menti_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/my_menti_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/registration_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/registration_widget.dart" afterDir="false" />
     </list>
     <list id="0f7fbc54-855c-4b7e-8962-fc77b3fa64d0" name="refactor" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646159669828</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add text styles">
+      <created>1646477131614</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1646477131614</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -176,6 +182,7 @@
     <MESSAGE value="Добавлены виджеты круглого аватара и карточек раздела &quot;Мои менти&quot;. Для теста виджеты выведены на главный экран" />
     <MESSAGE value="Добавлен конструктор кнопок, пока с фиксированной шириной." />
     <MESSAGE value="Переделаны конструкторы кнопок и карточкек менти" />
-    <option name="LAST_COMMIT_MESSAGE" value="Переделаны конструкторы кнопок и карточкек менти" />
+    <MESSAGE value="add text styles" />
+    <option name="LAST_COMMIT_MESSAGE" value="add text styles" />
   </component>
 </project>
