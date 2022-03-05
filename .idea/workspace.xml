@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f48310b-b233-4f0f-b366-532243994c91" name="Default Changelist" comment="Добавлен конструктор кнопок, пока с фиксированной шириной.">
+    <list default="true" id="1f48310b-b233-4f0f-b366-532243994c91" name="Default Changelist" comment="Переделаны конструкторы кнопок и карточкек менти">
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/constants/colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants/colors.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/constants/styles.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants/styles.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/auth/authorization_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/auth/authorization_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/main_form.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/main_form.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/matching_for_mentor.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/matching_for_mentor.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/mentor_skills.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/mentor_skills.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/user_information.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/user_information.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/detailed_registration_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/detailed_registration_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/registration_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/registration_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/button_constructor.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/button_constructor.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/widgets/buttons/custom_main_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/buttons/custom_main_button.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/widgets/my_menti_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/my_menti_card.dart" afterDir="false" />
     </list>
@@ -145,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645784246273</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Переделаны конструкторы кнопок и карточкек менти">
+      <created>1646159669828</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1646159669828</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -179,6 +175,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Добавлены виджеты круглого аватара и карточек раздела &quot;Мои менти&quot;. Для теста виджеты выведены на главный экран" />
     <MESSAGE value="Добавлен конструктор кнопок, пока с фиксированной шириной." />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен конструктор кнопок, пока с фиксированной шириной." />
+    <MESSAGE value="Переделаны конструкторы кнопок и карточкек менти" />
+    <option name="LAST_COMMIT_MESSAGE" value="Переделаны конструкторы кнопок и карточкек менти" />
   </component>
 </project>

@@ -24,6 +24,36 @@ class Styles {
       fontSize: 14,
       fontWeight: FontWeight.w400);
 
+  static const TextStyle roboto_18_500_blue = TextStyle(
+      color: Color.fromRGBO(2, 50, 112, 1),
+      fontFamily: 'Roboto',
+      fontSize: 18,
+      fontWeight: FontWeight.w500);
+
+  static const TextStyle roboto_14_500_black = TextStyle(
+      color: Color.fromRGBO(37, 39, 51, 1),
+      fontFamily: 'Roboto',
+      fontSize: 14,
+      fontWeight: FontWeight.w500);
+
+  static const TextStyle roboto_14_500_lightBlue = TextStyle(
+      color: Color.fromRGBO(141, 191, 255, 1),
+      fontFamily: 'Roboto',
+      fontSize: 14,
+      fontWeight: FontWeight.w500);
+
+  static const TextStyle mulish_18_700_grey = TextStyle(
+    color: Color.fromRGBO(119, 121, 134, 1),
+    fontFamily: 'Mulish',
+    fontSize: 18,
+    fontWeight: FontWeight.w700);
+
+  static const TextStyle roboto_14_700_lightGrey = TextStyle(
+    color: Color.fromRGBO(159, 162, 180, 1),
+    fontFamily: 'Roboto',
+    fontSize: 14,
+    fontWeight: FontWeight.w700);
+
   //
   static GoogleFonts hintStyle = GoogleFonts();
 
