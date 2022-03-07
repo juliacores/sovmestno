@@ -19,6 +19,7 @@ class AuthService {
       final authResault = await _firebaseAuth.createUserWithEmailAndPassword(
           email: email, password: password);
       final user = authResault.user;
+      //TODO start registration process this
       return UserModel.fromFirbase(user!);
     } catch (e) {
       throw Exception('Eror Fetching User');
