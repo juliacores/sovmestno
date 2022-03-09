@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
+import 'package:sovmestno/constants/styles.dart';
 import 'package:sovmestno/presentation/application/application_send.dart';
-import 'package:sovmestno/presentation/application/application_widgets/application_text_widget.dart';
 import 'package:sovmestno/presentation/application/application_widgets/applicationcard_text_widget.dart';
+import 'package:sovmestno/widgets/buttons/card_application_button.dart';
 
 class ApplicationCard extends StatefulWidget {
-  ApplicationCard({Key? key}) : super(key: key);
+  const ApplicationCard({Key? key}) : super(key: key);
 
   @override
   State<ApplicationCard> createState() => _ApplicationState();
@@ -25,8 +26,8 @@ class _ApplicationState extends State<ApplicationCard> {
             width: 474,
             decoration: BoxDecoration(
               color: Colors.white,
-              boxShadow: [
-                new BoxShadow(
+              boxShadow: const [
+                BoxShadow(
                   color: Colors.black,
                   blurRadius: 1.0,
                 ),
@@ -47,114 +48,56 @@ class _ApplicationState extends State<ApplicationCard> {
                             child: Image.network('src'),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 70,
                         ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              'Татьяна Иванова',
-                              style: TextStyle(
-                                color: AppColors.backgroundButton,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const SizedBox(height: 14),
-                            const Text(
-                              'Москва, 35 лет',
-                              style: TextStyle(
-                                color: AppColors.hintColor,
-                                fontSize: 14,
-                              ),
-                            ),
-                            const Text('Директор по маркетингу',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                )),
+                          children: const [
+                            Text('Татьяна Иванова',
+                                style: Styles.blueColor18bold),
+                            SizedBox(height: 14),
+                            Text('Москва, 35 лет', style: Styles.hintColor14),
+                            Text('Директор по маркетингу',
+                                style: Styles.colorBlack14bold),
                           ],
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     ),
-                    ApplicationCardTextWidget(),
-                    SizedBox(
+                    const ApplicationCardTextWidget(),
+                    const SizedBox(
                       height: 6,
                     ),
                     Row(
                       children: [
-                        Container(
-                          child: Center(
-                            child: const Text(
-                              'SMM',
-                              style: TextStyle(
-                                  color: AppColors.hintColor,
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          height: 33,
-                          width: 56,
-                          decoration: BoxDecoration(
-                            // color: Colors.white,
-                            border: Border.all(color: AppColors.hintColor),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                        ),
-                        SizedBox(
+                        CardButtom(
+                            name: 'SMM', height: 33, width: 56, onTap: () {}),
+                        const SizedBox(
                           width: 13,
                         ),
-                        Container(
-                          child: Center(
-                            child: const Text(
-                              'Менеджмент \nкоманды',
-                              style: TextStyle(
-                                  color: AppColors.hintColor,
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          height: 33,
-                          width: 141,
-                          decoration: BoxDecoration(
-                            // color: Colors.white,
-                            border: Border.all(color: AppColors.hintColor),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                        ),
-                        SizedBox(
+                        CardButtom(
+                            name: 'Менеджмент \nкоманды',
+                            height: 33,
+                            width: 141,
+                            onTap: () {}),
+                        const SizedBox(
                           width: 13,
                         ),
-                        Container(
-                          child: Center(
-                            child: const Text(
-                              'Контексная \nреклама',
-                              style: TextStyle(
-                                  color: AppColors.hintColor,
-                                  fontSize: 11,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          height: 33,
-                          width: 130,
-                          decoration: BoxDecoration(
-                            // color: Colors.white,
-                            border: Border.all(color: AppColors.hintColor),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                        ),
+                        CardButtom(
+                            name: 'Контексная \nреклама',
+                            height: 33,
+                            width: 130,
+                            onTap: () {}),
                       ],
                     ),
                   ]),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 99,
           ),
           ApplicationSend(),

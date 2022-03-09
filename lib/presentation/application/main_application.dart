@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/presentation/application/application_widgets/application_image_widget.dart';
 import 'package:sovmestno/presentation/application/application_widgets/application_text_widget.dart';
+import 'package:sovmestno/widgets/buttons/card_application_button.dart';
 
-import 'application_widgets/application_button_widget.dart';
+import '../../widgets/buttons/application_button_widget.dart';
 
 class ApplicationForm extends StatefulWidget {
-  ApplicationForm({Key? key}) : super(key: key);
+  const ApplicationForm({Key? key}) : super(key: key);
 
   @override
   State<ApplicationForm> createState() => _ApplicationFormState();
@@ -22,8 +22,8 @@ class _ApplicationFormState extends State<ApplicationForm> {
         width: 953,
         decoration: BoxDecoration(
           color: Colors.white,
-          boxShadow: [
-            new BoxShadow(
+          boxShadow: const [
+            BoxShadow(
               color: Colors.black,
               blurRadius: 1.0,
             ),
@@ -36,100 +36,59 @@ class _ApplicationFormState extends State<ApplicationForm> {
             children: [
               Row(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 36,
                   ),
-                  ApplicationImageWidget(),
-                  SizedBox(
+                  const ApplicationImageWidget(),
+                  const SizedBox(
                     width: 79,
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      ApplicationTextWidget(),
-                      SizedBox(
+                      const ApplicationTextWidget(),
+                      const SizedBox(
                         height: 8,
                       ),
                       Row(
                         children: [
-                          Container(
-                            child: Center(
-                              child: const Text(
-                                'SMM',
-                                style: TextStyle(
-                                    color: AppColors.hintColor,
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            height: 24,
-                            width: 61,
-                            decoration: BoxDecoration(
-                              // color: Colors.white,
-                              border: Border.all(color: AppColors.hintColor),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                          ),
-                          SizedBox(
+                          CardButtom(
+                              name: 'SMM', height: 24, width: 61, onTap: () {}),
+                          const SizedBox(
                             width: 13,
                           ),
-                          Container(
-                            child: Center(
-                              child: const Text(
-                                'Менеджмент команды',
-                                style: TextStyle(
-                                    color: AppColors.hintColor,
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            height: 24,
-                            width: 153,
-                            decoration: BoxDecoration(
-                              // color: Colors.white,
-                              border: Border.all(color: AppColors.hintColor),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                          ),
-                          SizedBox(
+                          CardButtom(
+                              name: 'Менеджмент команды',
+                              height: 24,
+                              width: 153,
+                              onTap: () {}),
+                          const SizedBox(
                             width: 13,
                           ),
-                          Container(
-                            child: Center(
-                              child: const Text(
-                                'Контексная реклама',
-                                style: TextStyle(
-                                    color: AppColors.hintColor,
-                                    fontSize: 11,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                            height: 24,
-                            width: 141,
-                            decoration: BoxDecoration(
-                              // color: Colors.white,
-                              border: Border.all(color: AppColors.hintColor),
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                          ),
+                          CardButtom(
+                              name: 'Контексная реклама',
+                              height: 24,
+                              width: 141,
+                              onTap: () {}),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 13,
                       ),
                     ],
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 18,
               ),
               Row(
-                children: [
+                children: const [
                   SizedBox(
                     width: 701,
                   ),
-                  ApplicationButtonWidget(),
+                  ApplicationButtonWidget(
+                      name: 'Выбрать этого ментора', height: 40, width: 226),
                 ],
               ),
             ],

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
+import 'package:sovmestno/constants/styles.dart';
+import 'package:sovmestno/constants/text.dart';
+import 'package:sovmestno/widgets/buttons/application_button_widget.dart';
 
 class ApplicationSend extends StatefulWidget {
   ApplicationSend({Key? key}) : super(key: key);
@@ -15,24 +18,17 @@ class _ApplicationSendState extends State<ApplicationSend> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 70,
           ),
           const Text(
             'Это сообщение будет отправлено ментору:',
-            style: TextStyle(
-                color: Colors.black, fontSize: 14, fontWeight: FontWeight.bold),
+            style: Styles.colorBlack14bold,
           ),
           Container(
-            child: Padding(
-              padding: const EdgeInsets.all(14.0),
-              child: const Text(
-                'Привет! Меня зовут Татьяна. \n\n\nЯ очень позитивный и веселый человек. Помимо \nпрофессиональных интересов, я люблю проводить \nвремя на природе с семьей - кататься на велосипеде, \nбегать.\n\nЯ люблю ответсвенность, поэтому уже больше 10 лет \nработаю в управлении. Являюсь спикером \nмеждународных конференций.\n\nЯ хотела бы научиться управлять командой. Буду рада \nесли вы поможете!\n\n\nС уважением,\nТатьяна',
-                style: TextStyle(
-                    color: AppColors.hintColor,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold),
-              ),
+            child: const Padding(
+              padding: EdgeInsets.all(14.0),
+              child: Text(ConstText.cardText, style: Styles.hintColor14Bold),
             ),
             height: 333,
             width: 476,
@@ -42,33 +38,18 @@ class _ApplicationSendState extends State<ApplicationSend> {
               borderRadius: BorderRadius.circular(8.0),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 33,
           ),
           Row(
-            children: [
+            children: const [
               SizedBox(
                 width: 234,
               ),
-              SizedBox(
+              ApplicationButtonWidget(
+                name: 'Отправить',
                 width: 226,
                 height: 40,
-                child: ElevatedButton(
-                  child: const Text(
-                    'Отправить',
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
-                  ),
-                  onPressed: () {
-                    // Navigator.pushNamed(context, '');
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: AppColors.backgroundButton,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                  ),
-                ),
               ),
             ],
           ),
