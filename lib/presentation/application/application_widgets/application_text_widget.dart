@@ -4,7 +4,7 @@ import 'package:sovmestno/constants/styles.dart';
 
 class ApplicationTextWidget extends StatelessWidget {
   const ApplicationTextWidget({Key? key}) : super(key: key);
-
+//TODO что это? почему хардкод? надо принимать параметры
   @override
   Widget build(BuildContext context) {
     return Column(
