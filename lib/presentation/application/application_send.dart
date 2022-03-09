@@ -7,7 +7,7 @@ class ApplicationSend extends StatefulWidget {
   @override
   State<ApplicationSend> createState() => _ApplicationSendState();
 }
-
+//TODO stateless!!
 class _ApplicationSendState extends State<ApplicationSend> {
   @override
   Widget build(BuildContext context) {
@@ -50,6 +50,7 @@ class _ApplicationSendState extends State<ApplicationSend> {
               SizedBox(
                 width: 234,
               ),
+              //TODO поставить кнопки за widgets/buttons
               SizedBox(
                 width: 226,
                 height: 40,

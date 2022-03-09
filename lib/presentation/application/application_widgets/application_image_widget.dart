@@ -3,7 +3,7 @@ import 'package:sovmestno/constants/colors.dart';
 
 class ApplicationImageWidget extends StatelessWidget {
   const ApplicationImageWidget({Key? key}) : super(key: key);
-
+//TODO почему все захардкожено? надо сделать прием параметров
   @override
   Widget build(BuildContext context) {
     return Column(

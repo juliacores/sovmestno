@@ -10,8 +10,7 @@ class ApplicationForm extends StatefulWidget {
 
   @override
   State<ApplicationForm> createState() => _ApplicationFormState();
-}
-
+}//TODO почему стейтфул?
 class _ApplicationFormState extends State<ApplicationForm> {
   @override
   Widget build(BuildContext context) {
