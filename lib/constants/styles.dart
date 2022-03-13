@@ -54,6 +54,32 @@ class Styles {
     fontSize: 14,
     fontWeight: FontWeight.w700);
 
+  static const TextStyle hintColor11bold = TextStyle(
+    color: AppColors.hintColor,
+    fontSize: 11,
+    fontWeight: FontWeight.bold,
+  );
+  static const TextStyle blueColor18bold = TextStyle(
+    color: AppColors.backgroundButton,
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+  );
+  static const TextStyle hintColor14 = TextStyle(
+    color: AppColors.hintColor,
+    fontSize: 14,
+  );
+  static const TextStyle hintColor14Bold = TextStyle(
+      color: AppColors.hintColor, fontSize: 14, fontWeight: FontWeight.bold);
+  static const TextStyle colorBlack14bold = TextStyle(
+    color: Colors.black,
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
+  );
+  static const TextStyle colorBlack11 = TextStyle(
+    color: Colors.black,
+    fontSize: 11,
+  );
+
   //
   static GoogleFonts hintStyle = GoogleFonts();
 
