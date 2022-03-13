@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
-
+import 'package:sovmestno/domain/models/user.dart';
+import 'package:sovmestno/services/auth_service.dart';
 import '../../../widgets/buttons/custom_main_button.dart';
 
 class Registration extends StatefulWidget {
@@ -11,9 +12,26 @@ class Registration extends StatefulWidget {
 }
 
 class _RegistrationState extends State<Registration> {
+  @override
+  void initState() {
+    _authService = AuthService();
+    super.initState();
+  }
+
   bool _showPassword = false;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  late final AuthService _authService;
+  void _loginButtonAction() async {
+    if (emailController.text.isEmpty || passwordController.text.isEmpty) return;
+    UserModel userModel = await _authService.singInWithEmailAndPassword(
+        emailController.text.trim(), passwordController.text.trim());
+    if (userModel == null) {
+    } else {
+      emailController.clear();
+      passwordController.clear();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -114,7 +132,10 @@ class _RegistrationState extends State<Registration> {
               ),
             ),
             const SizedBox(height: 30),
-            CustomButtonWidget.blue(title: 'Войти',)
+            CustomButtonWidget(
+              callback: () {},
+              title: 'Войти',
+            )
             // const RegistrationButtonWidget()
           ],
         ),
