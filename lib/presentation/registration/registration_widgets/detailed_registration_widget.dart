@@ -1,23 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
+import 'package:sovmestno/presentation/auth/login_provider.dart';
 import 'package:sovmestno/presentation/registration/registration_widgets/user_image_widget.dart';
 import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
 
-class DetailedRegistrationWidget extends StatefulWidget {
+class DetailedRegistrationWidget extends StatelessWidget {
   const DetailedRegistrationWidget({Key? key}) : super(key: key);
-
-  @override
-  State<DetailedRegistrationWidget> createState() =>
-      _DetailedRegistrationWidgetState();
-}
-
-class _DetailedRegistrationWidgetState
-    extends State<DetailedRegistrationWidget> {
-  bool _showPassword = false;
-  
-  final TextEditingController userNameController = TextEditingController();
-  final TextEditingController userSurnameController = TextEditingController();
-  final TextEditingController userPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +31,7 @@ class _DetailedRegistrationWidgetState
             ),
             const SizedBox(height: 6),
             TextField(
-              controller: userNameController,
+              controller: Provider.of<LoginProvider>(context).nameController,
               textAlign: TextAlign.start,
               decoration: InputDecoration(
                 filled: true,
@@ -72,7 +61,7 @@ class _DetailedRegistrationWidgetState
             ),
             const SizedBox(height: 6),
             TextField(
-              controller: userSurnameController,
+              controller: Provider.of<LoginProvider>(context).surnameController,
               textAlign: TextAlign.start,
               decoration: InputDecoration(
                 filled: true,
@@ -102,9 +91,9 @@ class _DetailedRegistrationWidgetState
             ),
             const SizedBox(height: 6),
             TextField(
-              controller: userPasswordController,
+              controller: Provider.of<LoginProvider>(context).passwordController,
               textAlign: TextAlign.start,
-              obscureText: !_showPassword,
+              obscureText: Provider.of<LoginProvider>(context).showPassword,
               decoration: InputDecoration(
                 filled: true,
                 fillColor: AppColors.grayscale,
@@ -127,11 +116,12 @@ class _DetailedRegistrationWidgetState
                 suffixIcon: IconButton(
                   icon: Icon(
                     Icons.remove_red_eye,
-                    color: _showPassword ? Colors.blue : Colors.grey,
+                    color: Provider.of<LoginProvider>(context).showPassword
+                        ? Colors.blue
+                        : Colors.grey,
                   ),
-                  onPressed: () {
-                    setState(() => _showPassword = !_showPassword);
-                  },
+                  onPressed:
+                  Provider.of<LoginProvider>(context,listen: false).changeShowPasswordState,
                 ),
               ),
             ),
@@ -141,10 +131,15 @@ class _DetailedRegistrationWidgetState
               style: TextStyle(fontSize: 12, color: AppColors.backgroundButton),
             ),
             const SizedBox(height: 19),
-            const UserImageWidget(),
-            CustomButtonWidget.blue(title: 'Зарегестрироваться',),
+            UserImageWidget(
+              addAvatar: Provider.of<LoginProvider>(context,listen: false).addImage,
+            ),
+            CustomButtonWidget.blue(
+              title: 'Зарегестрироваться',
+              callback: Provider.of<LoginProvider>(context,listen: false).register,
+            ),
             const SizedBox(height: 16),
-     ],
+          ],
         ),
       ),
     );

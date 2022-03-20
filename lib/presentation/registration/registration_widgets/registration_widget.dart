@@ -1,37 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/domain/models/user.dart';
+import 'package:sovmestno/presentation/auth/login_provider.dart';
+import 'package:sovmestno/presentation/registration/registration_widgets/user_image_widget.dart';
 import 'package:sovmestno/services/auth_service.dart';
 import '../../../widgets/buttons/custom_main_button.dart';
 
-class Registration extends StatefulWidget {
-  const Registration({Key? key}) : super(key: key);
-
-  @override
-  State<Registration> createState() => _RegistrationState();
-}
-
-class _RegistrationState extends State<Registration> {
-  @override
-  void initState() {
-    _authService = AuthService();
-    super.initState();
-  }
-
-  bool _showPassword = false;
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  late final AuthService _authService;
-  void _loginButtonAction() async {
-    if (emailController.text.isEmpty || passwordController.text.isEmpty) return;
-    UserModel userModel = await _authService.singInWithEmailAndPassword(
-        emailController.text.trim(), passwordController.text.trim());
-    if (userModel == null) {
-    } else {
-      emailController.clear();
-      passwordController.clear();
-    }
-  }
+class Auth extends StatelessWidget {
+  const Auth({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +33,7 @@ class _RegistrationState extends State<Registration> {
             ),
             const SizedBox(height: 6),
             TextField(
-              controller: emailController,
+              controller: Provider.of<LoginProvider>(context).loginController,
               textAlign: TextAlign.start,
               decoration: InputDecoration(
                 filled: true,
@@ -98,9 +75,9 @@ class _RegistrationState extends State<Registration> {
             ),
             const SizedBox(height: 6),
             TextField(
-              controller: passwordController,
+              controller: Provider.of<LoginProvider>(context).passwordController,
               textAlign: TextAlign.start,
-              obscureText: !_showPassword,
+              obscureText: Provider.of<LoginProvider>(context).showPassword,
               decoration: InputDecoration(
                 filled: true,
                 fillColor: AppColors.grayscale,
@@ -123,17 +100,15 @@ class _RegistrationState extends State<Registration> {
                 suffixIcon: IconButton(
                   icon: Icon(
                     Icons.remove_red_eye,
-                    color: _showPassword ? Colors.blue : Colors.grey,
+                    color: Provider.of<LoginProvider>(context).showPassword ? Colors.blue : Colors.grey,
                   ),
-                  onPressed: () {
-                    setState(() => _showPassword = !_showPassword);
-                  },
+                  onPressed: Provider.of<LoginProvider>(context,listen: false).changeShowPasswordState,
                 ),
               ),
             ),
             const SizedBox(height: 30),
-            CustomButtonWidget(
-              callback: () {},
+            CustomButtonWidget.blue(
+              callback: Provider.of<LoginProvider>(context,listen: false).auth,
               title: 'Войти',
             )
             // const RegistrationButtonWidget()

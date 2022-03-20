@@ -4,12 +4,33 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f48310b-b233-4f0f-b366-532243994c91" name="Default Changelist" comment="Переделаны конструкторы кнопок и карточкек менти">
+    <list default="true" id="1f48310b-b233-4f0f-b366-532243994c91" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/domain/models/meeting.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/models/request.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/login_provider.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/splash/splash_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/splash/splash_screen_provider.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/services/exceptions/firestore_api_exception.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/services/firestore_service.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/services/upload_service.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/services/utils.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/constants/styles.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants/styles.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/buttons/custom_main_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/buttons/custom_main_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/my_menti_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/my_menti_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/models/user.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/models/user.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/auth/authorization_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/auth/authorization_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/detailed_registration_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/detailed_registration_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/registration_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/registration_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/user_image_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/user_image_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/services/auth_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/auth_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/icons/Icon-192.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/icons/Icon-192.png" afterDir="false" />
     </list>
     <list id="0f7fbc54-855c-4b7e-8962-fc77b3fa64d0" name="refactor" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,12 +46,12 @@
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/dev" />
+    <option name="BRANCH" value="erjansBrnach" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="erjansBrnach" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,6 +65,7 @@
     </file-type-list>
   </component>
   <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
     <option name="recentBranches">
       <RecentBranches>
         <option name="branchesForRepo">
@@ -51,6 +73,14 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1647182705" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="erjansBrnach" />
+                    <option name="lastUsedInstant" value="1647182695" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="dev" />
                     <option name="lastUsedInstant" value="1645266503" />
@@ -91,16 +121,19 @@
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/services" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/services" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/icons" />
+      <recent name="$PROJECT_DIR$/web" />
+      <recent name="$PROJECT_DIR$/lib/presentation/splash" />
       <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$/fonts" />
-      <recent name="$PROJECT_DIR$/lib/widgets/buttons" />
-      <recent name="$PROJECT_DIR$/lib/presentation/registration/forms" />
-      <recent name="$PROJECT_DIR$/lib/presentation/registration" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

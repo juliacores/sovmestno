@@ -1,17 +1,41 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-//TODO use freezed to convert json object to dart class and back to json
-//freezed + json_annotation
-//flutter packages pub run build_runner watch while you developing
-class UserModel {
-  //TODO make required
-  //other fiels will be nullable so you can understand what registration page user needs to continue
-  String? id;
-  //TODO add real user model - name,skills and ect.
-  // email?
-  UserModel({required this.id});
+part 'user.freezed.dart';
 
-  UserModel.fromFirbase(User userFromFirbase) {
-    id = userFromFirbase.uid;
-  }
+part 'user.g.dart';
+
+@freezed
+class UserModel with _$UserModel {
+  const factory UserModel({
+    String? id,
+    String? avatarImage,
+    String? email,
+    String? firstName,
+    String? lastName,
+    @JsonKey(fromJson: _fromIdToRole, toJson: _fromRoleToId)
+        AccountRole? status,
+    List? tags,
+    String? description,
+    String? age,
+    String? city,
+    List? skills,
+    String? experience,
+  }) = _UserModel;
+
+  factory UserModel.fromJson(Map<String, dynamic> json) =>
+      _$UserModelFromJson(json);
 }
+
+_fromIdToRole(int? id) {
+  if (id == 0)
+    return AccountRole.mentor;
+  else if (id == 1)
+    return AccountRole.menti;
+  else
+    return null;
+}
+
+_fromRoleToId(AccountRole? role) =>
+    role == null ? null : (role == AccountRole.mentor ? 0 : 1);
+
+enum AccountRole { mentor, menti }

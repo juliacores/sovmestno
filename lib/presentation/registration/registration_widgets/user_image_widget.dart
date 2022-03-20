@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
-
+import 'package:sovmestno/presentation/auth/login_provider.dart';
 
 class UserImageWidget extends StatelessWidget {
-  const UserImageWidget({Key? key}) : super(key: key);
+  const UserImageWidget({Key? key, this.addAvatar}) : super(key: key);
+  final Function()? addAvatar;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,9 @@ class UserImageWidget extends StatelessWidget {
               width: 66,
               height: 66,
               child: ClipOval(
-                child: Image.network('src'),
+                //TODO add image placeholder
+                child: Image.network(context.watch<LoginProvider>().image ??
+                    'https://firebasestorage.googleapis.com/v0/b/sovmestno-co.appspot.com/o/11.png?alt=media&token=e64a6ccb-87e7-4b33-95ca-309546586901'),
               ),
             ),
             const SizedBox(width: 33),
@@ -30,7 +34,7 @@ class UserImageWidget extends StatelessWidget {
                   'Загрузить фотографию',
                   style: TextStyle(color: AppColors.backgroundButton),
                 ),
-                onPressed: () {},
+                onPressed: addAvatar,
                 style: ElevatedButton.styleFrom(
                   primary: Colors.white,
                   onPrimary: Colors.blue[100],
