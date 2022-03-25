@@ -7,9 +7,9 @@ part 'request.g.dart';
 @freezed
 class Request with _$Request {
   const factory Request({
-    String? request,
-    List? matchedMentors,
-    List? aims,
+    String? userId,
+    bool? matched,
+    String? id
   }) = _Request;
 
   factory Request.fromJson(Map<String, dynamic> json) =>
@@ -19,8 +19,8 @@ class Request with _$Request {
 @freezed
 class Match with _$Match {
   const factory Match({
-    String? matchRequest,
-    String? mentorId
+    String? requestId,
+    List<String>? mentorIds
   }) = _Match;
 
   factory Match.fromJson(Map<String, dynamic> json) =>

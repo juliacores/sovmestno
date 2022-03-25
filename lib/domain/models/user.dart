@@ -20,6 +20,7 @@ class UserModel with _$UserModel {
     String? city,
     List<String>? skills,
     String? experience,
+    List<String>? matchedUsers
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>

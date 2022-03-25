@@ -50,6 +50,9 @@ class UserComplitedRegisterProvider extends BaseProvider {
         break;
       case 4:
         _step = RegistrationSteps.matching;
+        if(_user!.status==AccountRole.menti){
+          startMentorSearch();
+        }
         break;
     }
     notifyListeners();
@@ -63,6 +66,10 @@ class UserComplitedRegisterProvider extends BaseProvider {
       _user = _user!.copyWith(skills: []);
       _user!.skills!.add(value);
     }
+  }
+
+  startMentorSearch(){
+
   }
 
 }

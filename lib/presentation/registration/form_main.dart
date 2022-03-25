@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/constants/styles.dart';
+import 'package:sovmestno/domain/models/user.dart';
 import 'package:sovmestno/presentation/auth/login_provider.dart';
 import 'package:sovmestno/presentation/registration/forms/main_form.dart';
+import 'package:sovmestno/presentation/registration/forms/matching_for_menti.dart';
 import 'package:sovmestno/presentation/registration/forms/matching_for_mentor.dart';
 import 'package:sovmestno/presentation/registration/forms/mentor_skills.dart';
 import 'package:sovmestno/presentation/registration/forms/user_information.dart';
@@ -36,22 +38,21 @@ class FormMainScreen extends StatelessWidget {
 
   Map<String?, Widget> screens = <String?, Widget>{};
 
-
   @override
   Widget build(BuildContext context) {
     UserComplitedRegisterProvider readable =
-    Provider.of<UserComplitedRegisterProvider>(context, listen: false);
-    UserComplitedRegisterProvider watchable = Provider.of<UserComplitedRegisterProvider>(context);
+        Provider.of<UserComplitedRegisterProvider>(context, listen: false);
+    UserComplitedRegisterProvider watchable =
+        Provider.of<UserComplitedRegisterProvider>(context);
 
-    if(watchable.user==null){
+    if (watchable.user == null) {
       WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
-      readable.user ??= Provider
-          .of<LoginProvider>(context, listen: false)
-          .user;});
+        readable.user ??=
+            Provider.of<LoginProvider>(context, listen: false).user;
+      });
       print('got user ${readable.user.toString()}');
       return const CircularProgressIndicator();
     }
-
 
     print('got user ${readable.user.toString()}');
 
@@ -66,24 +67,30 @@ class FormMainScreen extends StatelessWidget {
       'О себе': UserInformation(
         onSavePressed: () {
           readable.user = readable.user!.copyWith(
-              description: readable.aboutController.text,tags: readable.tags);
+              description: readable.aboutController.text, tags: readable.tags);
         },
       ),
       'Навыки': MentorSkills(
         onSavePressed: () {
-          readable.user = readable.user!.copyWith(
-              experience: readable.experienceController.text);
+          readable.user = readable.user!
+              .copyWith(experience: readable.experienceController.text);
         },
       ),
-      //TODO check role
-      'Мэчтинг': MatchingForMentor(
-        onSavePressed: () {
-          print('hzz');
-        },
-      ),
+      'Мэчтинг':
+          ((watchable.user?.status ?? AccountRole.mentor) == AccountRole.mentor
+              ? MatchingForMentor(
+                  onSavePressed: () {
+                    print('hzz');
+                  },
+                )
+              : MatchingForMenti(
+                  onSavePressed: () {
+                    print('hzz');
+                  },
+                )),
     });
     //TODO придумать получше
-    _currentScreen = screens.keys.toList()[watchable.step.index-1];
+    _currentScreen = screens.keys.toList()[watchable.step.index - 1];
 
     // print('ProfileActions - ${readable.user?.toJson()}');
 
@@ -91,12 +98,12 @@ class FormMainScreen extends StatelessWidget {
       backgroundColor: AppColors.appBarColor,
       appBar: CustomAppBar(
           actions: ProfileActions(
-            name: (watchable.user?.firstName ?? 'Anomim') +
-                ' ' +
-                (watchable.user?.lastName ?? 'Anomim'),
-            avatarUrl: watchable.user?.avatarImage,
-            role: watchable.user?.status,
-          )),
+        name: (watchable.user?.firstName ?? 'Anomim') +
+            ' ' +
+            (watchable.user?.lastName ?? 'Anomim'),
+        avatarUrl: watchable.user?.avatarImage,
+        role: watchable.user?.status,
+      )),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
@@ -108,8 +115,7 @@ class FormMainScreen extends StatelessWidget {
                 title: 'Анкета',
                 backCallback: watchable.step == RegistrationSteps.start
                     ? null
-                    : () => readable.setStep(readable.step.index - 1)
-                ,
+                    : () => readable.setStep(readable.step.index - 1),
               ),
               const SizedBox(height: 20),
               Row(
@@ -134,7 +140,7 @@ class FormMainScreen extends StatelessWidget {
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
                             color:
-                            isCurrentScreen ? Colors.white : Colors.grey),
+                                isCurrentScreen ? Colors.white : Colors.grey),
                       ),
                     ),
                   );

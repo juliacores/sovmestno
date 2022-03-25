@@ -1,23 +1,73 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
+import 'package:sovmestno/constants/text.dart';
+import 'package:sovmestno/domain/models/user.dart';
 import 'package:sovmestno/presentation/registration/forms/form_widgets/chips_widget.dart';
 import 'package:sovmestno/presentation/registration/forms/form_widgets/dropdown_form_field_widget.dart';
-import 'package:sovmestno/presentation/registration/forms/form_widgets/mentor_skills_widget.dart';
+import 'package:sovmestno/presentation/registration/user_provider.dart';
 import 'package:sovmestno/widgets/buttons/back_button_widget.dart';
 import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
 
 class MentorSkills extends StatelessWidget {
-  const MentorSkills({Key? key,  this.onSavePressed}) : super(key: key);
-final onSavePressed;
+  const MentorSkills({Key? key, this.onSavePressed}) : super(key: key);
+  final onSavePressed;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(height: 38),
-        const MentorSkillsWidget(),
+        Text(
+          (Provider.of<UserComplitedRegisterProvider>(context, listen: false)
+                      .user!
+                      .status! ==
+                  AccountRole.mentor
+              ? 'Расскажите о своем профессиональном опыте и компетенциях. (макс. 500 символов)'
+              : 'Опишите свой запрос к ментору. (макс. 500 символов)'),
+          style: const TextStyle(color: Colors.black, fontSize: 22),
+        ),
+        const SizedBox(height: 30),
+        SizedBox(
+          width: 960,
+          height: 160,
+          child: TextField(
+            controller: Provider.of<UserComplitedRegisterProvider>(context)
+                .experienceController,
+            maxLines: 10,
+            textAlign: TextAlign.left,
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: AppColors.grayscale,
+              hintText: ConstText.hintBiography,
+              hintStyle: const TextStyle(color: AppColors.hintColor),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(7),
+                borderSide: const BorderSide(
+                  color: AppColors.borderTextField,
+                  width: 0.5,
+                ),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(5),
+                borderSide: const BorderSide(
+                  color: AppColors.focusedBorderTextField,
+                  width: 0.5,
+                ),
+              ),
+            ),
+          ),
+        ),
         const SizedBox(height: 40),
-        const Text('Ваши навыки', style: TextStyle(fontSize: 28)),
+        Text(
+            Provider.of<UserComplitedRegisterProvider>(context, listen: false)
+                        .user!
+                        .status! ==
+                    AccountRole.mentor
+                ? 'Ваши навыки'
+                : 'Ваши цели',
+            style: const TextStyle(fontSize: 28)),
         const SizedBox(height: 20),
         Container(
           width: double.infinity,
@@ -29,11 +79,9 @@ final onSavePressed;
             style: TextStyle(fontSize: 18)),
         const SizedBox(height: 40),
         const DropdownFormFieldWidget(),
-        /* ДЛЯ "Dropdown" НЕТ категорий !!!!!!!!!!! */
+        //TODO ДЛЯ "Dropdown" НЕТ категорий !!!!!!!!!!!
         const SizedBox(height: 30),
-        CustomButtonWidget.blue(
-            title: 'Сохранить',
-            callback: onSavePressed),
+        CustomButtonWidget.blue(title: 'Сохранить', callback: onSavePressed),
         const SizedBox(height: 45),
       ],
     );
