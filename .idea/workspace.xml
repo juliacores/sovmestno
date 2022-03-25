@@ -5,32 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f48310b-b233-4f0f-b366-532243994c91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/domain/models/meeting.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/models/request.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/auth/login_provider.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/splash/splash_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/splash/splash_screen_provider.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/services/exceptions/firestore_api_exception.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/services/firestore_service.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/services/upload_service.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/services/utils.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/registration/user_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/constants/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants/routes.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/domain/models/user.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/models/user.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/auth/authorization_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/auth/authorization_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/detailed_registration_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/detailed_registration_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/registration_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/registration_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/user_image_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/user_image_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/auth/login_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/auth/login_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/form_main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/form_main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/form_main_screens.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/form_widgets/address_field_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/form_widgets/address_field_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/form_widgets/checkbox_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/form_widgets/checkbox_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/form_widgets/dropdown_button_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/dropdown_button_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/form_widgets/dropdown_form_field_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/form_widgets/dropdown_form_field_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/form_widgets/mentor_skills_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/form_widgets/mentor_skills_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/form_widgets/personal_qualities_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/form_widgets/personal_qualities_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/form_widgets/user_biography_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/form_widgets/user_biography_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/main_form.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/main_form.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/matching_for_mentor.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/matching_for_mentor.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/forms/mentor_skills.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration/forms/mentor_skills.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/detailed_registration_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/auth/widgets/detailed_registration_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/register_button_widget.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/registration_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/auth/widgets/registration_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/registration/registration_widgets/user_image_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/auth/widgets/user_image_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/splash/splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/splash/splash_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/services/auth_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/auth_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/favicon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/icons/Icon-192.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/icons/Icon-192.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/appbar/profile_actions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/appbar/profile_actions.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/header_with_line.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/header_with_line.dart" afterDir="false" />
     </list>
     <list id="0f7fbc54-855c-4b7e-8962-fc77b3fa64d0" name="refactor" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,11 +131,11 @@
       <recent name="$PROJECT_DIR$/lib/services" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/widgets" />
+      <recent name="$PROJECT_DIR$/lib/presentation/registration" />
+      <recent name="$PROJECT_DIR$/lib/presentation/auth/widgets" />
       <recent name="$PROJECT_DIR$/web/icons" />
       <recent name="$PROJECT_DIR$/web" />
-      <recent name="$PROJECT_DIR$/lib/presentation/splash" />
-      <recent name="$PROJECT_DIR$/assets/images" />
-      <recent name="$PROJECT_DIR$/fonts" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -174,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646159669828</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="provider added&#10;user,request,meetings models added&#10;Firestore Api added&#10;upload_service added&#10;auth store fixed&#10;login_provider created">
+      <created>1647772263032</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1647772263032</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -209,6 +218,7 @@
     <MESSAGE value="Добавлены виджеты круглого аватара и карточек раздела &quot;Мои менти&quot;. Для теста виджеты выведены на главный экран" />
     <MESSAGE value="Добавлен конструктор кнопок, пока с фиксированной шириной." />
     <MESSAGE value="Переделаны конструкторы кнопок и карточкек менти" />
-    <option name="LAST_COMMIT_MESSAGE" value="Переделаны конструкторы кнопок и карточкек менти" />
+    <MESSAGE value="provider added&#10;user,request,meetings models added&#10;Firestore Api added&#10;upload_service added&#10;auth store fixed&#10;login_provider created" />
+    <option name="LAST_COMMIT_MESSAGE" value="provider added&#10;user,request,meetings models added&#10;Firestore Api added&#10;upload_service added&#10;auth store fixed&#10;login_provider created" />
   </component>
 </project>

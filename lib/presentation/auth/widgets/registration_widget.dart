@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/domain/models/user.dart';
 import 'package:sovmestno/presentation/auth/login_provider.dart';
-import 'package:sovmestno/presentation/registration/registration_widgets/user_image_widget.dart';
+import 'package:sovmestno/presentation/auth/widgets/user_image_widget.dart';
 import 'package:sovmestno/services/auth_service.dart';
 import '../../../widgets/buttons/custom_main_button.dart';
 
@@ -75,7 +75,8 @@ class Auth extends StatelessWidget {
             ),
             const SizedBox(height: 6),
             TextField(
-              controller: Provider.of<LoginProvider>(context).passwordController,
+              controller:
+                  Provider.of<LoginProvider>(context).passwordController,
               textAlign: TextAlign.start,
               obscureText: Provider.of<LoginProvider>(context).showPassword,
               decoration: InputDecoration(
@@ -100,15 +101,22 @@ class Auth extends StatelessWidget {
                 suffixIcon: IconButton(
                   icon: Icon(
                     Icons.remove_red_eye,
-                    color: Provider.of<LoginProvider>(context).showPassword ? Colors.blue : Colors.grey,
+                    color: Provider.of<LoginProvider>(context).showPassword
+                        ? Colors.blue
+                        : Colors.grey,
                   ),
-                  onPressed: Provider.of<LoginProvider>(context,listen: false).changeShowPasswordState,
+                  onPressed: Provider.of<LoginProvider>(context, listen: false)
+                      .changeShowPasswordState,
                 ),
               ),
             ),
             const SizedBox(height: 30),
+            if (Provider.of<LoginProvider>(context).hasError)
+              Container(
+                  padding: EdgeInsets.all(16),
+                  child: Text('произошла ошибка',style: TextStyle(color: Colors.red),)),
             CustomButtonWidget.blue(
-              callback: Provider.of<LoginProvider>(context,listen: false).auth,
+              callback: Provider.of<LoginProvider>(context, listen: false).auth,
               title: 'Войти',
             )
             // const RegistrationButtonWidget()

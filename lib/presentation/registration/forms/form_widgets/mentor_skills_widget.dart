@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/constants/text.dart';
+import 'package:sovmestno/presentation/registration/user_provider.dart';
 
 class MentorSkillsWidget extends StatelessWidget {
   const MentorSkillsWidget({Key? key}) : super(key: key);
@@ -20,7 +22,7 @@ class MentorSkillsWidget extends StatelessWidget {
           width: 960,
           height: 160,
           child: TextField(
-            controller: skillFieldController,
+            controller: Provider.of<UserComplitedRegisterProvider>(context).experienceController,
             maxLines: 10,
             textAlign: TextAlign.left,
             decoration: InputDecoration(

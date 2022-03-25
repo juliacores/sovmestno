@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
+import 'package:sovmestno/presentation/registration/user_provider.dart';
 
-class AddressField extends StatefulWidget {
-  const AddressField({Key? key}) : super(key: key);
-
-  @override
-  _AddressFieldState createState() => _AddressFieldState();
-}
-class _AddressFieldState extends State<AddressField> {
-  TextEditingController addresFieldController = TextEditingController();
-  TextEditingController ageFieldController = TextEditingController();
-
+class AddressField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -25,7 +20,8 @@ class _AddressFieldState extends State<AddressField> {
           width: 225,
           height: 40,
           child: TextField(
-            controller: addresFieldController,
+            controller: Provider.of<UserComplitedRegisterProvider>(context)
+                .cityController,
             textAlign: TextAlign.start,
             decoration: InputDecoration(
               filled: true,
@@ -59,15 +55,15 @@ class _AddressFieldState extends State<AddressField> {
           width: 225,
           height: 40,
           child: TextField(
-            controller: ageFieldController,
+            controller: Provider.of<UserComplitedRegisterProvider>(context)
+                .ageController,
             textAlign: TextAlign.start,
             decoration: InputDecoration(
               filled: true,
-
               fillColor: AppColors.grayscale,
               hintText: 'Введите ваш возраст',
               hintStyle: const TextStyle(color: AppColors.hintColor),
-   enabledBorder: OutlineInputBorder(
+              enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5),
                 borderSide: const BorderSide(
                   color: AppColors.borderTextField,

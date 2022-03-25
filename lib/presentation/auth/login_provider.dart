@@ -8,7 +8,6 @@ import 'package:sovmestno/services/utils.dart';
 
 class LoginProvider extends BaseProvider {
   final AuthService _authService = AuthService();
-  final FirestoreApi _firestoreApi = FirestoreApi();
   final TextEditingController _loginController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _nameController = TextEditingController();
@@ -22,7 +21,7 @@ class LoginProvider extends BaseProvider {
 
   int get regState => _regState;
 
-  UserModel get user => _user!;
+  UserModel? get user => _user;
 
   TextEditingController get loginController => _loginController;
 
@@ -38,40 +37,47 @@ class LoginProvider extends BaseProvider {
   }
 
   Future auth() async {
+    hasError = false;
     if (!requestSend) {
       setRequestSend = true;
     }
     try {
-      var result = await _authService.singInWithEmailAndPassword(
+      _user = await _authService.singInWithEmailAndPassword(
           email: _loginController.text, password: _passwordController.text);
       setRequestSend = false;
-      return result;
+      notifyListeners();
     } catch (e) {
       setRequestSend = false;
       // ConsoleMessages.showErrorMessage(e);
+      hasError = true;
       return false;
     }
   }
 
   Future register() async {
+    hasError = false;
     if (!requestSend) {
       setRequestSend = true;
     }
     //TODO validate
     try {
-      _user = UserModel(
-          firstName: _nameController.text,
-          lastName: _surnameController.text,
-          email: _loginController.text,
-          avatarImage: image);
-      var result = await _authService.registerWithEmailAndPassword(
-        user: _user!,
+      _user = await _authService.registerWithEmailAndPassword(
+        user: UserModel(
+            firstName: _nameController.text,
+            lastName: _surnameController.text,
+            email: _loginController.text,
+            avatarImage: image),
         password: _passwordController.text,
       );
+      if(_user==null) {
+        hasError = true;
+      }
       setRequestSend = false;
-      return result;
+      notifyListeners();
     } catch (e) {
+      _user = null;
       setRequestSend = false;
+      hasError = true;
       // ConsoleMessages.showErrorMessage(e);
       return false;
     }
@@ -92,6 +98,7 @@ class LoginProvider extends BaseProvider {
         setRequestSend = false;
       }
     } catch (e) {
+      hasError = true;
       print('error occured - $e');
     }
   }

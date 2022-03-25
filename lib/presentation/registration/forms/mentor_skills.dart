@@ -14,25 +14,6 @@ final onSavePressed;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(height: 66),
-        const Text(
-          'Анкета',
-          style: TextStyle(fontSize: 36, color: AppColors.backgroundButton),
-        ),
-        const SizedBox(height: 18),
-        Container(
-          width: double.infinity,
-          height: 0.2,
-          color: AppColors.backgroundButton,
-        ),
-        const SizedBox(height: 22),
-        BackButtonWidget(
-          onPressed: () {
-            debugPrint('Nazad/Nazad');
-          },
-        ),
-        const SizedBox(height: 20),
-        ChipsWidget(),
         const SizedBox(height: 38),
         const MentorSkillsWidget(),
         const SizedBox(height: 40),

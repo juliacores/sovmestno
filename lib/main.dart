@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/routes.dart';
 import 'package:sovmestno/constants/themes.dart';
 import 'package:sovmestno/presentation/auth/login_provider.dart';
+import 'package:sovmestno/presentation/registration/user_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,6 +39,9 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider<LoginProvider>(
             create: (_) => LoginProvider(),
           ),
+          ChangeNotifierProvider<UserComplitedRegisterProvider>(
+            create: (_) => UserComplitedRegisterProvider(),
+          ),
         ],
     child: ScreenUtilInit(
       designSize: const Size(1440, 1024),
@@ -45,7 +49,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Sovmestno',
         theme: mainTheme(),
-        initialRoute: Routes.authRoute,
+        // initialRoute: Routes.authRoute,
         routes: Routes.customRoutes,
       ),
     ));

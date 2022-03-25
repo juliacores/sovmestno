@@ -25,7 +25,7 @@ class AuthService {
       final authResault = await _firebaseAuth.createUserWithEmailAndPassword(
           email: user.email!, password: password);
       final userFromFirebase = authResault.user;
-      _firestoreApi.addUser(user: user);
+      await _firestoreApi.addUser(user: user.copyWith(id: userFromFirebase?.uid));
       return _firestoreApi.getUser(userId: userFromFirebase?.uid);
     } catch (e) {
       throw Exception('Eror Fetching User');
@@ -37,6 +37,8 @@ class AuthService {
     //TODO reset providers
     //TODO goto auth
   }
+
+  get currentUser => _firebaseAuth.currentUser;
 
   // Stream<UserModel> get currentUser {
   //   return _firebaseAuth.authStateChanges().map((user) => user != null

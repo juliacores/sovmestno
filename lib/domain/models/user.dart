@@ -14,11 +14,11 @@ class UserModel with _$UserModel {
     String? lastName,
     @JsonKey(fromJson: _fromIdToRole, toJson: _fromRoleToId)
         AccountRole? status,
-    List? tags,
+    List<String>? tags,
     String? description,
     String? age,
     String? city,
-    List? skills,
+    List<String>? skills,
     String? experience,
   }) = _UserModel;
 
@@ -39,3 +39,18 @@ _fromRoleToId(AccountRole? role) =>
     role == null ? null : (role == AccountRole.mentor ? 0 : 1);
 
 enum AccountRole { mentor, menti }
+
+extension ParseRoleToString on AccountRole {
+  String toRusString() {
+    switch(this){
+      case AccountRole.mentor:
+       return 'Ментор';
+      case AccountRole.menti:
+        return 'Менти';
+    }
+  }
+}
+
+// extension on AccountRole {
+//
+// }

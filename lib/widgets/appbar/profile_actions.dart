@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sovmestno/presentation/registration/forms/form_widgets/dropdown_button_widget.dart';
+import 'package:sovmestno/domain/models/user.dart';
+import 'package:sovmestno/widgets/dropdown_button_widget.dart';
 
 import '../../constants/colors.dart';
 
@@ -8,7 +9,7 @@ class ProfileActions extends StatelessWidget {
 
   final String? name;
   final String? avatarUrl;
-  final String? role;
+  final AccountRole? role;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class ProfileActions extends StatelessWidget {
                 ),
               ),
                Text(
-                role!,
+                role?.toRusString() ?? 'Не выбрана роль',
                 style: TextStyle(color: Colors.grey, fontSize: 18),
               )
               // mentor ? const Text('Ментор') : const Text('Менти')
@@ -47,10 +48,11 @@ class ProfileActions extends StatelessWidget {
               width: 49,
               height: 49,
               child: ClipOval(
-                child: Image.network(avatarUrl!),
+                //TODO add placeholder
+                child: Image.network(avatarUrl??''),
               ),
             ),
-          const PopupMenuButtonWidget(),
+          const MenuDropdown(),
         ],
       ),
     );

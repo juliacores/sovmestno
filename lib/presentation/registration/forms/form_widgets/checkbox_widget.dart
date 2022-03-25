@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
+import 'package:sovmestno/domain/models/user.dart';
 
-class CheckboxWidget extends StatefulWidget {
-  final ValueChanged<bool?> onChanged;
-  const CheckboxWidget({Key? key,required this.onChanged}) : super(key: key);
+class CheckboxWidget extends StatelessWidget {
+  final ValueChanged<bool?> onChangedMenti;
+  final ValueChanged<bool?> onChangedMentor;
+  final AccountRole? role;
 
-  @override
-  _CheckboxWidgetState createState() => _CheckboxWidgetState();
-}
-
-class _CheckboxWidgetState extends State<CheckboxWidget> {
-  bool? isChecked = false;
-  bool? isCheck = false;
+  const CheckboxWidget({Key? key, required this.onChangedMenti, required this.role,required this.onChangedMentor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,15 +25,8 @@ class _CheckboxWidgetState extends State<CheckboxWidget> {
               checkColor: Colors.white,
               focusColor: Colors.black,
               fillColor: MaterialStateProperty.all(AppColors.checkboxColor),
-              value: isChecked,
-              onChanged: (bool? value) {
-                setState(
-                  () {
-                    isChecked = value;
-                    widget.onChanged(isChecked);
-                  },
-                );
-              },
+              value: role == AccountRole.menti,
+              onChanged: onChangedMenti,
             ),
             const SizedBox(width: 14),
             const Text(
@@ -56,14 +46,8 @@ class _CheckboxWidgetState extends State<CheckboxWidget> {
               checkColor: Colors.white,
               focusColor: Colors.black,
               fillColor: MaterialStateProperty.all(AppColors.checkboxColor),
-              value: isCheck,
-              onChanged: (bool? value) {
-                setState(
-                  () {
-                    isCheck = value;
-                  },
-                );
-              },
+              value: role == AccountRole.mentor,
+              onChanged: onChangedMentor,
             ),
             const SizedBox(width: 14),
             const Text(
@@ -72,11 +56,11 @@ class _CheckboxWidgetState extends State<CheckboxWidget> {
             )
           ],
         ),
-        const SizedBox(height: 30),
-        const Text(
-          'Вы также можете быть обоими.',
-          style: TextStyle(fontSize: 14),
-        )
+        // const SizedBox(height: 30),
+        // const Text(
+        //   'Вы также можете быть обоими.',
+        //   style: TextStyle(fontSize: 14),
+        // )
       ],
     );
   }

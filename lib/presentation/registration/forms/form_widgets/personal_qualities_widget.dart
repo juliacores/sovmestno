@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
+import 'package:sovmestno/presentation/registration/user_provider.dart';
 
 class PersonalQualities extends StatefulWidget {
   const PersonalQualities({Key? key}) : super(key: key);
-
+//TODO set Stateless and refactor
   @override
   _PersonalQualitiesState createState() => _PersonalQualitiesState();
 }
@@ -13,7 +15,7 @@ class Tech {
   bool isSelected;
   Tech(this.label, this.color, this.isSelected);
 }
-
+//TODO сделать список с предложениями. Сделать строку ввода, в которую можно вводить любые теги
 bool selected = false;
 final List<Tech> _chipsList = [
   Tech('Толерантный', AppColors.appBarColor, false),
@@ -68,6 +70,13 @@ class _PersonalQualitiesState extends State<PersonalQualities> {
           backgroundColor: _chipsList[i].color,
           selected: _chipsList[i].isSelected,
           onSelected: (bool value) {
+
+            if(value){
+              Provider.of<UserComplitedRegisterProvider>(context, listen: false).tags.add(_chipsList[i].label);
+            } else {
+              Provider.of<UserComplitedRegisterProvider>(context, listen: false).tags.remove(_chipsList[i].label);
+            }
+
             setState(() {
               _chipsList[i].isSelected = value;
             });

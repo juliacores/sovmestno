@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
+import 'package:sovmestno/presentation/registration/user_provider.dart';
 
-class DropdownFormFieldWidget extends StatefulWidget {
+class DropdownFormFieldWidget extends StatelessWidget {
   const DropdownFormFieldWidget({Key? key}) : super(key: key);
 
-  @override
-  State<DropdownFormFieldWidget> createState() =>
-      _DropdownFormFieldWidgetState();
-}
-//TODO сделать список с предложениями. Сделать строку ввода, в которую можно вводить любые теги
-class _DropdownFormFieldWidgetState extends State<DropdownFormFieldWidget> {
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -20,7 +17,7 @@ class _DropdownFormFieldWidgetState extends State<DropdownFormFieldWidget> {
           isDense: true,
           filled: true,
           fillColor: AppColors.grayscale,
-          hintText: 'Отметьте все навыки из списка',
+          hintText: 'Выберите навык',
           hintStyle: const TextStyle(color: AppColors.hintColor),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5),
@@ -30,9 +27,7 @@ class _DropdownFormFieldWidgetState extends State<DropdownFormFieldWidget> {
             ),
           ),
         ),
-        onChanged: (String? newValue) {
-          setState(() {});
-        },
+        onChanged: Provider.of<UserComplitedRegisterProvider>(context,listen: false).setSkills,
         //TODO вынести в отдельный файл констант - навыки пришлю в ближайшее время
         items: <String>['1', '2', '3', '4'].map<DropdownMenuItem<String>>(
           (String value) {

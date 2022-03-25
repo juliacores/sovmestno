@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
 
-class PopupMenuButtonWidget extends StatefulWidget {
-  const PopupMenuButtonWidget({Key? key}) : super(key: key);
+class MenuDropdown extends StatelessWidget {
+  const MenuDropdown({Key? key}) : super(key: key);
 
-  @override
-  State<PopupMenuButtonWidget> createState() => _PopupMenuButtonWidgetState();
-}
 
-class _PopupMenuButtonWidgetState extends State<PopupMenuButtonWidget> {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(

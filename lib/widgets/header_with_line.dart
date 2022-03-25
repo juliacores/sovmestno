@@ -11,9 +11,7 @@ class HeaderWithLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.only(left: 104, right: 104),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+    return  Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           const SizedBox(height: 66),
           Text(
             title,
@@ -32,6 +30,6 @@ class HeaderWithLine extends StatelessWidget {
               onPressed: backCallback,
             ),
           //const SizedBox(height: 44),
-        ]));
+        ]);
   }
 }

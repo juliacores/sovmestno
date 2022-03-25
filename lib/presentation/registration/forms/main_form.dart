@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:sovmestno/domain/models/user.dart';
 import 'package:sovmestno/presentation/registration/forms/form_widgets/address_field_widget.dart';
 import 'package:sovmestno/presentation/registration/forms/form_widgets/checkbox_widget.dart';
+import 'package:sovmestno/presentation/registration/user_provider.dart';
 import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
 
-
-class MainForm extends StatelessWidget {
+class StartForm extends StatelessWidget {
   final VoidCallback onSavePressed;
-  const MainForm({Key? key,required this.onSavePressed }) : super(key: key);
+
+  const StartForm({Key? key, required this.onSavePressed}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -17,11 +21,26 @@ class MainForm extends StatelessWidget {
           style: TextStyle(fontSize: 22, color: Colors.black),
         ),
         const SizedBox(height: 30),
-          CheckboxWidget(onChanged: (val){
-          print(val);
-        },),
+        CheckboxWidget(
+          onChangedMentor: (val) {
+            Provider.of<UserComplitedRegisterProvider>(context, listen: false)
+                .user = Provider.of<UserComplitedRegisterProvider>(context,
+                    listen: false)
+                .user!
+                .copyWith(status: AccountRole.mentor);
+          },
+          onChangedMenti: (val) {
+            Provider.of<UserComplitedRegisterProvider>(context, listen: false)
+                .user = Provider.of<UserComplitedRegisterProvider>(context,
+                    listen: false)
+                .user!
+                .copyWith(status: AccountRole.menti);
+          },
+          role:
+              Provider.of<UserComplitedRegisterProvider>(context).user?.status,
+        ),
         const SizedBox(height: 30),
-         AddressField(),
+        AddressField(),
         const SizedBox(height: 46),
         CustomButtonWidget.blue(
             title: 'Сохранить',

@@ -1,30 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/constants/styles.dart';
+import 'package:sovmestno/presentation/auth/login_provider.dart';
 import 'package:sovmestno/presentation/registration/forms/main_form.dart';
 import 'package:sovmestno/presentation/registration/forms/matching_for_mentor.dart';
 import 'package:sovmestno/presentation/registration/forms/mentor_skills.dart';
 import 'package:sovmestno/presentation/registration/forms/user_information.dart';
+import 'package:sovmestno/presentation/registration/user_provider.dart';
 import 'package:sovmestno/widgets/appbar/custom_appbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sovmestno/widgets/appbar/profile_actions.dart';
 import 'package:sovmestno/widgets/buttons/back_button_widget.dart';
+import 'package:sovmestno/widgets/header_with_line.dart';
 
-class FormMainScreen extends StatefulWidget {
-  const FormMainScreen({Key? key}) : super(key: key);
+import '../../services/firestore_service.dart';
 
-  @override
-  State<FormMainScreen> createState() => _FormMainScreenState();
-}
+class FormMainScreen extends StatelessWidget {
+  FormMainScreen({Key? key}) : super(key: key);
 
-class _FormMainScreenState extends State<FormMainScreen> {
   String? _currentScreen;
 
-  set currentScreen(String? newScreen) {
-    setState(() {
-      _currentScreen = newScreen;
-    });
-  }
+  //
+  // set currentScreen(String? newScreen) {
+  //   setState(() {
+  //     _currentScreen = newScreen;
+  //   });
+  // }
 
   String? get nextScreen =>
       screens.keys.elementAt(screens.keys.toList().indexOf(_currentScreen) + 1);
@@ -34,47 +36,67 @@ class _FormMainScreenState extends State<FormMainScreen> {
 
   Map<String?, Widget> screens = <String?, Widget>{};
 
+
   @override
-  void initState() {
-    super.initState();
+  Widget build(BuildContext context) {
+    UserComplitedRegisterProvider readable =
+    Provider.of<UserComplitedRegisterProvider>(context, listen: false);
+    UserComplitedRegisterProvider watchable = Provider.of<UserComplitedRegisterProvider>(context);
+
+    if(watchable.user==null){
+      WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+      readable.user ??= Provider
+          .of<LoginProvider>(context, listen: false)
+          .user;});
+      print('got user ${readable.user.toString()}');
+      return const CircularProgressIndicator();
+    }
+
+
+    print('got user ${readable.user.toString()}');
 
     screens.addAll({
-      'Основное': MainForm(
+      'Основное': StartForm(
         onSavePressed: () {
-          currentScreen = nextScreen;
+          readable.user = readable.user!.copyWith(
+              city: readable.cityController.text,
+              age: readable.ageController.text);
         },
       ),
       'О себе': UserInformation(
         onSavePressed: () {
-          currentScreen = nextScreen;
+          readable.user = readable.user!.copyWith(
+              description: readable.aboutController.text,tags: readable.tags);
         },
       ),
       'Навыки': MentorSkills(
         onSavePressed: () {
-          currentScreen = nextScreen;
+          readable.user = readable.user!.copyWith(
+              experience: readable.experienceController.text);
         },
       ),
+      //TODO check role
       'Мэчтинг': MatchingForMentor(
         onSavePressed: () {
-          currentScreen = nextScreen;
+          print('hzz');
         },
       ),
     });
-    _currentScreen = screens.keys.first;
-  }
+    //TODO придумать получше
+    _currentScreen = screens.keys.toList()[watchable.step.index-1];
 
-  @override
-  Widget build(BuildContext context) {
+    // print('ProfileActions - ${readable.user?.toJson()}');
+
     return Scaffold(
-
       backgroundColor: AppColors.appBarColor,
-      //TODO change to real data
-      appBar: const CustomAppBar(
+      appBar: CustomAppBar(
           actions: ProfileActions(
-        name: 'Татьяна Иванова',
-        avatarUrl:
-            'https://firebasestorage.googleapis.com/v0/b/sovmestno-co.appspot.com/o/11.png?alt=media&token=e64a6ccb-87e7-4b33-95ca-309546586901',
-      )),
+            name: (watchable.user?.firstName ?? 'Anomim') +
+                ' ' +
+                (watchable.user?.lastName ?? 'Anomim'),
+            avatarUrl: watchable.user?.avatarImage,
+            role: watchable.user?.status,
+          )),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(
@@ -82,25 +104,13 @@ class _FormMainScreenState extends State<FormMainScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 66),
-              const Text(
-                'Анкета',
-                style:
-                    TextStyle(fontSize: 36, color: AppColors.backgroundButton),
+              HeaderWithLine(
+                title: 'Анкета',
+                backCallback: watchable.step == RegistrationSteps.start
+                    ? null
+                    : () => readable.setStep(readable.step.index - 1)
+                ,
               ),
-              const SizedBox(height: 20),
-              Container(
-                width: double.infinity,
-                height: 0.2,
-                color: AppColors.backgroundButton,
-              ),
-              const SizedBox(height: 20),
-              if (_currentScreen != screens.keys.first)
-                BackButtonWidget(
-                  onPressed: () {
-                    currentScreen = previousScreen;
-                  },
-                ),
               const SizedBox(height: 20),
               Row(
                 children: screens.keys.map((screen) {
@@ -124,7 +134,7 @@ class _FormMainScreenState extends State<FormMainScreen> {
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
                             color:
-                                isCurrentScreen ? Colors.white : Colors.grey),
+                            isCurrentScreen ? Colors.white : Colors.grey),
                       ),
                     ),
                   );

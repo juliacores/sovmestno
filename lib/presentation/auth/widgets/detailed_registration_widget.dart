@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/presentation/auth/login_provider.dart';
-import 'package:sovmestno/presentation/registration/registration_widgets/user_image_widget.dart';
+import 'package:sovmestno/presentation/auth/widgets/user_image_widget.dart';
 import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
 
 class DetailedRegistrationWidget extends StatelessWidget {
