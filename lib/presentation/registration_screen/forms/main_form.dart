@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sovmestno/domain/models/user.dart';
-import 'package:sovmestno/presentation/registration/forms/form_widgets/address_field_widget.dart';
-import 'package:sovmestno/presentation/registration/forms/form_widgets/checkbox_widget.dart';
-import 'package:sovmestno/presentation/registration/user_provider.dart';
+import 'package:sovmestno/presentation/registration_screen/forms/form_widgets/address_field_widget.dart';
+import 'package:sovmestno/presentation/registration_screen/forms/form_widgets/checkbox_widget.dart';
+import 'package:sovmestno/presentation/registration_screen/user_provider.dart';
 import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
 
 class StartForm extends StatelessWidget {

@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/routes.dart';
 import 'package:sovmestno/constants/themes.dart';
 import 'package:sovmestno/presentation/auth/login_provider.dart';
-import 'package:sovmestno/presentation/registration/user_provider.dart';
+import 'package:sovmestno/presentation/registration_screen/user_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

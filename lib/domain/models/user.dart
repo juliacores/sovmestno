@@ -6,7 +6,7 @@ part 'user.g.dart';
 
 @freezed
 class UserModel with _$UserModel {
-  const factory UserModel({
+   factory UserModel({
     String? id,
     String? avatarImage,
     String? email,
@@ -20,11 +20,17 @@ class UserModel with _$UserModel {
     String? city,
     List<String>? skills,
     String? experience,
-    List<String>? matchedUsers
+    List<String>? matchedUsers,
+    List<String>? connectedUsers,
+    String? carrierRole
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>
       _$UserModelFromJson(json);
+
+  UserModel._();
+
+  String? get name => firstName! + ' ' +lastName!;
 }
 
 _fromIdToRole(int? id) {

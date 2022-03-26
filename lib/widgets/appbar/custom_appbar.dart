@@ -3,7 +3,7 @@ import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/constants/styles.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final title;
+  final Widget? title;
   final actions;
 
   const CustomAppBar({

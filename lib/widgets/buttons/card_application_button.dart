@@ -8,12 +8,12 @@ class CardButtom extends StatelessWidget {
       required this.name,
       required this.height,
       required this.width,
-      required this.onTap})
+       this.onTap})
       : super(key: key);
   final double width;
   final double height;
   final String name;
-  final Function() onTap;
+  final onTap;
 
   @override
   Widget build(BuildContext context) {

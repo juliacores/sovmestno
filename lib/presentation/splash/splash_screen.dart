@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/routes.dart';
-import 'package:sovmestno/presentation/registration/user_provider.dart';
+import 'package:sovmestno/presentation/registration_screen/user_provider.dart';
 import 'package:sovmestno/services/firestore_service.dart';
 
 import '../../domain/models/user.dart';

@@ -3,9 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/constants/text.dart';
 import 'package:sovmestno/domain/models/user.dart';
-import 'package:sovmestno/presentation/registration/forms/form_widgets/chips_widget.dart';
-import 'package:sovmestno/presentation/registration/forms/form_widgets/dropdown_form_field_widget.dart';
-import 'package:sovmestno/presentation/registration/user_provider.dart';
+import 'package:sovmestno/presentation/registration_screen/forms/form_widgets/dropdown_form_field_widget.dart';
+import 'package:sovmestno/presentation/registration_screen/user_provider.dart';
 import 'package:sovmestno/widgets/buttons/back_button_widget.dart';
 import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
 

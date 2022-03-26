@@ -35,6 +35,11 @@ class Styles {
       fontFamily: 'Roboto',
       fontSize: 14,
       fontWeight: FontWeight.w500);
+  static const TextStyle roboto_14_500_hintColor = TextStyle(
+      color: AppColors.hintColor,
+      fontFamily: 'Roboto',
+      fontSize: 14,
+      fontWeight: FontWeight.w500);
 
   static const TextStyle roboto_14_500_lightBlue = TextStyle(
       color: Color.fromRGBO(141, 191, 255, 1),

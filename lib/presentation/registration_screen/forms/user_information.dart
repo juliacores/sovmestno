@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/colors.dart';
-import 'package:sovmestno/presentation/registration/forms/form_widgets/personal_qualities_widget.dart';
-import 'package:sovmestno/presentation/registration/forms/form_widgets/user_biography_widget.dart';
+import 'package:sovmestno/presentation/registration_screen/forms/form_widgets/personal_qualities_widget.dart';
+import 'package:sovmestno/presentation/registration_screen/forms/form_widgets/user_biography_widget.dart';
 import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
 
 class UserInformation extends StatelessWidget {

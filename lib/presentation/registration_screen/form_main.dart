@@ -4,12 +4,12 @@ import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/constants/styles.dart';
 import 'package:sovmestno/domain/models/user.dart';
 import 'package:sovmestno/presentation/auth/login_provider.dart';
-import 'package:sovmestno/presentation/registration/forms/main_form.dart';
-import 'package:sovmestno/presentation/registration/forms/matching_for_menti.dart';
-import 'package:sovmestno/presentation/registration/forms/matching_for_mentor.dart';
-import 'package:sovmestno/presentation/registration/forms/mentor_skills.dart';
-import 'package:sovmestno/presentation/registration/forms/user_information.dart';
-import 'package:sovmestno/presentation/registration/user_provider.dart';
+import 'package:sovmestno/presentation/registration_screen/forms/main_form.dart';
+import 'package:sovmestno/presentation/registration_screen/forms/matching_for_menti.dart';
+import 'package:sovmestno/presentation/registration_screen/forms/matching_for_mentor.dart';
+import 'package:sovmestno/presentation/registration_screen/forms/mentor_skills.dart';
+import 'package:sovmestno/presentation/registration_screen/forms/user_information.dart';
+import 'package:sovmestno/presentation/registration_screen/user_provider.dart';
 import 'package:sovmestno/widgets/appbar/custom_appbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sovmestno/widgets/appbar/profile_actions.dart';
@@ -73,7 +73,10 @@ class FormMainScreen extends StatelessWidget {
       'Навыки': MentorSkills(
         onSavePressed: () {
           readable.user = readable.user!
-              .copyWith(experience: readable.experienceController.text);
+              .copyWith(experience: readable.experienceController.text,
+              //TODO убрать после написания функции метчинга
+              matchedUsers: [readable.user!.id!]
+          );
         },
       ),
       'Мэчтинг':
@@ -84,9 +87,8 @@ class FormMainScreen extends StatelessWidget {
                   },
                 )
               : MatchingForMenti(
-                  onSavePressed: () {
-                    print('hzz');
-                  },
+            user: readable.user!,
+                  onSavePressed: readable.startMentorSearch,
                 )),
     });
     //TODO придумать получше

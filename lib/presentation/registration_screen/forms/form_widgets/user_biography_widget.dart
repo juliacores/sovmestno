@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/constants/text.dart';
-import 'package:sovmestno/presentation/registration/user_provider.dart';
+import 'package:sovmestno/presentation/registration_screen/user_provider.dart';
 
 class UserBiography extends StatelessWidget {
   const UserBiography({Key? key}) : super(key: key);
