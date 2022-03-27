@@ -8,13 +8,10 @@ class TextForCard extends StatelessWidget {
   final UserModel userModel;
   @override
   Widget build(BuildContext context) {
-
-
     String lichnost = '';
     for(var i in userModel.tags!) {
       lichnost+= i + ' ,';
     }
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children:  [

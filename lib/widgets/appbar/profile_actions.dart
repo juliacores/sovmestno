@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/domain/models/user.dart';
+import 'package:sovmestno/widgets/avatar.dart';
 import 'package:sovmestno/widgets/dropdown_button_widget.dart';
 
 import '../../constants/colors.dart';
 
 class ProfileActions extends StatelessWidget {
-  const ProfileActions({Key? key, this.name, this.avatarUrl, this.role}) : super(key: key);
+  const ProfileActions(
+      {Key? key, required this.user})
+      : super(key: key);
 
-  final String? name;
-  final String? avatarUrl;
-  final AccountRole? role;
+  // final String? name;
+  // final String? avatarUrl;
+  // final AccountRole? role;
+  final UserModel user;
 
   @override
   Widget build(BuildContext context) {
@@ -29,29 +33,21 @@ class ProfileActions extends StatelessWidget {
             children: [
               const SizedBox(height: 12),
               Text(
-                name!,
+                user.name!,
                 style: const TextStyle(
                   fontSize: 18,
                   color: AppColors.backgroundButton,
                 ),
               ),
-               Text(
-                role?.toRusString() ?? 'Не выбрана роль',
+              Text(
+                user.status?.toRusString() ?? 'Не выбрана роль',
                 style: TextStyle(color: Colors.grey, fontSize: 18),
               )
               // mentor ? const Text('Ментор') : const Text('Менти')
             ],
           ),
           const SizedBox(width: 23),
-          if(avatarUrl!=null)
-            SizedBox(
-              width: 49,
-              height: 49,
-              child: ClipOval(
-                //TODO add placeholder
-                child: Image.network(avatarUrl??''),
-              ),
-            ),
+          Avatar(radius: 24, user: user),
           const MenuDropdown(),
         ],
       ),

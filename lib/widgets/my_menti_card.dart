@@ -7,18 +7,25 @@ import '../constants/colors.dart';
 import '../constants/styles.dart';
 
 class MyMentiesCard extends StatelessWidget {
-
   // final name;
   // final String? avatarUrl;
   final _mentiesAvailable;
   final UserModel userModel;
+  final String status;
 
-  const MyMentiesCard.empty({Key? key, required this.userModel, }) : _mentiesAvailable = false;
-  const MyMentiesCard.available({Key? key, required this.userModel}) : _mentiesAvailable = true;
+  const MyMentiesCard.empty({
+    Key? key,
+    required this.userModel,
+  })  : _mentiesAvailable = false,
+        status = '';
+
+  const MyMentiesCard.available(
+      {Key? key, required this.userModel, required this.status})
+      : _mentiesAvailable = true;
 
   @override
   Widget build(BuildContext context) {
-    if (_mentiesAvailable == false){
+    if (_mentiesAvailable == false) {
       return Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
@@ -29,13 +36,13 @@ class MyMentiesCard extends StatelessWidget {
         ),
         child: Column(
           children: [
-            SizedBox(height: 38),
-            Text(
+            const SizedBox(height: 38),
+            const Text(
               'Пока нет заявок',
               style: Styles.roboto_18_500_blue,
             ),
             SizedBox(height: 26),
-            CircleAvatar(
+            const CircleAvatar(
               radius: 61,
               backgroundColor: AppColors.emptyMentiIconColor,
               //Цвет получается не тот
@@ -45,10 +52,10 @@ class MyMentiesCard extends StatelessWidget {
                 color: AppColors.focusedBorderTextField,
               ),
             ),
-            SizedBox(height: 22),
+            const SizedBox(height: 22),
             Container(
               padding: EdgeInsets.symmetric(vertical: 16, horizontal: 8),
-              child: Text(
+              child: const Text(
                 'Мы заняты поиском менти для вас! Не забывайте проверять почту.',
                 style: Styles.roboroRegular,
                 textAlign: TextAlign.center,
@@ -70,28 +77,28 @@ class MyMentiesCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             SizedBox(height: 38),
-            Text(
-                userModel.name!,
-              style: Styles.roboto_18_500_blue
-            ),
+            Text(userModel.name!, style: Styles.roboto_18_500_blue),
             SizedBox(height: 26),
-            Avatar(radius: 61,user: userModel,),
+            Avatar(
+              radius: 61,
+              user: userModel,
+            ),
             SizedBox(height: 12),
             Text(
-              'Junior разработчик', //menti.profession
+              userModel.carrierRole!, //menti.profession
               style: Styles.roboto_14_500_black,
             ),
-            SizedBox(height: 6),
+            const SizedBox(height: 6),
             Text(
               'Завершено', //menti.status
               style: Styles.roboto_14_500_lightBlue,
             ),
-            SizedBox(height: 31),
+            const SizedBox(height: 31),
             CustomButtonWidget.white(
               title: 'Подробнее',
               callback: () {},
             ),
-            SizedBox(height: 31),
+            const SizedBox(height: 31),
             Container(
               padding: EdgeInsets.symmetric(vertical: 24, horizontal: 16),
               decoration: BoxDecoration(
@@ -133,7 +140,7 @@ class MyMentiesCard extends StatelessWidget {
                           Text(
                             'Достигнуто целей',
                             style: Styles.roboto_14_700_lightGrey,
-                            ),
+                          ),
                         ],
                       )
                     ],
@@ -147,4 +154,3 @@ class MyMentiesCard extends StatelessWidget {
     }
   }
 }
-

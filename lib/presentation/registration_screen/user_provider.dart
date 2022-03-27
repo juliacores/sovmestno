@@ -1,8 +1,10 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:sovmestno/domain/models/request.dart';
 import 'package:sovmestno/domain/models/user.dart';
 import 'package:sovmestno/services/auth_service.dart';
+import 'package:sovmestno/services/database_service.dart';
 import 'package:sovmestno/services/firestore_service.dart';
 import 'package:sovmestno/services/utils.dart';
 
@@ -12,6 +14,7 @@ class UserComplitedRegisterProvider extends BaseProvider {
   final FirestoreApi _firestoreApi = FirestoreApi();
   final TextEditingController _cityController = TextEditingController();
   final TextEditingController _ageController = TextEditingController();
+  final TextEditingController _carrierController = TextEditingController();
   final TextEditingController _aboutController = TextEditingController();
   final TextEditingController _experienceController = TextEditingController();
 
@@ -20,6 +23,7 @@ class UserComplitedRegisterProvider extends BaseProvider {
   TextEditingController get cityController => _cityController;
 
   TextEditingController get ageController => _ageController;
+  TextEditingController get carrierController => _carrierController;
 
   TextEditingController get aboutController => _aboutController;
 
@@ -34,8 +38,8 @@ class UserComplitedRegisterProvider extends BaseProvider {
     notifyListeners();
   }
 
-  setStep(int id){
-    switch(id){
+  setStep(int id) {
+    switch (id) {
       case 0:
         _step = RegistrationSteps.notLogined;
         break;
@@ -50,7 +54,7 @@ class UserComplitedRegisterProvider extends BaseProvider {
         break;
       case 4:
         _step = RegistrationSteps.matching;
-        if(_user!.status==AccountRole.menti){
+        if (_user!.status == AccountRole.menti) {
           startMentorSearch();
         }
         break;
@@ -59,19 +63,31 @@ class UserComplitedRegisterProvider extends BaseProvider {
   }
 
   UserModel? get user => _user;
+
   RegistrationSteps get step => _step;
 
-  setSkills(String? value){
-    if(_user!=null && value!=null) {
+  setSkills(String? value) {
+    if (_user != null && value != null) {
       _user = _user!.copyWith(skills: []);
       _user!.skills!.add(value);
     }
   }
 
-  startMentorSearch(){
-
+  Future<Request> startMentorSearch() async {
+    RealtimeBDApi _realtimeBDApi = RealtimeBDApi();
+    //проверяем нет ли уже созданного запроса, который не дошел до конца
+    for (String i in (_user?.requests ?? [])) {
+      final _r = await _realtimeBDApi.getRequestById(i);
+      if (_r.requestText == null) {
+        return _r;
+      }
+    }
+    //создаем запрос
+    final request =  await _realtimeBDApi.addRequest(Request(userId: _user!.id));
+    //сохраняем юзеру ид запроса
+    _user = _user!.copyWith(requests: [..._user!.requests ?? [],request.id!]);
+    return request;
   }
-
 }
 
 RegistrationSteps? checkRegistrationSteps(UserModel user) {

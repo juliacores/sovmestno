@@ -17,7 +17,7 @@ class MentorSkills extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(height: 38),
+        // const SizedBox(height: 38),
         Text(
           (Provider.of<UserComplitedRegisterProvider>(context, listen: false)
                       .user!

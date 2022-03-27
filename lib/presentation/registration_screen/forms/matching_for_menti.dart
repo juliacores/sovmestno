@@ -8,20 +8,22 @@ import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
 import '../../../widgets/custom_loading_indicator.dart';
 
 class MatchingForMenti extends StatelessWidget {
-  const MatchingForMenti({Key? key, required this.onSavePressed, required this.user}) : super(key: key);
-  final  onSavePressed;
+  const MatchingForMenti(
+      {Key? key, required this.onSavePressed, required this.user})
+      : super(key: key);
+  final onSavePressed;
   final UserModel user;
 
   @override
   Widget build(BuildContext context) {
-
-    if(user.matchedUsers==null || user.matchedUsers!.isEmpty) {
-      onSavePressed().then((_){
-        Navigator.of(context).pushReplacementNamed(Routes.requestRoute);
+    if (user.connectedUsers == null || user.connectedUsers!.isEmpty) {
+      onSavePressed().then((request) {
+        Navigator.of(context)
+            .pushReplacementNamed(Routes.requestRoute, arguments: request);
       });
     } else {
-      Future.delayed(const Duration(seconds: 2)).then((value) =>
-        Navigator.of(context).pushReplacementNamed(Routes.requestRoute));
+      WidgetsBinding.instance!.addPostFrameCallback((timeStamp) =>
+          Navigator.of(context).pushReplacementNamed(Routes.dashboardRoute));
     }
 
     return Row(

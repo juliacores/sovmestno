@@ -20,8 +20,10 @@ class UserModel with _$UserModel {
     String? city,
     List<String>? skills,
     String? experience,
-    List<String>? matchedUsers,
+    // List<String>? matchedUsers,
     List<String>? connectedUsers,
+    List<String>? requests,
+    List<String>? meetings,
     String? carrierRole
   }) = _UserModel;
 

@@ -61,6 +61,7 @@ class FormMainScreen extends StatelessWidget {
         onSavePressed: () {
           readable.user = readable.user!.copyWith(
               city: readable.cityController.text,
+              carrierRole: readable.carrierController.text,
               age: readable.ageController.text);
         },
       ),
@@ -74,8 +75,8 @@ class FormMainScreen extends StatelessWidget {
         onSavePressed: () {
           readable.user = readable.user!
               .copyWith(experience: readable.experienceController.text,
-              //TODO убрать после написания функции метчинга
-              matchedUsers: [readable.user!.id!]
+                  //TODO убрать после написания функции метчинга
+                  // connectedUsers: [readable.user!.id!]
           );
         },
       ),
@@ -87,7 +88,7 @@ class FormMainScreen extends StatelessWidget {
                   },
                 )
               : MatchingForMenti(
-            user: readable.user!,
+                  user: readable.user!,
                   onSavePressed: readable.startMentorSearch,
                 )),
     });
@@ -99,13 +100,11 @@ class FormMainScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.appBarColor,
       appBar: CustomAppBar(
-          actions: ProfileActions(
-        name: (watchable.user?.firstName ?? 'Anomim') +
-            ' ' +
-            (watchable.user?.lastName ?? 'Anomim'),
-        avatarUrl: watchable.user?.avatarImage,
-        role: watchable.user?.status,
-      )),
+          actions: watchable.user == null
+              ? null
+              : ProfileActions(
+                  user: watchable.user!,
+                )),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Padding(

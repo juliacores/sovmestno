@@ -7,13 +7,16 @@ import 'package:sovmestno/widgets/usercard/text_for_card.dart';
 import '../../domain/models/user.dart';
 import 'avatar_for_card_widget.dart';
 
-
 class UserCard extends StatelessWidget {
   final UserModel user;
+  final bool vertical;
+  final callback;
 
   const UserCard({
     Key? key,
     required this.user,
+    this.vertical = false,
+    this.callback,
   }) : super(key: key);
 
   @override
@@ -29,9 +32,7 @@ class UserCard extends StatelessWidget {
                 const SizedBox(
                   width: 36,
                 ),
-                AvatarForCard(
-                  userModel: user,
-                ),
+                AvatarForCard(userModel: user, vertical: vertical),
                 const SizedBox(
                   width: 79,
                 ),
@@ -39,7 +40,8 @@ class UserCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TextForCard(userModel: user),
-                    Text('С чем могу помочь:', style: Styles.colorBlack14bold),
+                    const Text('С чем могу помочь:',
+                        style: Styles.colorBlack14bold),
                     const SizedBox(
                       height: 8,
                     ),
@@ -49,27 +51,7 @@ class UserCard extends StatelessWidget {
                         direction: Axis.horizontal,
                         children: user.skills!
                             .map((e) => ChipsWidget(title: e))
-                            .toList()
-                      //   CardButtom(
-                      //       name: 'SMM', height: 24, width: 61, onTap: () {}),
-                      //   const SizedBox(
-                      //     width: 13,
-                      //   ),
-                      //   CardButtom(
-                      //       name: 'Менеджмент команды',
-                      //       height: 24,
-                      //       width: 153,
-                      //       onTap: () {}),
-                      //   const SizedBox(
-                      //     width: 13,
-                      //   ),
-                      //   CardButtom(
-                      //       name: 'Контексная реклама',
-                      //       height: 24,
-                      //       width: 141,
-                      //       onTap: () {}),
-                      // ],
-                    ),
+                            .toList()),
                     const SizedBox(
                       width: 13,
                     ),
@@ -80,10 +62,12 @@ class UserCard extends StatelessWidget {
             const SizedBox(
               height: 18,
             ),
+            if(!vertical)
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: const [
-                CustomButtonWidget.blue(title: 'Выбрать этого ментора')
+              children: [
+                CustomButtonWidget.blue(
+                    title: 'Выбрать этого ментора', callback: callback)
               ],
             ),
           ],
