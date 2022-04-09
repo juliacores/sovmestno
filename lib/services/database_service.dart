@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:sovmestno/domain/models/request.dart';
+import 'package:sovmestno/domain/models/user.dart';
 
 class RealtimeBDApi {
   final database = FirebaseDatabase.instance;
@@ -28,9 +29,29 @@ class RealtimeBDApi {
     return true;
   }
 
-  Future<Request> getRequestById(String requestId) async =>Request.fromJson((await requests.child(requestId).get()).value as Map<String, dynamic>);
+  Future<Request?> getRequestById(String requestId) async {
+    final _r = (await requests.child(requestId).get()).value;
+    if (_r == null) return null;
+    return Request.fromJson(_r as Map<String, dynamic>);
+  }
 
-  Stream getRequestStream(String requestId) => requests.onValue.map((event) {
+  Future<List<Request?>> getRequestsByUserId(String userId, AccountRole userRole) async {
+    final _r = (await requests.get()).children.map((e) {
+      if(e.value!= null){
+        final __r = Request.fromJson(e.value as Map<String, dynamic>);
+        if(userRole == AccountRole.menti) {
+          if (__r.mentiUserId == userId) {
+            return __r;
+          }
+        } else if (__r.selectedMentorId == userId) {
+          return __r;
+        }
+      }
+    }).toList();
+     return _r;
+  }
+
+  Stream getRequestStream(String? requestId) => requests.onValue.map((event) {
         print('got event like this: ${event.snapshot}');
         if (event.snapshot.value != null) {
           final Request _request =

@@ -5,29 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f48310b-b233-4f0f-b366-532243994c91" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/presentation/choose_mentor_screen/request_provider.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presentation/dashboard_screen/dashboard_screen.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/widgets/appbar/center_buttons.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/models/goal.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/models/session.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presentation/dashboard_screen/dashboard_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/constants/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/constants/routes.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/domain/models/meeting.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/models/meeting.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/domain/models/request.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/models/request.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/domain/models/user.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/domain/models/user.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/choose_mentor_screen/application_send.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/choose_mentor_screen/application_send.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/choose_mentor_screen/choose_mentor_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/choose_mentor_screen/choose_mentor_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration_screen/form_main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration_screen/form_main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration_screen/forms/form_widgets/address_field_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration_screen/forms/form_widgets/address_field_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/choose_mentor_screen/request_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/choose_mentor_screen/request_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presentation/dashboard_screen/dashboard_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/dashboard_screen/dashboard_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/registration_screen/forms/matching_for_menti.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration_screen/forms/matching_for_menti.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presentation/registration_screen/forms/mentor_skills.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration_screen/forms/mentor_skills.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presentation/registration_screen/user_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presentation/registration_screen/user_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/services/database_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/database_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/appbar/custom_appbar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/appbar/custom_appbar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/appbar/profile_actions.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/appbar/profile_actions.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/services/firestore_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/firestore_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/chips_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/chips_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/widgets/my_menti_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/my_menti_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/registration_app_bar.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/usercard/avatar_for_card_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/usercard/avatar_for_card_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/usercard/text_for_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/usercard/text_for_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/usercard/user_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/usercard/user_card.dart" afterDir="false" />
     </list>
     <list id="0f7fbc54-855c-4b7e-8962-fc77b3fa64d0" name="refactor" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -206,7 +200,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648299798114</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="request logic started">
+      <created>1648382484296</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1648382484296</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -246,6 +247,7 @@
     <MESSAGE value="matching start" />
     <MESSAGE value="mentor card refactor" />
     <MESSAGE value="avatar added" />
-    <option name="LAST_COMMIT_MESSAGE" value="avatar added" />
+    <MESSAGE value="request logic started" />
+    <option name="LAST_COMMIT_MESSAGE" value="request logic started" />
   </component>
 </project>

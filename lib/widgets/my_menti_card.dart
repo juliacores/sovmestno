@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sovmestno/domain/models/session.dart';
 import 'package:sovmestno/domain/models/user.dart';
 import 'package:sovmestno/widgets/avatar.dart';
 import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
@@ -11,16 +12,19 @@ class MyMentiesCard extends StatelessWidget {
   // final String? avatarUrl;
   final _mentiesAvailable;
   final UserModel userModel;
-  final String status;
+  final Session session;
 
-  const MyMentiesCard.empty({
+  MyMentiesCard.empty({
     Key? key,
-    required this.userModel,
   })  : _mentiesAvailable = false,
-        status = '';
+        userModel = UserModel(),
+        session = Session(),
+        super(key: key);
 
   const MyMentiesCard.available(
-      {Key? key, required this.userModel, required this.status})
+      {Key? key,
+      required this.userModel,
+      required this.session})
       : _mentiesAvailable = true;
 
   @override
@@ -41,7 +45,7 @@ class MyMentiesCard extends StatelessWidget {
               'Пока нет заявок',
               style: Styles.roboto_18_500_blue,
             ),
-            SizedBox(height: 26),
+            const SizedBox(height: 26),
             const CircleAvatar(
               radius: 61,
               backgroundColor: AppColors.emptyMentiIconColor,
@@ -54,7 +58,7 @@ class MyMentiesCard extends StatelessWidget {
             ),
             const SizedBox(height: 22),
             Container(
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
               child: const Text(
                 'Мы заняты поиском менти для вас! Не забывайте проверять почту.',
                 style: Styles.roboroRegular,
@@ -76,32 +80,33 @@ class MyMentiesCard extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            SizedBox(height: 38),
+            const SizedBox(height: 38),
             Text(userModel.name!, style: Styles.roboto_18_500_blue),
-            SizedBox(height: 26),
+            const SizedBox(height: 26),
             Avatar(
               radius: 61,
               user: userModel,
             ),
-            SizedBox(height: 12),
+            const SizedBox(height: 12),
             Text(
               userModel.carrierRole!, //menti.profession
               style: Styles.roboto_14_500_black,
             ),
             const SizedBox(height: 6),
             Text(
-              'Завершено', //menti.status
+              session.status?.toRusString() ?? 'Ожидает подтверждения', //menti.status
               style: Styles.roboto_14_500_lightBlue,
             ),
             const SizedBox(height: 31),
             CustomButtonWidget.white(
               title: 'Подробнее',
               callback: () {},
+              //TODO go to info
             ),
             const SizedBox(height: 31),
             Container(
-              padding: EdgeInsets.symmetric(vertical: 24, horizontal: 16),
-              decoration: BoxDecoration(
+              padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+              decoration: const BoxDecoration(
                   color: Color.fromRGBO(235, 237, 240, 1),
                   borderRadius: BorderRadius.only(
                       bottomRight: Radius.circular(8.0),
@@ -118,26 +123,32 @@ class MyMentiesCard extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            '3',
+                            session.meetings?.length.toString() ?? '3',
                             style: Styles.mulish_18_700_grey,
                           ),
-                          Text(
+                          const Text(
                             'Проведенных встреч',
                             style: Styles.roboto_14_700_lightGrey,
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 16,
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            '1',
+                            session.goals
+                                    ?.where(
+                                        (element) => element.status ?? false)
+                                    .toList()
+                                    .length
+                                    .toString() ??
+                                '0',
                             style: Styles.mulish_18_700_grey,
                           ),
-                          Text(
+                          const Text(
                             'Достигнуто целей',
                             style: Styles.roboto_14_700_lightGrey,
                           ),

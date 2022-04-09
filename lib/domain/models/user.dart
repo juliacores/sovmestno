@@ -21,10 +21,10 @@ class UserModel with _$UserModel {
     List<String>? skills,
     String? experience,
     // List<String>? matchedUsers,
-    List<String>? connectedUsers,
-    List<String>? requests,
-    List<String>? meetings,
-    String? carrierRole
+    List<String>? sessions,
+    String? carrierRole,
+     //TODO for mentor
+     List? timeslots
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>
@@ -36,11 +36,11 @@ class UserModel with _$UserModel {
 }
 
 _fromIdToRole(int? id) {
-  if (id == 0)
+  if (id == 0) {
     return AccountRole.mentor;
-  else if (id == 1)
+  } else if (id == 1) {
     return AccountRole.menti;
-  else
+  } else
     return null;
 }
 

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/constants/styles.dart';
 import 'package:sovmestno/constants/text.dart';
+import 'package:sovmestno/presentation/choose_mentor_screen/request_provider.dart';
 import 'package:sovmestno/widgets/buttons/application_button_widget.dart';
 import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
 
@@ -60,7 +62,7 @@ class ApplicationSend extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             CustomButtonWidget.blue(
-              title: 'Отправить',callback:callback
+              title: 'Отправить',callback: Provider.of<RequestProvider>(context).requestSend? null: callback
             ),
           ],
         ),

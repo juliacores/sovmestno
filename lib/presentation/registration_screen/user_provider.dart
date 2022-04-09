@@ -23,6 +23,7 @@ class UserComplitedRegisterProvider extends BaseProvider {
   TextEditingController get cityController => _cityController;
 
   TextEditingController get ageController => _ageController;
+
   TextEditingController get carrierController => _carrierController;
 
   TextEditingController get aboutController => _aboutController;
@@ -76,16 +77,18 @@ class UserComplitedRegisterProvider extends BaseProvider {
   Future<Request> startMentorSearch() async {
     RealtimeBDApi _realtimeBDApi = RealtimeBDApi();
     //проверяем нет ли уже созданного запроса, который не дошел до конца
-    for (String i in (_user?.requests ?? [])) {
-      final _r = await _realtimeBDApi.getRequestById(i);
-      if (_r.requestText == null) {
-        return _r;
+    final _prevRequests =
+        await _realtimeBDApi.getRequestsByUserId(_user!.id!, _user!.status!);
+    for (Request? i in _prevRequests) {
+      if (i != null && i.requestText == null) {
+        return i;
       }
     }
     //создаем запрос
-    final request =  await _realtimeBDApi.addRequest(Request(userId: _user!.id));
+    final request =
+        await _realtimeBDApi.addRequest(Request(mentiUserId: _user!.id));
     //сохраняем юзеру ид запроса
-    _user = _user!.copyWith(requests: [..._user!.requests ?? [],request.id!]);
+    // _user = _user!.copyWith(requests: [..._user!.requests ?? [],request.id!]);
     return request;
   }
 }

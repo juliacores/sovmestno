@@ -57,7 +57,7 @@ class ChooseMentorScreen extends StatelessWidget {
                                         vertical: true,
                                       )
                                     //TODO add shimmer
-                                    : Align()),
+                                    : const Align()),
                             ApplicationSend(
                               controller: provider.requestController,
                               callback: provider.updateAndSendRequest,

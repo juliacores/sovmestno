@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sovmestno/constants/routes.dart';
 import 'package:sovmestno/domain/models/request.dart';
+import 'package:sovmestno/domain/models/session.dart';
 import 'package:sovmestno/services/database_service.dart';
+import 'package:sovmestno/services/firestore_service.dart';
 import 'package:sovmestno/services/utils.dart';
 
 class RequestProvider extends BaseProvider {
-  RealtimeBDApi _realtimeBDApi = RealtimeBDApi();
+  final RealtimeBDApi _realtimeBDApi = RealtimeBDApi();
+  final FirestoreApi _firestoreApi = FirestoreApi();
   Request? _request;
   BuildContext _currentContext;
 
@@ -27,8 +30,14 @@ class RequestProvider extends BaseProvider {
     setRequestSend = true;
     final result = await _realtimeBDApi.updateRequest(
         _request!.copyWith(requestText: _requestTextController.text));
+    await _firestoreApi.addSession(
+        session: Session(
+            status: SessionStatus.pending,
+            request:
+                _request!.copyWith(requestText: _requestTextController.text),
+            createdBy: DateTime.now()));
     setRequestSend = false;
-    if(result) {
+    if (result) {
       Navigator.of(_currentContext).pushReplacementNamed(Routes.dashboardRoute);
     } else {
       hasError = true;

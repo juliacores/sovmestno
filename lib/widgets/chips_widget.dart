@@ -20,11 +20,11 @@ class ChipsWidget extends StatelessWidget {
       padding: const EdgeInsets.only(left: 0, right: 38),
       child: FilterChip(
         shape: RoundedRectangleBorder(
-          side: const BorderSide(color: Colors.grey, width: 0.5),
+          side: const BorderSide(color: AppColors.grayscale, width: 0.5),
           borderRadius: BorderRadius.circular(8),
         ),
         label: Text(title),
-        labelStyle: const TextStyle(color: Colors.grey),
+        labelStyle: const TextStyle(color: AppColors.grayscale),
         backgroundColor: AppColors.appBarColor,
         selected: selected ?? false,
         onSelected: onSelected
