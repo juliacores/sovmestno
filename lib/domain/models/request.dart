@@ -12,7 +12,7 @@ class Request with _$Request {
   const factory Request({
     ///от кого запрос
     String? mentiUserId,
-    bool? matched,
+    String? createdSessionId,
     String? id,
     ///кого предлагает алгоритм
     List<String>? mentorIds,

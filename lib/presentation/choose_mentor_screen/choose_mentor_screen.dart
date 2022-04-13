@@ -23,73 +23,82 @@ class ChooseMentorScreen extends StatelessWidget {
 
     final FirestoreApi _api = FirestoreApi();
     return ChangeNotifierProvider(
-        create: (context) => RequestProvider(context),
+        create: (context) => RequestProvider(context, readable.user),
         child: Scaffold(
-            appBar: CustomAppBar(
-                actions: ProfileActions(
-              user: readable.user!,
-            )),
-            body: Consumer<RequestProvider>(builder: (context, provider, _) {
-              if (provider.request == null) {
-                final args = ModalRoute.of(context)!.settings.arguments;
+          appBar: CustomAppBar(
+              actions: ProfileActions(
+            user: readable.user!,
+          )),
+          body: Consumer<RequestProvider>(builder: (context, provider, _) {
+            if (provider.request == null) {
+              final args = ModalRoute.of(context)!.settings.arguments;
+              WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
                 provider.request = args as Request;
-                return const Center(
-                  child: CustomLoadingIndicator(),
-                );
-              }
-
-              if (provider.request!.selectedMentorId != null) {
-                return SingleChildScrollView(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 26, vertical: 33),
-                    child: Column(
-                      children: [
-                        const Text(
-                            'Отличный выбор! Теперь вам нужно отправить заявку этому ментору.'),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            FutureBuilder(
-                                future: _api.getUser(
-                                    userId: provider.request!.selectedMentorId),
-                                builder: (context, snapshot) => snapshot.hasData
-                                    ? UserCard(
-                                        user: snapshot.data as UserModel,
-                                        vertical: true,
-                                      )
-                                    //TODO add shimmer
-                                    : const Align()),
-                            ApplicationSend(
-                              controller: provider.requestController,
-                              callback: provider.updateAndSendRequest,
-                            )
-                          ],
-                        )
-                      ],
-                    ));
-              }
-
-              return SingleChildScrollView(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 26, vertical: 33),
-                child: Column(
-                    children: provider.request?.mentorIds
-                            ?.map((e) => FutureBuilder(
-                                future: _api.getUser(userId: e),
-                                builder: (context, snapshot) => snapshot.hasData
-                                    ? UserCard(
-                                        user: snapshot.data as UserModel,
-                                        callback: provider.selectMentor(e),
-                                      )
-                                    //TODO add shimmer
-                                    : Align()))
-                            .toList() ??
-                        [
-                          const Text(
-                              'к сожалению процесс подбора ментора еще идет')
-                        ]),
+              });
+              return const Center(
+                child: CustomLoadingIndicator(),
               );
-            }),
-          bottomNavigationBar: const BottomBar(),));
+            }
+
+            if (provider.request!.selectedMentorId != null) {
+              return SingleChildScrollView(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 26, vertical: 33),
+                  child: Column(
+                    children: [
+                      const Text(
+                          'Отличный выбор! Теперь вам нужно отправить заявку этому ментору.'),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Flexible(
+                              flex: 1,
+                              child: FutureBuilder(
+                                  future: _api.getUser(
+                                      userId:
+                                          provider.request!.selectedMentorId),
+                                  builder: (context, snapshot) =>
+                                      snapshot.hasData
+                                          ? UserCard(
+                                              user: snapshot.data as UserModel,
+                                              vertical: true,
+                                            )
+                                          //TODO add shimmer
+                                          : const Align())),
+                          Flexible(
+                              flex: 1,
+                              child: ApplicationSend(
+                                controller: provider.requestController,
+                                callback: provider.updateAndSendRequest,
+                              ))
+                        ],
+                      )
+                    ],
+                  ));
+            }
+
+            return SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 33),
+              child: Column(
+                  children: provider.request?.mentorIds
+                          ?.map((e) => FutureBuilder(
+                              future: _api.getUser(userId: e),
+                              builder: (context, snapshot) => snapshot.hasData
+                                  ?  UserCard(
+                                      user: snapshot.data as UserModel,
+                                      callback: () => provider.selectMentor(e),
+                                    )
+                                  //TODO add shimmer
+                                  : Align()))
+                          .toList() ??
+                      [
+                        const Text(
+                            'к сожалению процесс подбора ментора еще идет')
+                      ]),
+            );
+          }),
+          bottomNavigationBar: const BottomBar(),
+        ));
   }
 }

@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:sovmestno/constants/routes.dart';
+import 'package:sovmestno/domain/models/request.dart';
 import 'package:sovmestno/domain/models/session.dart';
 import 'package:sovmestno/domain/models/user.dart';
 import 'package:sovmestno/presentation/user_session_info/user_session_screen.dart';
@@ -37,6 +38,28 @@ class DashboardProvider extends BaseProvider {
 
   _getUserSessions(userId) async {
     user = await _firestoreApi.getUser(userId: userId);
+    //проверяем нет ли входящих запросов на сессии
+    //TODO убрать
+    if (user!.status == AccountRole.mentor) {
+      final List<Request?> requests = await _realtimeBDApi.getRequestsByUserId(
+          user!.id!, AccountRole.mentor);
+      if (requests.isNotEmpty) {
+        List<String> newSessions = [];
+        ///берем идешники
+        ///удаляем запросы
+        for (Request? r in requests) {
+          if (r != null && r.createdSessionId != null) {
+            newSessions.add(r.createdSessionId!);
+            _realtimeBDApi.deleteRequest(r.id!);
+          }
+        }
+        await _firestoreApi.updateUser(
+            user: _user!.copyWith(
+                sessions: [...(_user!.sessions ?? []), ...newSessions]));
+        user = await _firestoreApi.getUser(userId: userId);
+      }
+    }
+    //получаем каждую сессию по ид
     for (String sessionId in _user!.sessions ?? []) {
       final session = await _firestoreApi.getSession(sessionId: sessionId);
       if (session != null) {

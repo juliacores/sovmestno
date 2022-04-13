@@ -8,11 +8,13 @@ class BottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
+      elevation: 1,
       color: AppColors.grayscale,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text('Sovmestno 2022'),
-          TextButton(onPressed: ()=>launch('sovmestno.co'), child: Text('sovmestno.co'))
+          const Text('@Sovmestno 2022'),
+          TextButton(onPressed: ()=>launch('https://sovmestno.co'), child: const Text('sovmestno.co'))
         ],
       ),
     );

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/constants/strings.dart';
-import 'package:sovmestno/presentation/registration_screen/forms/form_widgets/personal_qualities_widget.dart';
 import 'package:sovmestno/presentation/registration_screen/forms/form_widgets/user_biography_widget.dart';
 import 'package:sovmestno/presentation/registration_screen/user_provider.dart';
 import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
@@ -37,7 +36,7 @@ class UserInformation extends StatelessWidget {
         const SizedBox(height: 20),
         Wrap(
             spacing: 10,
-            runSpacing: 30,
+            runSpacing: 20,
             direction: Axis.horizontal,
             children: charecteristics
                 .map((e) => ChipsWidget(

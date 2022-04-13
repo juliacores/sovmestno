@@ -4,9 +4,7 @@ import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/constants/strings.dart';
 import 'package:sovmestno/constants/text.dart';
 import 'package:sovmestno/domain/models/user.dart';
-import 'package:sovmestno/presentation/registration_screen/forms/form_widgets/dropdown_form_field_widget.dart';
 import 'package:sovmestno/presentation/registration_screen/user_provider.dart';
-import 'package:sovmestno/widgets/buttons/back_button_widget.dart';
 import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
 import 'package:sovmestno/widgets/chips_widget.dart';
 
@@ -82,12 +80,12 @@ class MentorSkills extends StatelessWidget {
                         .status! ==
                     AccountRole.mentor
                 ? 'С развитием каких навыков вы могли бы помочь другим?'
-                : 'Выберите для начала 1 цель, потом сможете добавить',
+                : 'Выберите навыки, которые хотите развить',
             style: const TextStyle(fontSize: 18)),
         const SizedBox(height: 40),
         Wrap(
             spacing: 10,
-            runSpacing: 30,
+            runSpacing: 20,
             direction: Axis.horizontal,
             children: skills
                 .map((e) => ChipsWidget(

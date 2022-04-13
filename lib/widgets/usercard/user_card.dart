@@ -27,6 +27,7 @@ class UserCard extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
+            if (!vertical)
             Row(
               children: [
                 const SizedBox(
@@ -45,31 +46,55 @@ class UserCard extends StatelessWidget {
                     const SizedBox(
                       height: 8,
                     ),
-                    Wrap(
-                        spacing: 20,
-                        runSpacing: 35,
-                        direction: Axis.horizontal,
-                        children: user.skills!
-                            .map((e) => ChipsWidget(title: e))
-                            .toList()),
+                     Wrap(
+                            spacing: 10,
+                            // runSpacing: 35,
+                            direction: Axis.horizontal,
+                            children: user.skills!
+                                .map((e) => ChipsWidget(title: e))
+                                .toList()),
                     const SizedBox(
                       width: 13,
                     ),
                   ],
                 ),
               ],
-            ),
+            )
+            else
+              ...[
+                AvatarForCard(userModel: user, vertical: vertical),
+                const SizedBox(
+                  width: 36,
+                ),
+                TextForCard(userModel: user),
+                const Text('С чем могу помочь:',
+                    style: Styles.colorBlack14bold),
+                const SizedBox(
+                  height: 8,
+                ),
+                Wrap(
+                  spacing: 10,
+                  // runSpacing: 35,
+                    direction: Axis.horizontal,
+                    children: user.skills!
+                        .map((e) => ChipsWidget(title: e))
+                        .toList()),
+                const SizedBox(
+                  width: 13,
+                ),
+              ],
+
             const SizedBox(
               height: 18,
             ),
-            if(!vertical)
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                CustomButtonWidget.blue(
-                    title: 'Выбрать этого ментора', callback: callback)
-              ],
-            ),
+            if (!vertical)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  CustomButtonWidget.blue(
+                      title: 'Выбрать этого ментора', callback: callback)
+                ],
+              ),
           ],
         ),
       ),

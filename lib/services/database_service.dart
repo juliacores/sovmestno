@@ -1,10 +1,14 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:sovmestno/domain/models/request.dart';
 import 'package:sovmestno/domain/models/user.dart';
+import 'package:sovmestno/services/firestore_service.dart';
+
+import 'helpers/find_in_list.dart';
 
 class RealtimeBDApi {
   final database = FirebaseDatabase.instance;
@@ -35,30 +39,56 @@ class RealtimeBDApi {
     return Request.fromJson(_r as Map<String, dynamic>);
   }
 
-  Future<List<Request?>> getRequestsByUserId(String userId, AccountRole userRole) async {
-    final _r = (await requests.get()).children.map((e) {
-      if(e.value!= null){
-        final __r = Request.fromJson(e.value as Map<String, dynamic>);
-        if(userRole == AccountRole.menti) {
-          if (__r.mentiUserId == userId) {
+  Future<void> deleteRequest(String requestId) =>
+      requests.child(requestId).remove();
+
+  Future<List<Request?>> getRequestsByUserId(
+      String userId, AccountRole userRole) async {
+    final db = await requests.get();
+
+    if (db.exists) {
+      final _r = (await requests.get()).children.map((e) {
+        if (e.value != null) {
+          final __r = Request.fromJson(e.value as Map<String, dynamic>);
+          if (userRole == AccountRole.menti) {
+            if (__r.mentiUserId == userId) {
+              return __r;
+            }
+          } else if (__r.selectedMentorId == userId) {
             return __r;
           }
-        } else if (__r.selectedMentorId == userId) {
-          return __r;
         }
-      }
-    }).toList();
-     return _r;
+      }).toList();
+      return _r;
+    }
+    return [];
   }
 
-  Stream getRequestStream(String? requestId) => requests.onValue.map((event) {
-        print('got event like this: ${event.snapshot}');
+  Stream<Request?> getRequestStream(String? requestId) =>
+      requests.onValue.map((event) {
+        print('got event like this: ${event.snapshot.value}');
         if (event.snapshot.value != null) {
-          final Request _request =
-              Request.fromJson(event.snapshot.value as Map<String, dynamic>);
-          if (_request.id == requestId) {
-            return event.snapshot.value;
+          try {
+            return Request.fromJson(
+                (event.snapshot.value as Map<String, dynamic>)[requestId]);
+          } catch (e) {
+            // return null;
           }
+          // final Request _request =
+          //     Request.fromJson(event.snapshot.value as Map<String, dynamic>);
+          // if (_request.id == requestId) {
+          //   return event.snapshot.value;
+          // }
         }
+        return null;
       });
+
+  Future<void> findMentor(Request request, FirestoreApi api) async {
+    final mentorList = await api.getMentors();
+    final currentUser = await api.getUser(userId: request.mentiUserId);
+    final selectedMentors = mentorList!.where(
+        (element) => compareLists(element.skills!, currentUser!.skills!));
+    updateRequest(request.copyWith(
+        mentorIds: selectedMentors.map((e) => e.id!).toList()));
+  }
 }

@@ -1,4 +1,5 @@
 import 'dart:core';
+import 'dart:developer';
 
 import 'package:sovmestno/domain/models/request.dart';
 import 'package:sovmestno/domain/models/user.dart';
@@ -90,9 +91,11 @@ class UserComplitedRegisterProvider extends BaseProvider {
 
   Future<Request> startMentorSearch() async {
     RealtimeBDApi _realtimeBDApi = RealtimeBDApi();
+    log('_prevRequests fetch started');
     //проверяем нет ли уже созданного запроса, который не дошел до конца
     final _prevRequests =
         await _realtimeBDApi.getRequestsByUserId(_user!.id!, _user!.status!);
+    log('_prevRequests - $_prevRequests');
     for (Request? i in _prevRequests) {
       if (i != null && i.requestText == null) {
         return i;
@@ -101,8 +104,8 @@ class UserComplitedRegisterProvider extends BaseProvider {
     //создаем запрос
     final request =
         await _realtimeBDApi.addRequest(Request(mentiUserId: _user!.id));
-    //сохраняем юзеру ид запроса
-    // _user = _user!.copyWith(requests: [..._user!.requests ?? [],request.id!]);
+    //TODO убрать в будущем
+    _realtimeBDApi.findMentor(request,_firestoreApi);
     return request;
   }
 }

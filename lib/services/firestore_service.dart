@@ -61,7 +61,7 @@ class FirestoreApi {
     }
   }
 
-  Future<List<Map<String, dynamic>>?> getMentors() async {
+  Future<List<UserModel>?> getMentors() async {
     try {
       final docref = _usersCollection.where('status', isEqualTo: 0);
       final userDoc = await docref.get();
@@ -69,7 +69,7 @@ class FirestoreApi {
       final docData = userDoc.docs
           .map((doc) => doc.data() as Map<String, dynamic>)
           .toList();
-      return docData;
+      return docData.map((e) => UserModel.fromJson(e)).toList();
     } catch (err) {
       throw FirestoreApiException(message: err.toString());
     }

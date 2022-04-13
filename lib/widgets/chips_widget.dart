@@ -28,7 +28,9 @@ class ChipsWidget extends StatelessWidget {
           backgroundColor: AppColors.appBarColor,
           selected: selected ?? false,
           onSelected: onSelected,
-          selectedColor: AppColors.checkboxColor.withOpacity(0.5),
+          selectedColor: AppColors.emptyMentiIconColor.withOpacity(0.5),
+          disabledColor: AppColors.appBarColor,
+
         ));
   }
 }

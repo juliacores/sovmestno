@@ -21,6 +21,7 @@ class UserImageWidget extends StatelessWidget {
             Avatar(
                 radius: 33,
                 user: UserModel(
+                  avatarImage: Provider.of<LoginProvider>(context).image,
                     firstName:
                         Provider.of<LoginProvider>(context).nameController.text,
                     lastName: Provider.of<LoginProvider>(context)

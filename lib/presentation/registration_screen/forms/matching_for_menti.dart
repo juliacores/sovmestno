@@ -31,15 +31,16 @@ class MatchingForMenti extends StatelessWidget {
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     try {
-                      final Request _request = Request.fromJson(
-                          snapshot.data as Map<String, dynamic>);
-                      if (!(_request.matched ?? false) &&
-                          _request.mentorIds != null &&
-                          _request.mentorIds!.isNotEmpty) {
-                        WidgetsBinding.instance?.addPostFrameCallback(
-                            (timeStamp) => Navigator.of(context)
-                                .pushReplacementNamed(Routes.requestRoute,
-                                    arguments: _request));
+                      final Request? _request = snapshot.data as Request?;
+                      if (_request != null) {
+                        if (_request.selectedMentorId == null &&
+                            _request.mentorIds != null &&
+                            _request.mentorIds!.isNotEmpty) {
+                          WidgetsBinding.instance?.addPostFrameCallback(
+                              (timeStamp) => Navigator.of(context)
+                                  .pushReplacementNamed(Routes.requestRoute,
+                                      arguments: _request));
+                        }
                       }
                     } catch (e) {
                       log(e.toString());
@@ -104,15 +105,15 @@ class MatchingForMenti extends StatelessWidget {
     //         );
     //       });
 
-      // if (user.connectedUsers == null || user.connectedUsers!.isEmpty) {
-      //   onSavePressed().then((request) {
-      //     Navigator.of(context)
-      //         .pushReplacementNamed(Routes.requestRoute, arguments: request);
-      //   });
-      // } else {
-      //   WidgetsBinding.instance!.addPostFrameCallback((timeStamp) =>
-      //       Navigator.of(context).pushReplacementNamed(Routes.dashboardRoute));
-      // }
+    // if (user.connectedUsers == null || user.connectedUsers!.isEmpty) {
+    //   onSavePressed().then((request) {
+    //     Navigator.of(context)
+    //         .pushReplacementNamed(Routes.requestRoute, arguments: request);
+    //   });
+    // } else {
+    //   WidgetsBinding.instance!.addPostFrameCallback((timeStamp) =>
+    //       Navigator.of(context).pushReplacementNamed(Routes.dashboardRoute));
+    // }
     // });
   }
 }
