@@ -47,6 +47,7 @@ dependencies:
 
   #utils
   json_annotation: ^4.4.0
+  url_launcher:
 
 dev_dependencies:
   flutter_lints: ^1.0.4

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
+import 'package:sovmestno/constants/routes.dart';
 import 'package:sovmestno/constants/styles.dart';
 import 'package:sovmestno/domain/models/user.dart';
 import 'package:sovmestno/presentation/auth/login_provider.dart';
@@ -13,6 +14,7 @@ import 'package:sovmestno/presentation/registration_screen/user_provider.dart';
 import 'package:sovmestno/widgets/appbar/custom_appbar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sovmestno/widgets/appbar/profile_actions.dart';
+import 'package:sovmestno/widgets/bottom_bar/bottom_bar.dart';
 import 'package:sovmestno/widgets/buttons/back_button_widget.dart';
 import 'package:sovmestno/widgets/header_with_line.dart';
 
@@ -68,13 +70,13 @@ class FormMainScreen extends StatelessWidget {
       'О себе': UserInformation(
         onSavePressed: () {
           readable.user = readable.user!.copyWith(
-              description: readable.aboutController.text, tags: readable.tags);
+              description: readable.aboutController.text, tags: readable.userCharacteristics);
         },
       ),
       'Навыки': MentorSkills(
         onSavePressed: () {
           readable.user = readable.user!
-              .copyWith(experience: readable.experienceController.text,
+              .copyWith(experience: readable.experienceController.text, skills: readable.userSkills
                   //TODO убрать после написания функции метчинга
                   // connectedUsers: [readable.user!.id!]
           );
@@ -84,7 +86,7 @@ class FormMainScreen extends StatelessWidget {
           ((watchable.user?.status ?? AccountRole.mentor) == AccountRole.mentor
               ? MatchingForMentor(
                   onSavePressed: () {
-                    print('hzz');
+                    Navigator.of(context).pushReplacementNamed(Routes.dashboardRoute);
                   },
                 )
               : MatchingForMenti(
@@ -99,6 +101,7 @@ class FormMainScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: AppColors.appBarColor,
+      bottomNavigationBar: const BottomBar(),
       appBar: CustomAppBar(
           actions: watchable.user == null
               ? null

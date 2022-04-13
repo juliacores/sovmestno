@@ -4,11 +4,10 @@ import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/constants/styles.dart';
 import 'package:sovmestno/constants/text.dart';
 import 'package:sovmestno/presentation/choose_mentor_screen/request_provider.dart';
-import 'package:sovmestno/widgets/buttons/application_button_widget.dart';
 import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
 
 class ApplicationSend extends StatelessWidget {
-  ApplicationSend({Key? key, this.controller, this.callback}) : super(key: key);
+  const ApplicationSend({Key? key, this.controller, this.callback}) : super(key: key);
   final controller;
   final callback;
 

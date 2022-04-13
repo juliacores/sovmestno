@@ -7,6 +7,7 @@ import 'package:sovmestno/presentation/choose_mentor_screen/request_provider.dar
 import 'package:sovmestno/services/firestore_service.dart';
 import 'package:sovmestno/widgets/appbar/custom_appbar.dart';
 import 'package:sovmestno/widgets/appbar/profile_actions.dart';
+import 'package:sovmestno/widgets/bottom_bar/bottom_bar.dart';
 import 'package:sovmestno/widgets/custom_loading_indicator.dart';
 import 'package:sovmestno/widgets/usercard/user_card.dart';
 
@@ -88,6 +89,7 @@ class ChooseMentorScreen extends StatelessWidget {
                               'к сожалению процесс подбора ментора еще идет')
                         ]),
               );
-            })));
+            }),
+          bottomNavigationBar: const BottomBar(),));
   }
 }

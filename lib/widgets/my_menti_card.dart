@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sovmestno/domain/models/session.dart';
 import 'package:sovmestno/domain/models/user.dart';
+import 'package:sovmestno/presentation/dashboard_screen/dashboard_provider.dart';
 import 'package:sovmestno/widgets/avatar.dart';
 import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
 
@@ -18,13 +20,11 @@ class MyMentiesCard extends StatelessWidget {
     Key? key,
   })  : _mentiesAvailable = false,
         userModel = UserModel(),
-        session = Session(),
+        session = const Session(),
         super(key: key);
 
   const MyMentiesCard.available(
-      {Key? key,
-      required this.userModel,
-      required this.session})
+      {Key? key, required this.userModel, required this.session})
       : _mentiesAvailable = true;
 
   @override
@@ -94,14 +94,15 @@ class MyMentiesCard extends StatelessWidget {
             ),
             const SizedBox(height: 6),
             Text(
-              session.status?.toRusString() ?? 'Ожидает подтверждения', //menti.status
+              session.status?.toRusString() ?? 'Ожидает подтверждения',
+              //menti.status
               style: Styles.roboto_14_500_lightBlue,
             ),
             const SizedBox(height: 31),
             CustomButtonWidget.white(
               title: 'Подробнее',
-              callback: () {},
-              //TODO go to info
+              callback: () => Provider.of<DashboardProvider>(context)
+                  .openUserInfo(userModel, session),
             ),
             const SizedBox(height: 31),
             Container(

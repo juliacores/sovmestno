@@ -22,9 +22,13 @@ class Splash extends StatelessWidget {
         RegistrationSteps _step =
             checkRegistrationSteps(_user) ?? RegistrationSteps.notLogined;
 
-        if (_step == RegistrationSteps.matching)
-          //TODO goto dashboard
-          return;
+        if (_step == RegistrationSteps.matching) {
+          if(_user.status == AccountRole.mentor)
+          Navigator.of(context).pushReplacementNamed(Routes.dashboardRoute);
+          else if(_user.sessions!=null && _user.sessions!.isNotEmpty )
+            Navigator.of(context).pushReplacementNamed(Routes.dashboardRoute);
+          else Navigator.of(context).pushReplacementNamed(Routes.regRoute);
+        }
         else
           Navigator.of(context).pushReplacementNamed(Routes.regRoute);
         return;

@@ -5,6 +5,7 @@ import 'package:sovmestno/presentation/dashboard_screen/dashboard_provider.dart'
 import 'package:sovmestno/presentation/registration_screen/user_provider.dart';
 import 'package:sovmestno/widgets/appbar/custom_appbar.dart';
 import 'package:sovmestno/widgets/appbar/profile_actions.dart';
+import 'package:sovmestno/widgets/bottom_bar/bottom_bar.dart';
 import 'package:sovmestno/widgets/custom_loading_indicator.dart';
 import 'package:sovmestno/widgets/header_with_line.dart';
 import 'package:sovmestno/widgets/my_menti_card.dart';
@@ -18,8 +19,9 @@ class DashboardScreen extends StatelessWidget {
         Provider.of<UserComplitedRegisterProvider>(context, listen: false);
 
     return ChangeNotifierProvider(
-        create: (context) => DashboardProvider(readable.user!.id!),
+        create: (context) => DashboardProvider(readable.user!.id!,context),
         child: Scaffold(
+          bottomNavigationBar: const BottomBar(),
           appBar: CustomAppBar(
               actions: ProfileActions(
             user: readable.user!,

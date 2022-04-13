@@ -8,6 +8,7 @@ import 'package:sovmestno/presentation/auth/widgets/detailed_registration_widget
 import 'package:sovmestno/presentation/auth/widgets/registration_widget.dart';
 import 'package:sovmestno/widgets/appbar/auth_actions.dart';
 import 'package:sovmestno/widgets/appbar/custom_appbar.dart';
+import 'package:sovmestno/widgets/bottom_bar/bottom_bar.dart';
 import 'package:sovmestno/widgets/header_with_line.dart';
 
 class AuthorizationScreen extends StatelessWidget {
@@ -38,6 +39,7 @@ class AuthorizationScreen extends StatelessWidget {
                 ? secondRegStep(context)
                 : authStep(context)),
       ))),
+      bottomNavigationBar: const BottomBar(),
     );
   }
 

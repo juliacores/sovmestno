@@ -1,12 +1,11 @@
-import 'dart:html';
+import 'dart:core';
 
-import 'package:flutter/material.dart';
 import 'package:sovmestno/domain/models/request.dart';
 import 'package:sovmestno/domain/models/user.dart';
-import 'package:sovmestno/services/auth_service.dart';
 import 'package:sovmestno/services/database_service.dart';
 import 'package:sovmestno/services/firestore_service.dart';
 import 'package:sovmestno/services/utils.dart';
+import 'package:flutter/material.dart';
 
 class UserComplitedRegisterProvider extends BaseProvider {
   UserModel? _user;
@@ -18,7 +17,23 @@ class UserComplitedRegisterProvider extends BaseProvider {
   final TextEditingController _aboutController = TextEditingController();
   final TextEditingController _experienceController = TextEditingController();
 
-  List<String> tags = [];
+  List<String> _userSkills = [];
+
+  List<String> get userSkills => _userSkills;
+
+  set userSkills(List<String> value) {
+    _userSkills = value;
+    notifyListeners();
+  }
+
+  List<String> _userCharacteristics = [];
+
+  List<String> get userCharacteristics => _userCharacteristics;
+
+  set userCharacteristics(List<String> value) {
+    _userCharacteristics = value;
+    notifyListeners();
+  }
 
   TextEditingController get cityController => _cityController;
 
@@ -67,10 +82,9 @@ class UserComplitedRegisterProvider extends BaseProvider {
 
   RegistrationSteps get step => _step;
 
-  setSkills(String? value) {
+  setSkills(List<String>? value) {
     if (_user != null && value != null) {
-      _user = _user!.copyWith(skills: []);
-      _user!.skills!.add(value);
+      _user = _user!.copyWith(skills: value);
     }
   }
 

@@ -80,6 +80,7 @@ class AddressField extends StatelessWidget {
             ),
           ),
         ),
+        const SizedBox(height: 38),
         const Text(
           'Какая у вас профессия?',
           style: TextStyle(fontSize: 22, color: Colors.black),
