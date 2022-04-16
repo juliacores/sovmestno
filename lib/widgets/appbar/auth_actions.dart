@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/constants/routes.dart';
 import 'package:sovmestno/constants/styles.dart';
+import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
 
 class AuthActions extends StatelessWidget {
-  const AuthActions({Key? key, this.regCallback, this.authCallback}) : super(key: key);
+  const AuthActions({Key? key, this.regCallback, this.authCallback})
+      : super(key: key);
 
   final regCallback;
   final authCallback;
@@ -21,35 +24,14 @@ class AuthActions extends StatelessWidget {
             color: Colors.grey,
           ),
           const SizedBox(width: 35),
-          SizedBox(
-            width: 207,
-            height: 40,
-            child: ElevatedButton(
-              child: const Text(
-                'Зарегестрироваться',
-                style: TextStyle(color: AppColors.backgroundButton),
-              ),
-              onPressed: regCallback,
-              style: Styles.registrationButtonStyle,
-            ),
+          CustomButtonWidget.white(
+            title: 'Зарегестрироваться',
+            callback: regCallback,
           ),
           const SizedBox(width: 28),
-          SizedBox(
-            width: 98,
-            height: 40,
-            child: ElevatedButton(
-              child: const Text(
-                'Войти',
-                style: TextStyle(color: Colors.white),
-              ),
-              onPressed: authCallback,
-              style: ElevatedButton.styleFrom(
-                primary: AppColors.backgroundButton,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-              ),
-            ),
+          CustomButtonWidget.blue(
+            title: 'Войти',
+            callback: authCallback,
           ),
         ],
       ),

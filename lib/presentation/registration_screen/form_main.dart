@@ -121,7 +121,7 @@ class FormMainScreen extends StatelessWidget {
                     ? null
                     : () => readable.setStep(readable.step.index - 1),
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
               Row(
                 children: screens.keys.map((screen) {
                   final isCurrentScreen = screen == _currentScreen;
@@ -150,7 +150,7 @@ class FormMainScreen extends StatelessWidget {
                   );
                 }).toList(),
               ),
-              const SizedBox(height: 60),
+              SizedBox(height: 60.h),
               screens[_currentScreen]!
             ],
           ),

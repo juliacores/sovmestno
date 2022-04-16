@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/constants/routes.dart';
@@ -9,6 +10,7 @@ import 'package:sovmestno/presentation/auth/widgets/registration_widget.dart';
 import 'package:sovmestno/widgets/appbar/auth_actions.dart';
 import 'package:sovmestno/widgets/appbar/custom_appbar.dart';
 import 'package:sovmestno/widgets/bottom_bar/bottom_bar.dart';
+import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
 import 'package:sovmestno/widgets/header_with_line.dart';
 
 class AuthorizationScreen extends StatelessWidget {
@@ -16,9 +18,9 @@ class AuthorizationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    if(Provider.of<LoginProvider>(context).user!=null) {
-      WidgetsBinding.instance!.addPostFrameCallback((timeStamp) => Navigator.of(context).pushReplacementNamed(Routes.regRoute));
+    if (Provider.of<LoginProvider>(context).user != null) {
+      WidgetsBinding.instance!.addPostFrameCallback((timeStamp) =>
+          Navigator.of(context).pushReplacementNamed(Routes.regRoute));
     }
 
     return Scaffold(
@@ -35,7 +37,7 @@ class AuthorizationScreen extends StatelessWidget {
               child: Column(
         children: Provider.of<LoginProvider>(context).regState == 0
             ? firstRegStep(context)
-            : (Provider.of<LoginProvider>(context,listen: false).regState == 1
+            : (Provider.of<LoginProvider>(context, listen: false).regState == 1
                 ? secondRegStep(context)
                 : authStep(context)),
       ))),
@@ -44,24 +46,24 @@ class AuthorizationScreen extends StatelessWidget {
   }
 
   goToFirstStep(context) {
-    Provider.of<LoginProvider>(context,listen: false).regState = 0;
+    Provider.of<LoginProvider>(context, listen: false).regState = 0;
   }
 
   goToSecondStep(context) {
-    Provider.of<LoginProvider>(context,listen: false).regState = 1;
+    Provider.of<LoginProvider>(context, listen: false).regState = 1;
   }
 
   goToAuthStep(context) {
-    Provider.of<LoginProvider>(context,listen: false).regState = 2;
+    Provider.of<LoginProvider>(context, listen: false).regState = 2;
   }
 
   authStep(context) => [
-  Padding(
-  padding: const EdgeInsets.only(left: 104, right: 104),
-  child:HeaderWithLine(
-          title: 'Вход в аккаунт',
-          backCallback: () => goToFirstStep(context),
-        )),
+        Padding(
+            padding: EdgeInsets.only(left: 104.w, right: 104.w),
+            child: HeaderWithLine(
+              title: 'Вход в аккаунт',
+              backCallback: () => goToFirstStep(context),
+            )),
         const Auth(),
         BottomTextWidget(
           title: 'Нет аккаунта?',
@@ -71,9 +73,9 @@ class AuthorizationScreen extends StatelessWidget {
       ];
 
   firstRegStep(context) => [
-        const SizedBox(height: 200),
+        SizedBox(height: 200.h),
         SizedBox(
-          width: 655,
+          width: MediaQuery.of(context).size.width<400 ? 300:655,
           height: 42,
           child: TextField(
             controller: Provider.of<LoginProvider>(context).loginController,
@@ -99,23 +101,11 @@ class AuthorizationScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 30),
-        SizedBox(
-          width: 117,
-          height: 40,
-          child: ElevatedButton(
-            child: const Text(
-              'Далее',
-              style: TextStyle(color: Colors.white),
-            ),
-            onPressed: () => goToSecondStep(context),
-            style: ElevatedButton.styleFrom(
-              primary: AppColors.backgroundButton,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-            ),
-          ),
+        CustomButtonWidget.blue(
+          title: 'Далее',
+          callback: () => goToSecondStep(context),
         ),
+
         const SizedBox(height: 30),
         BottomTextWidget(
           title: 'Уже есть аккаунт?',
@@ -123,9 +113,7 @@ class AuthorizationScreen extends StatelessWidget {
           callback: () => goToAuthStep(context),
         ),
         //Вывод виджетов на экран авторизации для проверки
-        const SizedBox(
-          height: 30,
-        ),
+        const SizedBox(height: 30),
         // Row(
         //   crossAxisAlignment: CrossAxisAlignment.start,
         //   children: [
@@ -142,12 +130,12 @@ class AuthorizationScreen extends StatelessWidget {
       ];
 
   secondRegStep(context) => [
-    Padding(
-        padding: const EdgeInsets.only(left: 104, right: 104),
-    child: HeaderWithLine(
-          title: 'Регистрация',
-          backCallback: () => goToFirstStep(context),
-        )),
+        Padding(
+            padding: EdgeInsets.only(left: 104.w, right: 104.w),
+            child: HeaderWithLine(
+              title: 'Регистрация',
+              backCallback: () => goToFirstStep(context),
+            )),
         const DetailedRegistrationWidget(),
         BottomTextWidget(
           title: 'Уже есть аккаунт?',

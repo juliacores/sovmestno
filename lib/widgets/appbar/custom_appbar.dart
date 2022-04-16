@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/constants/styles.dart';
 
@@ -18,19 +19,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         tag: 'appbar',
         transitionOnUserGestures: true,
         child: AppBar(
-          leadingWidth: 280,
+          leadingWidth: 300.w,
           leading: Container(
-            padding: const EdgeInsets.only(
-              left: 70.0,
+            padding: EdgeInsets.only(
+              left: 70.w,
             ),
             alignment: Alignment.center,
-            child: const Text(
+            child: Text(
               'Совместно',
-              style: Styles.mainTitle,
+              style: Styles.mainTitle.copyWith(fontSize: 30.w),
             ),
           ),
           backgroundColor: AppColors.appBarColor,
-          toolbarHeight: 100,
+          toolbarHeight: 100.h,
           automaticallyImplyLeading: false,
           title: title,
           actions: actions.runtimeType == List ? actions : [actions],
@@ -38,5 +39,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(100);
+  Size get preferredSize => Size.fromHeight(100.h);
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/presentation/registration_screen/user_provider.dart';
@@ -17,8 +18,8 @@ class AddressField extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         SizedBox(
-          width: 225,
-          height: 40,
+          width: 225.w,
+          height: 40.h,
           child: TextField(
             controller: Provider.of<UserComplitedRegisterProvider>(context)
                 .cityController,
@@ -52,8 +53,8 @@ class AddressField extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         SizedBox(
-          width: 225,
-          height: 40,
+          width: 225.w,
+          height: 40.h,
           child: TextField(
             controller: Provider.of<UserComplitedRegisterProvider>(context)
                 .ageController,
@@ -87,8 +88,8 @@ class AddressField extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         SizedBox(
-          width: 225,
-          height: 40,
+          width: 225.w,
+          height: 40.h,
           child: TextField(
             controller: Provider.of<UserComplitedRegisterProvider>(context)
                 .carrierController,

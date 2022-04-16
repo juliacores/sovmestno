@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sovmestno/constants/colors.dart';
 
 ThemeData mainTheme() {
   final outlineButton = OutlinedButtonThemeData(
@@ -8,7 +9,8 @@ ThemeData mainTheme() {
   );
 
   return ThemeData(
-    primarySwatch: Colors.blue,
+    // primarySwatch: AppColors.backgroundButton.,
+    primarySwatch: Colors.indigo,
     outlinedButtonTheme: outlineButton,
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );

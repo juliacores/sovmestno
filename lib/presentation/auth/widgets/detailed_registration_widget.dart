@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/presentation/auth/login_provider.dart';
@@ -10,8 +11,11 @@ class DetailedRegistrationWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double coef = 1;
+    if(MediaQuery.of(context).size.width<400)
+      coef = 0.6;
     return Container(
-      width: 450,
+      width: 450*coef,
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
@@ -21,7 +25,7 @@ class DetailedRegistrationWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(52),
+        padding:  EdgeInsets.all(52*coef),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

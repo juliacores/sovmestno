@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:sovmestno/domain/models/user.dart';
 import 'package:sovmestno/presentation/registration_screen/forms/form_widgets/address_field_widget.dart';
@@ -20,7 +21,7 @@ class StartForm extends StatelessWidget {
           'Кем вы хотите быть?',
           style: TextStyle(fontSize: 22, color: Colors.black),
         ),
-        const SizedBox(height: 30),
+        SizedBox(height: 30.h),
         CheckboxWidget(
           onChangedMentor: (val) {
             Provider.of<UserComplitedRegisterProvider>(context, listen: false)
@@ -39,9 +40,9 @@ class StartForm extends StatelessWidget {
           role:
               Provider.of<UserComplitedRegisterProvider>(context).user?.status,
         ),
-        const SizedBox(height: 30),
+        SizedBox(height: 30.h),
         AddressField(),
-        const SizedBox(height: 46),
+        SizedBox(height: 46.h),
         CustomButtonWidget.blue(
             title: 'Сохранить',
             callback: () {

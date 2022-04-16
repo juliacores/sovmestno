@@ -13,7 +13,7 @@ class BottomBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text('@Sovmestno 2022'),
+          const Text('Sovmestno app 2022'),
           TextButton(onPressed: ()=>launch('https://sovmestno.co'), child: const Text('sovmestno.co'))
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/constants/strings.dart';
@@ -29,8 +30,8 @@ class MentorSkills extends StatelessWidget {
         ),
         const SizedBox(height: 30),
         SizedBox(
-          width: 960,
-          height: 160,
+          width: 960.w,
+          height: 160.h,
           child: TextField(
             controller: Provider.of<UserComplitedRegisterProvider>(context)
                 .experienceController,
@@ -58,7 +59,7 @@ class MentorSkills extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 40),
+        SizedBox(height: 30.h),
         Text(
             Provider.of<UserComplitedRegisterProvider>(context, listen: false)
                         .user!
@@ -67,13 +68,13 @@ class MentorSkills extends StatelessWidget {
                 ? 'Ваши навыки'
                 : 'Ваши цели',
             style: const TextStyle(fontSize: 28)),
-        const SizedBox(height: 20),
+        SizedBox(height: 30.h),
         Container(
           width: double.infinity,
           height: 0.2,
           color: AppColors.backgroundButton,
         ),
-        const SizedBox(height: 30),
+        SizedBox(height: 30.h),
         Text(
             Provider.of<UserComplitedRegisterProvider>(context, listen: false)
                         .user!
@@ -82,7 +83,7 @@ class MentorSkills extends StatelessWidget {
                 ? 'С развитием каких навыков вы могли бы помочь другим?'
                 : 'Выберите навыки, которые хотите развить',
             style: const TextStyle(fontSize: 18)),
-        const SizedBox(height: 40),
+        SizedBox(height: 30.h),
         Wrap(
             spacing: 10,
             runSpacing: 20,
@@ -112,9 +113,9 @@ class MentorSkills extends StatelessWidget {
                 .toList()),
 
 
-        const SizedBox(height: 30),
+        SizedBox(height: 30.h),
         CustomButtonWidget.blue(title: 'Сохранить', callback: onSavePressed),
-        const SizedBox(height: 45),
+        SizedBox(height: 30.h),
       ],
     );
   }

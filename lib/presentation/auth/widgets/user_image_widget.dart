@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:sovmestno/constants/colors.dart';
 import 'package:sovmestno/domain/models/user.dart';
 import 'package:sovmestno/presentation/auth/login_provider.dart';
 import 'package:sovmestno/widgets/avatar.dart';
+import 'package:sovmestno/widgets/buttons/custom_main_button.dart';
 
 class UserImageWidget extends StatelessWidget {
   const UserImageWidget({Key? key, this.addAvatar}) : super(key: key);
@@ -21,34 +23,16 @@ class UserImageWidget extends StatelessWidget {
             Avatar(
                 radius: 33,
                 user: UserModel(
-                  avatarImage: Provider.of<LoginProvider>(context).image,
+                    avatarImage: Provider.of<LoginProvider>(context).image,
                     firstName:
                         Provider.of<LoginProvider>(context).nameController.text,
                     lastName: Provider.of<LoginProvider>(context)
                         .surnameController
                         .text)),
-            const SizedBox(width: 33),
-            SizedBox(
-              height: 40,
-              width: 246,
-              child: ElevatedButton(
-                child: const Text(
-                  'Загрузить фотографию',
-                  style: TextStyle(color: AppColors.backgroundButton),
-                ),
-                onPressed: addAvatar,
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.white,
-                  onPrimary: Colors.blue[100],
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(6.0),
-                    side: const BorderSide(
-                      width: 1.0,
-                      color: AppColors.backgroundButton,
-                    ),
-                  ),
-                ),
-              ),
+            const SizedBox(height: 30),
+            CustomButtonWidget.white(
+              title: 'Загрузить фотографию',
+              callback: addAvatar,
             ),
           ],
         ),
@@ -57,7 +41,7 @@ class UserImageWidget extends StatelessWidget {
           'Максимальный размер фото  1 MB.',
           style: TextStyle(fontSize: 12, color: AppColors.backgroundButton),
         ),
-        const SizedBox(height: 37),
+        const SizedBox(height: 30),
       ],
     );
   }
